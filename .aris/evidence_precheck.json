@@ -1,0 +1,148 @@
+{
+  "results": [
+    {
+      "id": "r11_C1_pc_Astar",
+      "value": "0.61",
+      "source": "results/raw/s38_privacy_metric.json",
+      "status": "value_not_found",
+      "detail": "'0.61' not found in 'results/raw/s38_privacy_metric.json' (1 file(s) checked) — send to the cross-model jury"
+    },
+    {
+      "id": "r11_C1_pc_eps",
+      "value": "4.997",
+      "source": "results/raw/s38_privacy_metric.json",
+      "status": "value_not_found",
+      "detail": "'4.997' not found in 'results/raw/s38_privacy_metric.json' (1 file(s) checked) — send to the cross-model jury"
+    },
+    {
+      "id": "r11_C1_af1dp_Astar",
+      "value": "0.187",
+      "source": "results/raw/s38_privacy_metric.json",
+      "status": "value_not_found",
+      "detail": "'0.187' not found in 'results/raw/s38_privacy_metric.json' (1 file(s) checked) — send to the cross-model jury"
+    },
+    {
+      "id": "r11_C1_refbasis_Astar",
+      "value": "0.033",
+      "source": "results/raw/s38_privacy_metric.json",
+      "status": "value_not_found",
+      "detail": "'0.033' not found in 'results/raw/s38_privacy_metric.json' (1 file(s) checked) — send to the cross-model jury"
+    },
+    {
+      "id": "r11_C2_af_nsp12000",
+      "value": "0.537",
+      "source": "results/raw/s37_realsynth_scale.json",
+      "status": "value_not_found",
+      "detail": "'0.537' not found in 'results/raw/s37_realsynth_scale.json' (1 file(s) checked) — send to the cross-model jury"
+    },
+    {
+      "id": "r11_C2_insample_gap_nsp8000",
+      "value": "0.0002",
+      "source": "results/raw/s37_realsynth_scale.json",
+      "status": "value_not_found",
+      "detail": "'0.0002' not found in 'results/raw/s37_realsynth_scale.json' (1 file(s) checked) — send to the cross-model jury"
+    },
+    {
+      "id": "r11_C3_library_leak",
+      "value": "1.0",
+      "source": "/data/lvvyongji1/GWAS/results/raw/s39_enforcement.json",
+      "status": "verified",
+      "detail": "'1.0' found in /data/lvvyongji1/GWAS/results/raw/s39_enforcement.json"
+    },
+    {
+      "id": "r11_C3_egress_blocked",
+      "value": "1.0",
+      "source": "/data/lvvyongji1/GWAS/results/raw/s39_enforcement.json",
+      "status": "verified",
+      "detail": "'1.0' found in /data/lvvyongji1/GWAS/results/raw/s39_enforcement.json"
+    },
+    {
+      "id": "r11_C3_chain_verified",
+      "value": "1.0",
+      "source": "/data/lvvyongji1/GWAS/results/raw/s39_enforcement.json",
+      "status": "verified",
+      "detail": "'1.0' found in /data/lvvyongji1/GWAS/results/raw/s39_enforcement.json"
+    },
+    {
+      "id": "r11_C3_governed_af",
+      "value": "0.624",
+      "source": "results/raw/s39_enforcement.json",
+      "status": "value_not_found",
+      "detail": "'0.624' not found in 'results/raw/s39_enforcement.json' (1 file(s) checked) — send to the cross-model jury"
+    },
+    {
+      "id": "r11_C4_bundle",
+      "value": "0.962",
+      "source": "results/raw/s40_bundle.json",
+      "status": "value_not_found",
+      "detail": "'0.962' not found in 'results/raw/s40_bundle.json' (1 file(s) checked) — send to the cross-model jury"
+    },
+    {
+      "id": "r11_C4_max_single",
+      "value": "0.947",
+      "source": "results/raw/s40_bundle.json",
+      "status": "value_not_found",
+      "detail": "'0.947' not found in 'results/raw/s40_bundle.json' (1 file(s) checked) — send to the cross-model jury"
+    },
+    {
+      "id": "r11_C4_excess",
+      "value": "0.015",
+      "source": "results/raw/s40_bundle.json",
+      "status": "value_not_found",
+      "detail": "'0.015' not found in 'results/raw/s40_bundle.json' (1 file(s) checked) — send to the cross-model jury"
+    },
+    {
+      "id": "r11_C4_noise_control",
+      "value": "0.839",
+      "source": "results/raw/s40_bundle.json",
+      "status": "value_not_found",
+      "detail": "'0.839' not found in 'results/raw/s40_bundle.json' (1 file(s) checked) — send to the cross-model jury"
+    },
+    {
+      "id": "r11_C5_ibd_chr1_real",
+      "value": "0.456",
+      "source": "results/raw/s41_phased_ibd_genome.json",
+      "status": "value_not_found",
+      "detail": "'0.456' not found in 'results/raw/s41_phased_ibd_genome.json' (1 file(s) checked) — send to the cross-model jury"
+    },
+    {
+      "id": "r11_C5_ibd_chr1_planted",
+      "value": "0.715",
+      "source": "results/raw/s41_phased_ibd_genome.json",
+      "status": "value_not_found",
+      "detail": "'0.715' not found in 'results/raw/s41_phased_ibd_genome.json' (1 file(s) checked) — send to the cross-model jury"
+    },
+    {
+      "id": "r11_C5_ibd_chr2_real",
+      "value": "0.479",
+      "source": "results/raw/s41_phased_ibd_genome.json",
+      "status": "value_not_found",
+      "detail": "'0.479' not found in 'results/raw/s41_phased_ibd_genome.json' (1 file(s) checked) — send to the cross-model jury"
+    },
+    {
+      "id": "r11_C5_ibd_chr22_real",
+      "value": "0.424",
+      "source": "results/raw/s41_phased_ibd_genome.json",
+      "status": "value_not_found",
+      "detail": "'0.424' not found in 'results/raw/s41_phased_ibd_genome.json' (1 file(s) checked) — send to the cross-model jury"
+    },
+    {
+      "id": "r11_C5_rho0_null",
+      "value": "0.502",
+      "source": "results/raw/s42_missingness_realistic.json",
+      "status": "value_not_found",
+      "detail": "'0.502' not found in 'results/raw/s42_missingness_realistic.json' (1 file(s) checked) — send to the cross-model jury"
+    },
+    {
+      "id": "r11_C5_rho1",
+      "value": "1.0",
+      "source": "/data/lvvyongji1/GWAS/results/raw/s42_missingness_realistic.json",
+      "status": "verified",
+      "detail": "'1.0' found in /data/lvvyongji1/GWAS/results/raw/s42_missingness_realistic.json"
+    }
+  ],
+  "summary": {
+    "value_not_found": 16,
+    "verified": 4
+  }
+}

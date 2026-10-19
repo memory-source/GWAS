@@ -1,0 +1,1 @@
+7/10, verdict ready. No remaining critical correctness defect. Verified S40 +0.007844 / S46 +0.005602 5/5, actual-phase relatedness disclosure, missingness-as-confounding-control, raw-haplotype vs LSR distinction, per-group monitor delivery, Fig7 0.50. Three nonblocking terminology items.

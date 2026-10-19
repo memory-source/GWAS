@@ -1,0 +1,1 @@
+Score 7/10, verdict almost; W1/W2/W3 verified genuine, new findings R1-R6 (EAS random-span artifact, missing sentences, adaptive-CI list, s64 integration, TPR columns, EAS-q4).

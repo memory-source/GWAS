@@ -1,0 +1,1 @@
+C6 yes-scoped/C7 yes/C8 yes; high; refinements applied (s21 brackets, chr2-crossing phrasing, eig range).

@@ -1,0 +1,17 @@
+{
+  "skill": "auto-review-loop",
+  "run_id": "2026-10-16_run01",
+  "started_at": "2026-10-16T11:30:10Z",
+  "executor": "claude-code",
+  "executor_model": "deepseek-flash",
+  "executor_model_source": "caller-declared",
+  "executor_family": "unknown",
+  "reviewer_model_source": "requested",
+  "reviewer_family": "unknown",
+  "reviewer_backend": "pi-review",
+  "native_evidence_id": null,
+  "native_evidence_path": null,
+  "family_relation": "unknown",
+  "independence_verified": "unverified",
+  "project_dir": "/data/lvvyongji1/GWAS"
+}

@@ -1,0 +1,13 @@
+### within:EUR  AF 0.689  AFpool 0.791  AFcond 0.882  specCond 0.985
+  passive  q1 auc0.908 gapStrong-0.076 vis0.593 | q2 auc0.908 gapStrong-0.076 vis0.593 | q4 auc0.908 gapStrong-0.076 vis0.593 | q8 auc0.908 gapStrong-0.076 vis0.593
+  random   q1 auc0.908 gapStrong-0.076 vis0.593 | q2 auc0.961 gapStrong-0.024 vis0.661 | q4 auc0.996 gapStrong+0.011 vis0.761 | q8 auc1.000 gapStrong+0.015 vis0.853
+  adaptive q1 auc0.908 gapStrong-0.076 vis0.593 | q2 auc0.975 gapStrong-0.010 vis0.680 | q4 auc0.998 gapStrong+0.013 vis0.770 | q8 auc1.000 gapStrong+0.015 vis0.860
+### super:3pop  AF 0.633  AFpool 0.695  AFcond 0.784  specCond 0.757
+  passive  q1 auc0.655 gapStrong-0.129 vis0.920 | q2 auc0.655 gapStrong-0.129 vis0.920 | q4 auc0.655 gapStrong-0.129 vis0.920 | q8 auc0.655 gapStrong-0.129 vis0.920
+  random   q1 auc0.655 gapStrong-0.129 vis0.920 | q2 auc0.739 gapStrong-0.045 vis0.930 | q4 auc0.830 gapStrong+0.047 vis0.943 | q8 auc0.907 gapStrong+0.123 vis0.956
+  adaptive q1 auc0.655 gapStrong-0.129 vis0.920 | q2 auc0.741 gapStrong-0.043 vis0.930 | q4 auc0.833 gapStrong+0.049 vis0.944 | q8 auc0.912 gapStrong+0.128 vis0.957
+### within:EAS  AF 0.688  AFpool 0.812  AFcond 0.915  specCond 0.987
+  passive  q1 auc0.915 gapStrong-0.072 vis0.602 | q2 auc0.915 gapStrong-0.072 vis0.602 | q4 auc0.915 gapStrong-0.072 vis0.602 | q8 auc0.915 gapStrong-0.072 vis0.602
+  random   q1 auc0.915 gapStrong-0.072 vis0.602 | q2 auc0.964 gapStrong-0.023 vis0.667 | q4 auc0.991 gapStrong+0.004 vis0.768 | q8 auc0.999 gapStrong+0.013 vis0.854
+  adaptive q1 auc0.915 gapStrong-0.072 vis0.602 | q2 auc0.974 gapStrong-0.013 vis0.687 | q4 auc0.994 gapStrong+0.007 vis0.782 | q8 auc0.999 gapStrong+0.012 vis0.866
+done 135.1 s

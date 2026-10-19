@@ -1,0 +1,13 @@
+nsp500_m5000 af=0.808 pc=0.816 delta=+0.008 comb=0.814
+nsp500_m10000 af=0.889 pc=0.866 delta=-0.022 comb=0.890
+nsp500_m20000 af=0.963 pc=0.924 delta=-0.039 comb=0.963
+nsp500_m50000 af=0.998 pc=0.967 delta=-0.030 comb=0.998
+nsp500_m100000 af=1.000 pc=0.989 delta=-0.011 comb=1.000
+nsp500_m300000 af=1.000 pc=0.999 delta=-0.001 comb=1.000
+nsp500_m1000000 af=1.000 pc=1.000 delta=-0.000 comb=1.000
+nsp2000_m5000 af=0.665 pc=0.632 delta=-0.033 comb=0.673
+nsp2000_m10000 af=0.732 pc=0.658 delta=-0.074 comb=0.736
+nsp2000_m20000 af=0.800 pc=0.690 delta=-0.110 comb=0.802
+nsp2000_m50000 af=0.914 pc=0.747 delta=-0.167 comb=0.914
+nsp2000_m100000 af=0.973 pc=0.800 delta=-0.174 comb=0.974
+done 2142.9 s

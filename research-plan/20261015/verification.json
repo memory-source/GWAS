@@ -1,0 +1,25 @@
+{
+  "scope": "Research-plan artifact QA and bounded synthetic algebra validation only.",
+  "missing_local_links": [],
+  "review_snapshot_inputs_changed": [],
+  "sources": 12,
+  "largest_scatter_identity_abs_error": 1.474376176702208e-13,
+  "files": {
+    "RESTRUCTURE_ZH.md": {
+      "bytes": 23880,
+      "sha256": "247c83abb942634ff2f62345a2b020da1c78d5d347691b39cb9a8f232a9a2b10"
+    },
+    "algebra_check.py": {
+      "bytes": 3182,
+      "sha256": "b7f4759575ef329e90a931f805533ebad4fc069947ffedb1d62b0a63a9fa1393"
+    },
+    "algebra_check.json": {
+      "bytes": 2096,
+      "sha256": "09e2c45ad79856a18ab80dc2ede4c656dec3ece55c8f29edb33c1054b7b24beb"
+    },
+    "novelty_sources.json": {
+      "bytes": 4431,
+      "sha256": "37c7a3716bac574cd700e4ea9d271be3014977b3324b48ac2508c7a689629ab9"
+    }
+  }
+}

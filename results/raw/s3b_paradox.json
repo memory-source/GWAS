@@ -1,0 +1,168 @@
+{
+  "rows": [
+    {
+      "seed": 0,
+      "family": "A_scree",
+      "sanitized": false,
+      "n_probes": 3,
+      "chosen_k": 2,
+      "quality": 0.37961528125068006,
+      "lambda_gc": 0.9449100447391682,
+      "recovery": 0.0,
+      "cumulative_auroc": 0.8446777777777777
+    },
+    {
+      "seed": 0,
+      "family": "A_scree",
+      "sanitized": true,
+      "n_probes": 0,
+      "chosen_k": 2,
+      "quality": 0.37961528125068006,
+      "lambda_gc": 0.9449100447391682,
+      "recovery": 0.0,
+      "cumulative_auroc": 0.8395987654320988
+    },
+    {
+      "seed": 0,
+      "family": "B_gap",
+      "sanitized": false,
+      "n_probes": 3,
+      "chosen_k": 3,
+      "quality": 0.38439701182048225,
+      "lambda_gc": 0.9474135610047515,
+      "recovery": 0.0,
+      "cumulative_auroc": 0.8446777777777777
+    },
+    {
+      "seed": 0,
+      "family": "B_gap",
+      "sanitized": true,
+      "n_probes": 0,
+      "chosen_k": 3,
+      "quality": 0.38439701182048225,
+      "lambda_gc": 0.9474135610047515,
+      "recovery": 0.0,
+      "cumulative_auroc": 0.8395987654320988
+    },
+    {
+      "seed": 1,
+      "family": "A_scree",
+      "sanitized": false,
+      "n_probes": 3,
+      "chosen_k": 2,
+      "quality": 0.6322588114392547,
+      "lambda_gc": 0.9927745649428201,
+      "recovery": 0.3,
+      "cumulative_auroc": 0.8561827160493827
+    },
+    {
+      "seed": 1,
+      "family": "A_scree",
+      "sanitized": true,
+      "n_probes": 0,
+      "chosen_k": 2,
+      "quality": 0.6322588114392547,
+      "lambda_gc": 0.9927745649428201,
+      "recovery": 0.3,
+      "cumulative_auroc": 0.8388987654320987
+    },
+    {
+      "seed": 1,
+      "family": "B_gap",
+      "sanitized": false,
+      "n_probes": 3,
+      "chosen_k": 3,
+      "quality": 0.6302226281091378,
+      "lambda_gc": 0.9919283413029009,
+      "recovery": 0.3,
+      "cumulative_auroc": 0.8561827160493827
+    },
+    {
+      "seed": 1,
+      "family": "B_gap",
+      "sanitized": true,
+      "n_probes": 0,
+      "chosen_k": 3,
+      "quality": 0.6302226281091378,
+      "lambda_gc": 0.9919283413029009,
+      "recovery": 0.3,
+      "cumulative_auroc": 0.8388987654320987
+    },
+    {
+      "seed": 2,
+      "family": "A_scree",
+      "sanitized": false,
+      "n_probes": 3,
+      "chosen_k": 2,
+      "quality": 0.36055509857394197,
+      "lambda_gc": 1.1303587497507133,
+      "recovery": 0.2,
+      "cumulative_auroc": 0.8691604938271605
+    },
+    {
+      "seed": 2,
+      "family": "A_scree",
+      "sanitized": true,
+      "n_probes": 0,
+      "chosen_k": 2,
+      "quality": 0.36055509857394197,
+      "lambda_gc": 1.1303587497507133,
+      "recovery": 0.2,
+      "cumulative_auroc": 0.8568753086419754
+    },
+    {
+      "seed": 2,
+      "family": "B_gap",
+      "sanitized": false,
+      "n_probes": 3,
+      "chosen_k": 3,
+      "quality": 0.3653776316194426,
+      "lambda_gc": 1.1266908523682937,
+      "recovery": 0.2,
+      "cumulative_auroc": 0.8691604938271605
+    },
+    {
+      "seed": 2,
+      "family": "B_gap",
+      "sanitized": true,
+      "n_probes": 0,
+      "chosen_k": 3,
+      "quality": 0.3653776316194426,
+      "lambda_gc": 1.1266908523682937,
+      "recovery": 0.2,
+      "cumulative_auroc": 0.8568753086419754
+    }
+  ],
+  "summary": {
+    "A_scree|san=False": {
+      "n_probes_mean": 3.0,
+      "quality_mean": 0.4574763970879589,
+      "lambda_gc_mean": 1.0226811198109005,
+      "cumulative_auroc_mean": 0.8566736625514403
+    },
+    "A_scree|san=True": {
+      "n_probes_mean": 0.0,
+      "quality_mean": 0.4574763970879589,
+      "lambda_gc_mean": 1.0226811198109005,
+      "cumulative_auroc_mean": 0.845124279835391
+    },
+    "B_gap|san=False": {
+      "n_probes_mean": 3.0,
+      "quality_mean": 0.45999909051635424,
+      "lambda_gc_mean": 1.0220109182253154,
+      "cumulative_auroc_mean": 0.8566736625514403
+    },
+    "B_gap|san=True": {
+      "n_probes_mean": 0.0,
+      "quality_mean": 0.45999909051635424,
+      "lambda_gc_mean": 1.0220109182253154,
+      "cumulative_auroc_mean": 0.845124279835391
+    }
+  },
+  "probe_reduction": {
+    "A_scree": 1.0,
+    "B_gap": 1.0
+  },
+  "both_families_ge_20pct": true,
+  "quality_parity": true
+}

@@ -1,0 +1,2 @@
+nsp12000_m6000 {"af_only": 0.5372, "pc_calibrated": 0.5029, "combined": 0.5386, "delta_pc_minus_af": -0.0342, "pc_refbasis": 0.5005, "pc_eigonly": 0.5019, "pc_in_sample_gap": 0.0024, "fst_like": 0.0949}
+shard5 done 188.4 s

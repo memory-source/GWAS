@@ -1,0 +1,135 @@
+{
+  "per_seed": [
+    {
+      "seed": 0,
+      "ungoverned": {
+        "af": 0.835658024691358,
+        "pc_dist": 0.8849716049382716
+      },
+      "governed": {
+        "af": 0.6257617283950617,
+        "pc_dist": 0.5065950617283951
+      },
+      "delta_af": -0.20989629629629625,
+      "delta_pc": -0.37837654320987657
+    },
+    {
+      "seed": 1,
+      "ungoverned": {
+        "af": 0.8494567901234568,
+        "pc_dist": 0.8727024691358025
+      },
+      "governed": {
+        "af": 0.6178098765432098,
+        "pc_dist": 0.5087493827160494
+      },
+      "delta_af": -0.23164691358024692,
+      "delta_pc": -0.3639530864197531
+    },
+    {
+      "seed": 2,
+      "ungoverned": {
+        "af": 0.8585271604938272,
+        "pc_dist": 0.889183950617284
+      },
+      "governed": {
+        "af": 0.6281728395061729,
+        "pc_dist": 0.5129617283950617
+      },
+      "delta_af": -0.2303543209876543,
+      "delta_pc": -0.37622222222222224
+    },
+    {
+      "seed": 3,
+      "ungoverned": {
+        "af": 0.8358012345679012,
+        "pc_dist": 0.8811901234567902
+      },
+      "governed": {
+        "af": 0.6219716049382716,
+        "pc_dist": 0.5130172839506173
+      },
+      "delta_af": -0.2138296296296296,
+      "delta_pc": -0.36817283950617286
+    },
+    {
+      "seed": 4,
+      "ungoverned": {
+        "af": 0.8433074074074074,
+        "pc_dist": 0.880137037037037
+      },
+      "governed": {
+        "af": 0.6147358024691358,
+        "pc_dist": 0.5086271604938272
+      },
+      "delta_af": -0.22857160493827156,
+      "delta_pc": -0.3715098765432099
+    }
+  ],
+  "agg": {
+    "ungoverned_af": [
+      0.8445501234567901,
+      0.008678591620029133
+    ],
+    "ungoverned_pc_dist": [
+      0.8816370370370372,
+      0.005483638992596772
+    ],
+    "governed_af": [
+      0.6216903703703703,
+      0.004941694085625815
+    ],
+    "governed_pc_dist": [
+      0.5099901234567902,
+      0.002565840459900162
+    ]
+  },
+  "manifest_governed": "sha256:9f0a24d8c10866c3f47538fed9cff340c1632c717363f0ebb92cb1134655621b",
+  "manifest_ungoverned": "sha256:49ea1fd95dabc333268175c92d2d9e725d6f09ec15226147d61b2809524aed96",
+  "enforcement": {
+    "matrix": [
+      {
+        "injection": "undeclared_loadings",
+        "outcome": "blocked",
+        "reason": "undeclared reveal: loadings"
+      },
+      {
+        "injection": "undeclared_missingness",
+        "outcome": "blocked",
+        "reason": "undeclared reveal: missing"
+      },
+      {
+        "injection": "undeclared_condition_bit",
+        "outcome": "blocked",
+        "reason": "undeclared reveal: condition_bit"
+      },
+      {
+        "injection": "recipient_expansion",
+        "outcome": "blocked",
+        "reason": "recipient expansion for af"
+      },
+      {
+        "injection": "condition_loosened",
+        "outcome": "blocked",
+        "reason": "condition loosened for af"
+      },
+      {
+        "injection": "af_overprecision_to_full",
+        "outcome": "coarsened",
+        "emitted_precision": 1,
+        "returned_matches_declared": true
+      }
+    ],
+    "chain_verified": true,
+    "n_records": 6,
+    "tcb_inventory": {
+      "components": [
+        "manifest_validator",
+        "egress_monitor",
+        "hash_chain_ledger"
+      ],
+      "loc": 0,
+      "note": "plaintext release-object layer; MPC/SPU sole-egress binding out of scope"
+    }
+  }
+}

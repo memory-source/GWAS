@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/data/lvvyongji1/GWAS/code/s41_phased_ibd_genome.py", line 221, in <module>
+    run_all()
+  File "/data/lvvyongji1/GWAS/code/s41_phased_ibd_genome.py", line 209, in run_all
+    res["per_chrom"][f"chr{c}"] = run(chrom=c)
+  File "/data/lvvyongji1/GWAS/code/s41_phased_ibd_genome.py", line 190, in run
+    r = arm(coord, si, ri, ni, planted=do_planted, seed=s)
+  File "/data/lvvyongji1/GWAS/code/s41_phased_ibd_genome.py", line 150, in arm
+    score_hap = best_cm_per_target(TH, released, cm, n_members=n_st)
+  File "/data/lvvyongji1/GWAS/code/s41_phased_ibd_genome.py", line 85, in best_cm_per_target
+    cmrun = _cm_run_vs_one(targets_H, released_H[j], cm)
+  File "/data/lvvyongji1/GWAS/code/s41_phased_ibd_genome.py", line 64, in _cm_run_vs_one
+    span = np.where(E, cm[None, :] - cm[sidx], -np.inf)
+IndexError: index 50000 is out of bounds for axis 0 with size 50000

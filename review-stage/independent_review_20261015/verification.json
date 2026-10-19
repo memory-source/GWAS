@@ -1,0 +1,27 @@
+{
+  "scope": "Review artifact QA and source-snapshot consistency only; not full scientific validation.",
+  "original_snapshot_files_changed": [],
+  "missing_local_links": [],
+  "review_reports": 3,
+  "cross_review_synthesis": 1,
+  "external_sources": 8,
+  "local_link_count": 24,
+  "artifacts": {
+    "REVIEW_ZH.md": {
+      "bytes": 21694,
+      "sha256": "a2f7176b8e028ec78b2629d7c8547c34433969974622f2c7866635a1923e3393"
+    },
+    "check_evidence.py": {
+      "bytes": 6722,
+      "sha256": "2d164aede72648c36b39ee2c49394286b5279734c860f518725632b792f8609a"
+    },
+    "evidence_checks.json": {
+      "bytes": 12576,
+      "sha256": "c9f0e94bfc81de0eed482a83c01f79f7c6bac5d03ba8630d1edcdac2c479a9d2"
+    },
+    "sources.json": {
+      "bytes": 2381,
+      "sha256": "9718636f963ac55420f8004327f5e98a3bb541873aea5c515cc10bcfda4c84ad"
+    }
+  }
+}

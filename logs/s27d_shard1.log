@@ -1,0 +1,7 @@
+nsp500_m1000000_f0.04 {"af_only": 1.0, "pc_calibrated": 1.0, "combined": 1.0, "delta_pc_minus_af": 0.0, "pc_refbasis": 0.4998, "pc_eigonly": 0.5019, "pc_in_sample_gap": 0.5002, "fst_like": 0.0274}
+nsp2000_m300000_f0.04 {"af_only": 0.9997, "pc_calibrated": 0.9494, "combined": 0.9997, "delta_pc_minus_af": -0.0503, "pc_refbasis": 0.5002, "pc_eigonly": 0.5008, "pc_in_sample_gap": 0.4492, "fst_like": 0.027}
+nsp8000_m100000_f0.04 {"af_only": 0.8367, "pc_calibrated": 0.6463, "combined": 0.8367, "delta_pc_minus_af": -0.1904, "pc_refbasis": 0.4987, "pc_eigonly": 0.4995, "pc_in_sample_gap": 0.1476, "fst_like": 0.0269}
+nsp500_m1000000_f0.08 {"af_only": 1.0, "pc_calibrated": 1.0, "combined": 1.0, "delta_pc_minus_af": 0.0, "pc_refbasis": 0.4996, "pc_eigonly": 0.4965, "pc_in_sample_gap": 0.5004, "fst_like": 0.0519}
+nsp2000_m300000_f0.08 {"af_only": 0.9997, "pc_calibrated": 0.8949, "combined": 0.9997, "delta_pc_minus_af": -0.1047, "pc_refbasis": 0.4986, "pc_eigonly": 0.501, "pc_in_sample_gap": 0.3963, "fst_like": 0.0515}
+nsp8000_m100000_f0.08 {"af_only": 0.8297, "pc_calibrated": 0.6082, "combined": 0.8297, "delta_pc_minus_af": -0.2215, "pc_refbasis": 0.4984, "pc_eigonly": 0.4982, "pc_in_sample_gap": 0.1097, "fst_like": 0.0515}
+shard1 done 2905.3 s

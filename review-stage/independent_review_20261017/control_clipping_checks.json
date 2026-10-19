@@ -1,0 +1,49 @@
+{
+  "scope": "Same EAS cache, splits and random spans; only z_clip changes. This tests control comparability, not invalidity of the active-versus-passive gap.",
+  "cache": "results/cache/real_panel_chr22_e6f1c0cf.npz",
+  "cache_sha256": "47b0195ce81b0352a927d3cda55b6312bab862fab4984de6dcb254652f358d47",
+  "EAS_shape": [
+    504,
+    3271
+  ],
+  "per_seed": [
+    {
+      "seed": 0,
+      "unclipped": 0.5340112201963534,
+      "clipped": 0.4481065918653576,
+      "test_nonmembers": 46
+    },
+    {
+      "seed": 1,
+      "unclipped": 0.6338888888888888,
+      "clipped": 0.41388888888888886,
+      "test_nonmembers": 30
+    },
+    {
+      "seed": 2,
+      "unclipped": 0.5871670702179177,
+      "clipped": 0.4870863599677159,
+      "test_nonmembers": 42
+    },
+    {
+      "seed": 3,
+      "unclipped": 0.5544969512195121,
+      "clipped": 0.48246951219512196,
+      "test_nonmembers": 41
+    },
+    {
+      "seed": 4,
+      "unclipped": 0.5848126232741617,
+      "clipped": 0.48570019723865876,
+      "test_nonmembers": 39
+    }
+  ],
+  "mean_unclipped": 0.5788753507593667,
+  "mean_clipped": 0.46345031003114856,
+  "honest_overlap_seed0_others": [
+    29,
+    27,
+    30,
+    35
+  ]
+}

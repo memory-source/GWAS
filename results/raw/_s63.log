@@ -1,0 +1,6 @@
+seed 0  af 0.686  afcond 0.855  single 0.927  spec_cond 0.992  q1 0.927  q2 0.968 q4 0.997  q8 1.000  gap_q8 +0.008
+seed 1  af 0.678  afcond 0.897  single 0.887  spec_cond 0.976  q1 0.887  q2 0.968 q4 0.996  q8 1.000  gap_q8 +0.024
+seed 2  af 0.691  afcond 0.876  single 0.951  spec_cond 0.994  q1 0.951  q2 0.987 q4 0.998  q8 1.000  gap_q8 +0.006
+seed 3  af 0.615  afcond 0.857  single 0.898  spec_cond 0.977  q1 0.898  q2 0.936 q4 0.994  q8 1.000  gap_q8 +0.023
+seed 4  af 0.775  afcond 0.924  single 0.879  spec_cond 0.984  q1 0.879  q2 0.879 q4 0.966  q8 0.994  gap_q8 +0.009
+done 181.6 s

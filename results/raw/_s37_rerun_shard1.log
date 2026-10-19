@@ -1,0 +1,2 @@
+nsp500_m8000 {"af_only": 0.6429, "pc_calibrated": 0.5812, "combined": 0.646, "delta_pc_minus_af": -0.0616, "pc_refbasis": 0.4999, "pc_eigonly": 0.4834, "pc_in_sample_gap": 0.0813, "fst_like": 0.0961}
+shard1 done 69.8 s

@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-14",
+  "auditor": "pi-review-glm-flash-ultra",
+  "superseded_by": null,
+  "overall_verdict": "warn",
+  "integrity_status": "warn",
+  "round": 17,
+  "scope": "s59 (GPU AUROC tie disclosure), s60 (monotone PCA share + per-seed crossing), s56 (fixed-reference rewrite), s54/s55/s37/s42 text corrections",
+  "checks": {
+    "gt_provenance": {"status": "pass", "details": "Membership GT is a 3-way disjoint per-group random split of real 1000G genotypes (s48 cohort_cell, s56 cell, s60 share_ladder); s54 reproduces s48's statistic to all printed digits; s37/s42 proxy arms are labeled."},
+    "score_normalization": {"status": "warn", "details": "s60's denominator is the total squared norm about the study mean (an input statistic), not model output. But the cumulative squared-projection share is monotone BY CONSTRUCTION (cumsum of non-negative increments); the paper initially cited its monotonicity as if it certified a gap. Reworded to state it only rules out a share that rises by construction."},
+    "result_existence": {"status": "warn", "details": "All headline numbers trace to live JSON keys. Two quoted statements contradicted their JSONs and were fixed: (i) s42 'differ by <=0.01 / bounded above by candonly' (actual diff 0.0212 at rho=0.25 and table>candonly at rho=0.75); (ii) s56 'up to sd 0.26' (actual max 0.41). Also 'rather than all eighteen' -> the s48 ladder has 19 cohorts. All corrected in paper/docs."},
+    "dead_code": {"status": "pass", "details": "s59/s60 functions all called and reach JSON. s60 line 96 assigns crossing.mean from mean_sequence[0] then overwritten by the per-seed mean; harmless, mean_sequence preserved in JSON."},
+    "scope": {"status": "warn", "details": "s60 crossing now reported with per-seed instability (3 single-crossing, 1 triple-crossing, 1 non-crossing). s56 held n_ref=150 (cap only at the pool boundary). EUR/EAS n350 cells have only 6 non-members; the paper now states this and quotes their gaps. s54 scope stated as the five tested cohorts."},
+    "eval_type": "real_gt (s54/s55/s56/s60); simulation_only (s59); synthetic_proxy (s37/s42, labeled)"
+  },
+  "claims": [
+    {"id": "L1-structure-zero-bound", "impact": "supported_scoped"},
+    {"id": "s56-fixed-reference", "impact": "supported"},
+    {"id": "s60-monotone-share", "impact": "needs_qualifier"},
+    {"id": "s59-tie-disclosure", "impact": "supported"},
+    {"id": "s42-candonly-match", "impact": "supported_after_fix"}
+  ]
+}

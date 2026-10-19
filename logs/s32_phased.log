@@ -1,0 +1,5 @@
+  chr22 phased: 20000
+real chr22 L=20 {"lsr_auc": 0.5992, "hit_auc": 0.0, "af": 0.7057, "mean_lsr_mem": 6874.0, "mean_lsr_non": 5978.9811}
+real chr22 L=50 {"lsr_auc": 0.5992, "hit_auc": 0.0, "af": 0.7057, "mean_lsr_mem": 6874.0, "mean_lsr_non": 5978.9811}
+real chr22 L=100 {"lsr_auc": 0.5992, "hit_auc": 0.0, "af": 0.7057, "mean_lsr_mem": 6874.0, "mean_lsr_non": 5978.9811}
+done 1316.0 s

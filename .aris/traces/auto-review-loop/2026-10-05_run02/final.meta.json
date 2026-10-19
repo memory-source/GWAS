@@ -1,0 +1,14 @@
+{
+  "skill": "auto-review-loop",
+  "run_id": "run_20261005_d6cf307b",
+  "status": "completed",
+  "rounds": 4,
+  "score_progression": [8.0, 8.5, 9.0, 9.0],
+  "verdict_progression": ["almost", "almost", "almost", "ready"],
+  "threadId": "1f62f459effe4efe90befe5bb0cb34c7",
+  "backend": "pi-review",
+  "model": "glm-flash",
+  "review_independence": "cross-family",
+  "focus": "limitation closure: governance prototype + model-dependence + paradox + IBD",
+  "timestamp": "2026-10-05T03:30:00"
+}

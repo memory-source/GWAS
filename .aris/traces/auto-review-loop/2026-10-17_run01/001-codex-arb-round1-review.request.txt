@@ -1,0 +1,31 @@
+[Round 1/4 of an autonomous review loop — round 22, selection-input spectral tomography]
+
+Act as a senior security/measurement reviewer (USENIX Security / CCS level). Review the work directly from its artifacts — do NOT trust any summary; read the files yourself.
+
+Files to read:
+- Claims: CLAIMS_FROM_RESULTS_ARB_20261017.md
+- Results summary: refine-logs/EXPERIMENT_RESULTS_ARB_20261017.md
+- Plan: refine-logs/EXPERIMENT_PLAN_ARB_20261017.md
+- Direction: research-plan/20261016_deep_search/DEEP_DIRECTIONS_ZH.md
+- Methods/code: code/s67_joint_passive.py, code/s68_interface.py, code/s69_reliable_dirs.py, code/s70_known_fraction.py, code/s71_protection_cost.py, code/s61_spectral_tomography.py, code/s63_plink_export.py
+- Raw results: results/raw/s67_joint_passive_chr22.json, results/raw/s67_joint_passive_chr1.json, results/raw/s68_interface_chr22.json, results/raw/s69_reliable_dirs_chr22.json, results/raw/s70_known_fraction_chr22.json, results/raw/s71_protection_cost_chr22.json
+- Prior artifacts: refine-logs/EXPERIMENT_RESULTS_DEEP_20261016.md, CLAIMS_FROM_RESULTS_DEEP_20261016.md, review-stage/DEEP_REVIEW_20261016.md, EXPERIMENT_AUDIT_ARB.md, EXPERIMENT_AUDIT_ARB.json
+
+Context: this round narrows the claim. The prior deep round (D1–D9) measured an accumulated-output membership increment against the stronger of two SINGLE passive channels. This round (a) rebuilds the passive bar as the strongest of FOUR constructions (oracle), (b) adds an interface manifest + a randomized-solver (PLINK `--pca approx`) test, (c) bounds the usable directions by the export precision, (d) sweeps the known-member fraction, (e) measures scientific cost under a fixed vs input-varying pass.
+
+Please:
+1. Score this work 1–10 for a top security/measurement venue.
+2. List the remaining critical weaknesses, ranked by severity (verify each against the raw JSONs and code — quote file:line).
+3. For each weakness, the MINIMUM fix (experiment, analysis, or reframing).
+4. State clearly: is this READY for submission? Yes / No / Almost.
+5. A Memory Update section (suspicions, unresolved concerns, patterns).
+
+Be adversarial. The center claim is deliberately NARROWED (float64 superiority established; the bounded-precision conjunction NOT established). Judge whether the narrowing is honest and sufficient, whether any affirmative statement still exceeds the evidence, and whether the measurements are computed correctly. Say plainly when something is correct.
+
+=== SCOPE LIMITS ===
+1. This is a research-workflow repo, not a security paper; a malicious local user is not in the threat model.
+2. Do NOT propose hash/digest-binding schemes.
+3. NO speculative machinery unless evidence shows a current defect it fixes.
+4. NO corner-case obsession.
+5. A clear sentence beats a scored table.
+Say plainly when something is correct. Do not manufacture findings.

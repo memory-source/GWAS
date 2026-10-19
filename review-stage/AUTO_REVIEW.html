@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auto Review — GWAS governed-release</title>
+
+<meta name="generator" content="ARIS render-html (academic, v1)">
+<meta name="aris:source-path" content="review-stage/AUTO_REVIEW.md">
+<meta name="aris:source-sha256" content="b2c8c59b678398270149e859239796744bce2f2ddca72079f6d9bbf376055fa5">
+<meta name="aris:generated-at" content="2026-10-09 09:25 UTC">
+
+<!-- MathJax 3 -->
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']], processEscapes: true },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+
+<!-- highlight.js -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/atom-one-light.min.css">
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+<script>document.addEventListener('DOMContentLoaded', () => hljs.highlightAll());</script>
+
+
+<style>
+:root {
+  --bg: #fdfcf7;
+  --bg-soft: #f4f1ea;
+  --bg-code: #f8f5ec;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --ink-muted: #6b6b6b;
+  --primary: #1a4a8c;
+  --primary-soft: #2d6cb8;
+  --accent: #b8390e;
+  --warn: #b45309;
+  --warn-bg: #fef3c7;
+  --info-bg: #dbeafe;
+  --good-bg: #d1fae5;
+  --good: #065f46;
+  --bad-bg: #fee2e2;
+  --bad: #991b1b;
+  --border: #d6d0c0;
+  --border-soft: #e8e3d5;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Source Serif Pro", "Source Serif 4", "Crimson Pro", "Georgia", "Songti SC", "STSong", serif;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--bg);
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+.layout {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 48px;
+  padding: 40px 32px;
+}
+
+nav.toc {
+  position: sticky;
+  top: 24px;
+  align-self: start;
+  font-size: 13px;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  border-right: 1px solid var(--border-soft);
+  padding-right: 16px;
+}
+nav.toc h3 {
+  margin: 0 0 12px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+  font-weight: 600;
+}
+nav.toc ol { list-style: none; padding: 0; margin: 0; counter-reset: toc; }
+nav.toc ol li { margin: 5px 0; counter-increment: toc; }
+nav.toc ol li::before { content: counter(toc) ". "; color: var(--ink-muted); margin-right: 4px; }
+nav.toc a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px dotted transparent;
+}
+nav.toc a:hover { color: var(--primary); border-bottom-color: var(--primary); }
+nav.toc ul { list-style: none; padding-left: 14px; margin: 3px 0; font-size: 12px; }
+nav.toc ul li::before { content: "→ "; color: var(--border); }
+
+main { min-width: 0; }
+
+header.hero {
+  border-bottom: 3px double var(--primary);
+  padding-bottom: 24px;
+  margin-bottom: 32px;
+}
+header.hero .eyebrow {
+  color: var(--accent);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+body.aris-blog header.hero .eyebrow {
+  font-family: inherit;
+  color: var(--ink-muted);
+  text-transform: none;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+}
+header.hero h1 {
+  font-size: 32px;
+  line-height: 1.2;
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+header.hero .subtitle {
+  font-size: 16px;
+  color: var(--ink-soft);
+  margin: 0 0 8px;
+  font-style: italic;
+}
+header.hero .byline {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin: 0 0 20px;
+}
+header.hero .byline strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+header.hero .meta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--ink-muted);
+  border-top: 1px solid var(--border-soft);
+  padding-top: 14px;
+}
+header.hero .meta span strong { color: var(--ink-soft); }
+header.hero .meta code {
+  font-family: "JetBrains Mono", "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 11px;
+  background: var(--bg-soft);
+  padding: 1px 5px;
+  border-radius: 3px;
+  border: 1px solid var(--border-soft);
+}
+
+h2 {
+  font-size: 24px;
+  margin: 44px 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+  color: var(--ink);
+  font-weight: 700;
+}
+h2 .num { color: var(--primary); font-weight: 600; margin-right: 8px; }
+h3 { font-size: 19px; margin: 28px 0 10px; color: var(--primary); font-weight: 600; }
+h4 { font-size: 16px; margin: 20px 0 8px; color: var(--ink); font-weight: 600; }
+
+p { margin: 10px 0; }
+ul, ol { padding-left: 22px; margin: 10px 0; }
+ul li, ol li { margin: 4px 0; }
+ul li::marker { color: var(--primary); }
+
+strong { color: var(--accent); font-weight: 600; }
+em { color: var(--ink-soft); }
+
+a { color: var(--primary); }
+a:hover { color: var(--accent); }
+
+code:not(.hljs) {
+  font-family: "JetBrains Mono", "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 0.86em;
+  background: var(--bg-code);
+  padding: 1px 5px;
+  border-radius: 3px;
+  border: 1px solid var(--border-soft);
+  color: var(--accent);
+}
+
+pre {
+  background: #fafaf6;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  padding: 0;
+  overflow-x: auto;
+  border-radius: 4px;
+  margin: 14px 0;
+}
+pre code, pre code.hljs {
+  background: transparent !important;
+  display: block;
+  padding: 14px 18px !important;
+  font-size: 13px;
+  line-height: 1.55;
+  font-family: "JetBrains Mono", "SF Mono", "Menlo", monospace;
+  color: var(--ink);
+}
+pre.diagram {
+  background: #f9f6ed;
+  border-left: 4px solid var(--accent);
+  font-size: 12.5px;
+  line-height: 1.4;
+}
+
+.callout {
+  margin: 16px 0;
+  padding: 12px 16px;
+  border-radius: 4px;
+  border-left: 4px solid;
+  font-size: 15px;
+}
+.callout-title {
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.callout-info { background: var(--info-bg); border-left-color: var(--primary); }
+.callout-info .callout-title { color: var(--primary); }
+.callout-warn { background: var(--warn-bg); border-left-color: var(--warn); }
+.callout-warn .callout-title { color: var(--warn); }
+.callout-good { background: var(--good-bg); border-left-color: var(--good); }
+.callout-good .callout-title { color: var(--good); }
+.callout-bad { background: var(--bad-bg); border-left-color: var(--bad); }
+.callout-bad .callout-title { color: var(--bad); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 14px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+thead { background: var(--primary); color: white; }
+th, td {
+  text-align: left;
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--border-soft);
+  vertical-align: top;
+}
+th { font-weight: 600; font-size: 13px; letter-spacing: 0.02em; }
+tr:last-child td { border-bottom: none; }
+tbody tr:nth-child(even) { background: var(--bg-soft); }
+
+details.qa, details {
+  background: white;
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+  margin: 10px 0;
+  padding: 0;
+}
+details summary {
+  cursor: pointer;
+  padding: 10px 14px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--primary);
+  list-style: none;
+  user-select: none;
+}
+details summary::-webkit-details-marker { display: none; }
+details summary::before {
+  content: "▸ ";
+  margin-right: 4px;
+  display: inline-block;
+  transition: transform 0.15s;
+}
+details[open] summary::before { transform: rotate(90deg); }
+details[open] summary { border-bottom: 1px solid var(--border-soft); }
+details > :not(summary) { padding: 10px 14px; }
+details p:first-of-type { margin-top: 8px; }
+
+mjx-container[display="true"] { margin: 12px 0 !important; }
+
+footer.aris-footer {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--ink-muted);
+}
+footer.aris-footer a { color: var(--ink-muted); border-bottom: 1px dotted var(--border); }
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; gap: 20px; padding: 20px 16px; }
+  nav.toc {
+    position: static;
+    max-height: none;
+    border-right: none;
+    border-bottom: 1px solid var(--border-soft);
+    padding-right: 0;
+    padding-bottom: 14px;
+  }
+  header.hero h1 { font-size: 24px; }
+  h2 { font-size: 20px; }
+}
+@media print {
+  nav.toc { display: none; }
+  .layout { grid-template-columns: 1fr; padding: 0; }
+  body { background: white; }
+  header.hero { border-bottom-color: var(--ink); }
+  #cite-pop, dialog.lightbox { display: none !important; }
+}
+
+/* --- P0 polish: TOC scrollspy active state ---------------------------- */
+nav.toc a.active {
+  color: var(--accent);
+  font-weight: 600;
+  border-bottom-color: var(--accent);
+}
+
+/* --- P0 polish: Long-code auto-collapse ------------------------------- */
+details.code-card {
+  margin: 14px 0;
+  background: #fafaf6;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  border-radius: 4px;
+}
+details.code-card > summary {
+  cursor: pointer;
+  padding: 8px 14px;
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-family: "JetBrains Mono", "SF Mono", monospace;
+  list-style: none;
+  user-select: none;
+}
+details.code-card > summary::-webkit-details-marker { display: none; }
+details.code-card > summary::before { content: none; }
+details.code-card > pre {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-left: none;
+  border-radius: 0;
+}
+@media print {
+  details.code-card { border: 1px solid #ccc; background: white; }
+  details.code-card > summary { display: none !important; }
+  details.code-card > pre { border: 1px solid #ddd; border-radius: 4px; background: white; }
+}
+
+/* --- P0 polish: Paper popover ([[ref]] popups) ------------------------ */
+[data-ref] {
+  color: var(--primary);
+  border-bottom: 1px dotted var(--primary);
+  cursor: pointer;
+  white-space: nowrap;
+}
+[data-ref]:hover { background: rgba(26, 74, 140, 0.08); }
+#cite-pop {
+  position: fixed;
+  width: 360px;
+  max-width: calc(100vw - 32px);
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  font-size: 13px;
+  line-height: 1.5;
+  z-index: 1000;
+}
+#cite-pop[hidden] { display: none; }
+#cite-pop .cp-title {
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 4px;
+  padding-right: 24px;
+}
+#cite-pop .cp-meta {
+  color: var(--ink-muted);
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+#cite-pop .cp-key {
+  color: var(--accent);
+  font-style: italic;
+  margin-bottom: 8px;
+}
+#cite-pop .cp-link {
+  display: inline-block;
+  color: var(--primary);
+  font-weight: 500;
+}
+#cite-pop .cp-close {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--ink-muted);
+}
+
+/* --- P0 polish: Figure lightbox (native <dialog>) --------------------- */
+dialog.lightbox {
+  border: none;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.92);
+  width: 96vw;
+  height: 96vh;
+  max-width: 96vw;
+  max-height: 96vh;
+}
+dialog.lightbox::backdrop { background: rgba(0, 0, 0, 0.92); }
+dialog.lightbox .lb-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 16px;
+  position: relative;
+}
+dialog.lightbox img {
+  max-width: 90vw;
+  max-height: 84vh;
+  object-fit: contain;
+  cursor: zoom-out;
+}
+dialog.lightbox figcaption {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  text-align: center;
+  max-width: 700px;
+}
+dialog.lightbox .lb-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* --- P0 polish: blog/talk mode active-H2 highlight (opt-in) ----------- */
+body.aris-blog h2 { scroll-margin-top: 24px; }
+body.aris-blog h2.aris-active-h2 {
+  background: linear-gradient(to right, rgba(26, 74, 140, 0.06), transparent);
+  border-radius: 4px;
+  padding-left: 12px;
+  margin-left: -12px;
+}
+</style>
+</head>
+<body class="">
+<div class="layout">
+
+<nav class="toc">
+  <h3>Contents</h3>
+  <ol>
+<li><a href="#round-1-2026-10-04--reviewer-backend-pi-review">Round 1 (2026-10-04) — Reviewer backend: pi-review</a>
+<ul>
+<li><a href="#assessment-summary">Assessment (Summary)</a></li>
+<li><a href="#reviewer-raw-response">Reviewer Raw Response</a></li>
+<li><a href="#actions-taken">Actions Taken</a></li>
+<li><a href="#results">Results</a></li>
+<li><a href="#status">Status</a></li>
+</ul>
+</li>
+<li><a href="#round-2-2026-10-04--reviewer-backend-pi-review">Round 2 (2026-10-04) — Reviewer backend: pi-review</a>
+<ul>
+<li><a href="#assessment-summary-1">Assessment (Summary)</a></li>
+<li><a href="#reviewer-raw-response-1">Reviewer Raw Response</a></li>
+<li><a href="#actions-taken-1">Actions Taken</a></li>
+<li><a href="#results-1">Results</a></li>
+<li><a href="#status-1">Status</a></li>
+</ul>
+</li>
+<li><a href="#method-description">Method Description</a>
+</li>
+<li><a href="#final-summary-run20261004d429b8c1">Final Summary (run_20261004_d429b8c1)</a>
+</li>
+<li><a href="#round-1-2026-10-04--score-710-almost">Round 1 (2026-10-04) — Score 7/10, &quot;Almost&quot;</a>
+<ul>
+<li><a href="#assessment-summary-2">Assessment (Summary)</a></li>
+<li><a href="#actions-taken-2">Actions Taken</a></li>
+</ul>
+</li>
+<li><a href="#round-2-2026-10-04--score-7510-almost">Round 2 (2026-10-04) — Score 7.5/10, &quot;Almost&quot;</a>
+</li>
+<li><a href="#round-3-2026-10-04--score-810-verdict-ready">Round 3 (2026-10-04) — Score 8/10, VERDICT: ready</a>
+</li>
+<li><a href="#final-summary-run20261004bcd63f1a">Final Summary (run_20261004_bcd63f1a)</a>
+</li>
+<li><a href="#method-description-1">Method Description</a>
+</li>
+<li><a href="#round-1--score-810-almost">Round 1 — Score 8/10, &quot;Almost&quot;</a>
+<ul>
+<li><a href="#actions">Actions</a></li>
+</ul>
+</li>
+<li><a href="#round-2--score-8510-almost">Round 2 — Score 8.5/10, &quot;Almost&quot;</a>
+</li>
+<li><a href="#round-3--score-910-verdict-ready">Round 3 — Score 9/10, VERDICT: ready</a>
+</li>
+<li><a href="#final-summary-run202610053e9677f2">Final Summary (run_20261005_3e9677f2)</a>
+</li>
+<li><a href="#method-description-updated">Method Description (updated)</a>
+</li>
+<li><a href="#round-1--score-810-almost-1">Round 1 — Score 8/10, &quot;Almost&quot;</a>
+<ul>
+<li><a href="#actions-1">Actions</a></li>
+</ul>
+</li>
+<li><a href="#round-2--score-8510-almost-1">Round 2 — Score 8.5/10, &quot;Almost&quot;</a>
+<ul>
+<li><a href="#actions-2">Actions</a></li>
+</ul>
+</li>
+<li><a href="#round-3--score-910-almost">Round 3 — Score 9/10, &quot;Almost&quot;</a>
+<ul>
+<li><a href="#actions-3">Actions</a></li>
+</ul>
+</li>
+<li><a href="#round-4--score-910-verdict-ready">Round 4 — Score 9/10, VERDICT: ready</a>
+</li>
+<li><a href="#final-summary-run20261005d6cf307b">Final Summary (run_20261005_d6cf307b)</a>
+</li>
+<li><a href="#method-description-updated-1">Method Description (updated)</a>
+</li>
+<li><a href="#round-1-2026-10-06--reviewer-backend-pi-review">Round 1 (2026-10-06) — Reviewer backend: pi-review</a>
+<ul>
+<li><a href="#assessment-summary-3">Assessment (Summary)</a></li>
+</ul>
+</li>
+<li><a href="#round-2-2026-10-06--reviewer-backend-pi-review">Round 2 (2026-10-06) — Reviewer backend: pi-review</a>
+</li>
+<li><a href="#round-3-2026-10-06--reviewer-backend-pi-review--final">Round 3 (2026-10-06) — Reviewer backend: pi-review — FINAL</a>
+<ul>
+<li><a href="#reviewer-raw-responses">Reviewer Raw Responses</a></li>
+<li><a href="#reviewer-backend">Reviewer backend</a></li>
+<li><a href="#actions-taken-3">Actions Taken</a></li>
+<li><a href="#results-2">Results</a></li>
+<li><a href="#status-2">Status</a></li>
+</ul>
+</li>
+<li><a href="#method-description-gpu--scale-round-updated">Method Description (GPU / scale round, updated)</a>
+</li>
+<li><a href="#round-1-2026-10-06--reviewer-backend-pi-review-1">Round 1 (2026-10-06) — Reviewer backend: pi-review</a>
+</li>
+<li><a href="#round-2-2026-10-06--reviewer-backend-pi-review-1">Round 2 (2026-10-06) — Reviewer backend: pi-review</a>
+</li>
+<li><a href="#round-3-2026-10-06--reviewer-backend-pi-review--final-1">Round 3 (2026-10-06) — Reviewer backend: pi-review — FINAL</a>
+<ul>
+<li><a href="#reviewer-raw-responses-1">Reviewer Raw Responses</a></li>
+<li><a href="#reviewer-backend-1">Reviewer backend</a></li>
+<li><a href="#actions-taken-4">Actions Taken</a></li>
+<li><a href="#results-3">Results</a></li>
+<li><a href="#status-3">Status</a></li>
+</ul>
+</li>
+<li><a href="#method-description-round-11--limitation-closure">Method Description (round 11 — limitation closure)</a>
+</li>
+<li><a href="#round-12-2026-10-07--reviewer-backend-pi-review">Round 12 (2026-10-07) — Reviewer backend: pi-review</a>
+</li>
+<li><a href="#round-13-2026-10-07--reviewer-backend-pi-review--final">Round 13 (2026-10-07) — Reviewer backend: pi-review — FINAL</a>
+<ul>
+<li><a href="#reviewer-raw-responses-2">Reviewer Raw Responses</a></li>
+<li><a href="#reviewer-backend-2">Reviewer backend</a></li>
+<li><a href="#actions-taken-round-12">Actions Taken (round 12)</a></li>
+<li><a href="#results-4">Results</a></li>
+<li><a href="#status-4">Status</a></li>
+</ul>
+</li>
+<li><a href="#round-13-2026-10-07--reviewer-backend-pi-review">Round 13 (2026-10-07) — Reviewer backend: pi-review</a>
+</li>
+<li><a href="#round-15-2026-10-07--reviewer-backend-pi-review--final">Round 15 (2026-10-07) — Reviewer backend: pi-review — FINAL</a>
+<ul>
+<li><a href="#reviewer-raw-responses-3">Reviewer Raw Responses</a></li>
+<li><a href="#reviewer-backend-3">Reviewer backend</a></li>
+<li><a href="#actions-taken-round-13">Actions Taken (round 13)</a></li>
+<li><a href="#results-5">Results</a></li>
+<li><a href="#status-5">Status</a></li>
+</ul>
+</li>
+<li><a href="#round-17-2026-10-08--reviewer-backend-pi-review--final">Round 17 (2026-10-08) — Reviewer backend: pi-review — FINAL</a>
+<ul>
+<li><a href="#remaining-limitations-all-disclosed-scope-bounds-no-blocker">Remaining limitations (all disclosed scope bounds, no blocker)</a></li>
+<li><a href="#reviewer-backend-4">Reviewer backend</a></li>
+<li><a href="#actions-taken-5">Actions Taken</a></li>
+<li><a href="#status-6">Status</a></li>
+</ul>
+</li>
+<li><a href="#round-18b-2026-10-08--cross-family-reviewer-switch-to-codex-gpt-6-astra">Round 18b (2026-10-08) — cross-family reviewer switch to Codex (gpt-6-astra)</a>
+<ul>
+<li><a href="#score-progression-codex">Score progression (Codex)</a></li>
+<li><a href="#actions-taken-c1--c3">Actions taken (C1 → C3)</a></li>
+<li><a href="#status-7">Status</a></li>
+</ul>
+</li>
+<li><a href="#round-19-2026-10-08--codex-gpt-6-astra-thread-01a11a42-2795-7c53-be84-19b6858e9dcf">Round 19 (2026-10-08) — Codex (gpt-6-astra), thread 01a11a42-2795-7c53-be84-19b6858e9dcf</a>
+<ul>
+<li><a href="#assessment-summary-4">Assessment (Summary)</a></li>
+<li><a href="#reviewer-raw-response-2">Reviewer Raw Response</a></li>
+<li><a href="#actions-taken-6">Actions Taken</a></li>
+<li><a href="#results-6">Results</a></li>
+<li><a href="#status-8">Status</a></li>
+</ul>
+</li>
+<li><a href="#final-summary--run20261008d9f3a1b2-codex-cross-family-loop">Final Summary — run_20261008_d9f3a1b2 (Codex cross-family loop)</a>
+</li>
+<li><a href="#method-description-2">Method Description</a>
+</li>
+<li><a href="#round-20-2026-10-09--fresh-independent-codex-thread-gpt-6-astra">Round 20 (2026-10-09) — fresh independent Codex thread (gpt-6-astra)</a>
+<ul>
+<li><a href="#assessment-summary-5">Assessment (Summary)</a></li>
+<li><a href="#reviewer-raw-response-3">Reviewer Raw Response</a></li>
+<li><a href="#actions-taken-round-c6">Actions Taken (round C6)</a></li>
+<li><a href="#results-7">Results</a></li>
+<li><a href="#status-9">Status</a></li>
+</ul>
+</li>
+<li><a href="#round-21-2026-10-09--codex-gpt-6-astra-same-fresh-thread-01a11b98-9533-72c3-855e-f9f6999ac82e">Round 21 (2026-10-09) — Codex (gpt-6-astra), same fresh thread 01a11b98-9533-72c3-855e-f9f6999ac82e</a>
+<ul>
+<li><a href="#assessment-summary-6">Assessment (Summary)</a></li>
+<li><a href="#reviewer-raw-response-4">Reviewer Raw Response</a></li>
+<li><a href="#actions-taken-round-22">Actions Taken (round 22)</a></li>
+<li><a href="#status-10">Status</a></li>
+</ul>
+</li>
+</ol>
+</nav>
+
+<main>
+<header class="hero">
+  <div class="eyebrow">Workflow 2</div>
+  <h1>Auto Review — GWAS governed-release</h1>
+  
+  
+  <div class="meta">
+    <span><strong>Source:</strong> <code>review-stage/AUTO_REVIEW.md</code></span>
+    <span><strong>SHA256:</strong> <code>b2c8c59b6783</code></span>
+    <span><strong>Rendered:</strong> 2026-10-09 09:25 UTC</span>
+    
+  </div>
+</header>
+
+<h1 id="autoreview--run20261004d429b8c1">AUTO_REVIEW — run_20261004_d429b8c1</h1>
+<p>Backend: pi-review (local glm-flash), difficulty: medium, MAX_ROUNDS=4. State: <code>review-stage/REVIEW_STATE.json</code>. Traces: <code>.aris/traces/auto-review-loop/2026-10-04_run01/</code>. Reviewer memory: <code>review-stage/REVIEWER_MEMORY.md</code>. Artifacts under review: <code>paper/main.tex</code> / <code>main.pdf</code> (6 pp), <code>code/*.py</code>, <code>results/raw/*.json</code>.</p>
+<h2 id="round-1-2026-10-04--reviewer-backend-pi-review">Round 1 (2026-10-04) — Reviewer backend: pi-review</h2>
+<h3 id="assessment-summary">Assessment (Summary)</h3>
+<ul><li>Score: 7/10</li><li>Verdict: almost</li><li>Key criticisms: (1) release-unit ambiguity — the projection attack needs the PC loading matrix, but <code>release_objects</code> emitted only eigenvalues and T3 recomputed loadings from raw genotypes; (2) operating point unstated; (3) uncertainty gaps (s7 single split, 2-seed sweeps); (4) text/numeric slips ("+0.003±0.006" vs ±0.005; "0.85" vs 0.845; "sign-reversed" wrong; top-k criterion undisclosed); (5) F/M taxonomy undefined; (6) missingness row near-tautological; (7) "largest at small sites" should be ratios; (8) broken <code>\ref{sec:discussion}</code>; (9) stale docs.</li></ul>
+<h3 id="reviewer-raw-response">Reviewer Raw Response</h3>
+<details>
+<summary>Click to expand full reviewer response</summary>
+<h1 id="senior-review--gwas-leakage-measurement-paper-loop-2-round-1">Senior Review — GWAS Leakage Measurement Paper (Loop 2, Round 1)</h1>
+<p>I read <code>main.tex</code>, all 13 scripts + <code>common.py</code>, and all 13 raw JSONs in full, recompiled the paper fresh, and script-matched 66 paper values against the JSONs. Verdict file: <code>refine-logs/pi_review_verdict_round6.md</code>.</p>
+<h2 id="what-holds-up-verified-not-trusted">What holds up (verified, not trusted)</h2>
+<ul><li>64/66 checked paper numbers match <code>results/raw/*.json</code> exactly (Tables 1/2/3, per-ancestor, CIs, msprime, real-data, s8, s3b, s1d). Two apparent misses were rounding tolerance.</li><li>Splits are genuinely 3-way disjoint; the s7 1000G split shuffles within super-population before splitting; msprime slices are exchangeable.</li><li>MAF filter is the fixed version; 3814/4000 tested matches "≈3800 of 4000".</li><li>Orientations correct and honestly disclosed; PC naive(0.12)/adversarial(0.88) backed by s0b and s2c.</li><li>Controls real: ref-basis structure control 0.502/0.510, permutation 0.486, T2 refit collapse (+0.003), T3 centering intact (+0.10), eig ratio 1.000, noise 0.496; CV is out-of-fold.</li><li>s3b genuinely implemented; real VCF present; GT parsing fixed. Compiles 6pp/0 errors.</li></ul>
+<h2 id="1-score-710">1. Score: 7/10</h2>
+<h2 id="2-critical-weaknesses-ranked">2. Critical weaknesses (ranked)</h2>
+<ol><li>"Attacker-implementable from the release alone" rests on an unstated release unit (needs loadings; release_objects emits eig+scores only; T3 recomputes from raw genotypes).</li><li>Operating point stated nowhere (900/900/900, 4000 SNPs).</li><li>Uncertainty gaps: s7 single split; boundary/dim 2 seeds unstated; Table 2 no std.</li><li>Text/numeric slips: "+0.003±0.006" vs ±0.005; "0.85" vs 0.8446; "sign-reversed" wrong (same sign, attenuated); real-data top-200 criterion differs from simulated; Table 2 caption pointer.</li><li>"Largest intermediate-release channel" comparison class undefined; F/M taxonomy never explained.</li><li>Missingness row near-tautological (iid uniform noise).</li><li>"Generally largest at small-to-moderate sites" — pattern cleaner in ratios.</li><li>Broken <code>\ref{sec:discussion}</code> → "Section ??" in PDF.</li><li>Stale docs (EXPERIMENT_RESULTS.md; tracker "compiled clean" with 3 overfull + 1 undefined ref).</li><li>auroc() no average-rank tie handling — latent only.</li></ol>
+<h2 id="3-minimum-fixes">3. Minimum fixes</h2>
+<ul><li>W1: name the released object (PC loadings) + conditional scoping; optionally add loadings to release_objects and have T3 consume them.</li><li>W2: state the operating point.</li><li>W3: state seed counts; optionally rerun s7 with several split seeds.</li><li>W4/5/7/8: text edits (±0.005; 0.84(5); "attenuated, same direction"; top-k disclosure; define F/M; "ratios"; add label).</li><li>W6: acknowledge structureless missingness.</li><li>W9: sync stale docs.</li></ul>
+<h2 id="4-ready-almost">4. READY? Almost</h2>
+</details>
+<h3 id="actions-taken">Actions Taken</h3>
+<ul><li><strong>W1 (substantive)</strong>: <code>release_objects</code> now returns <code>loadings</code>; <code>s2c_mechanism</code> consumes <code>rel[&quot;loadings&quot;]</code> (the released object) for all study-fitted attacks instead of recomputing from raw genotypes; paper scopes the implementability claim as conditional on loadings being shared (as federated PCA does). Re-ran s2c: numbers unchanged (base 0.839, +PC 0.941, Δ+0.102, T2 +0.003, T3 +0.102, perm 0.486, eig 1.000).</li><li><strong>W2</strong>: added an "Operating point" paragraph (300/ancestry → 900/900/900, 4000 SNPs ≈3814 tested, ratio ≈13; seed counts per experiment).</li><li><strong>W3 (substantive)</strong>: re-ran S7 with 5 random three-way splits; real-data AUROC now 0.684/0.681/0.564/0.640/0.808 with per-split std; structure control 0.504. Paper updated (was single split 0.699/0.696/0.577/0.646/0.793).</li><li><strong>W4</strong>: fixed "+0.003±0.006"→"+0.003", "0.85"→"0.84 at both 2dp and full", "sign-reversed"→"same-signed but strongly attenuated" with both orientations.</li><li><strong>W5</strong>: defined the F/M taxonomy once in §6; noted per-site AF is itself intermediate but reported separately.</li><li><strong>W6</strong>: acknowledged structureless simulated missingness in the Discussion.</li><li><strong>W7</strong>: reworded dimension-dependence to "ratios" framing.</li><li><strong>W8</strong>: added <code>\label{sec:discussion}</code>; recompiled twice — 0 undefined refs.</li><li><strong>W9</strong>: synced EXPERIMENT_RESULTS.md (real-data PC leak) and tracker.</li><li><strong>W10</strong>: noted; auroc tie-handling affects no reported number (continuous scores).</li></ul>
+<h3 id="results">Results</h3>
+<ul><li>Paper: 6 pages, 0 errors, 0 undefined references (recompiled twice).</li><li>S7 rerun (5 splits) and S2c rerun (released loadings) logged in <code>results/raw/</code>.</li></ul>
+<h3 id="status">Status</h3>
+<ul><li>Continuing to round 2 (score 7, verdict "almost" → not a stop).</li><li>Difficulty: medium</li></ul>
+<h2 id="round-2-2026-10-04--reviewer-backend-pi-review">Round 2 (2026-10-04) — Reviewer backend: pi-review</h2>
+<h3 id="assessment-summary-1">Assessment (Summary)</h3>
+<ul><li>Score: 7.5/10 (up from 7.0)</li><li>Verdict: almost (one clause from ready)</li><li>Verified fixed: loadings now the released object and s2c bit-identical; S7 at 5 splits (0.684/0.681/0.564/0.640/0.808, ctrl 0.504); all text/numeric slips gone; compiles 0 errors / 0 undefined refs.</li><li>Remaining: abstract's unconditional "release alone" clause; tracker S7 row; condition-bit M-number nit; 3 overfull boxes.</li></ul>
+<h3 id="reviewer-raw-response-1">Reviewer Raw Response</h3>
+<details>
+<summary>Click to expand full reviewer response</summary>
+<h1 id="re-review-loop-2-round-2--confirmation-after-fixes">Re-Review (Loop 2, Round 2 — confirmation after fixes)</h1>
+<p>I re-read the three changed code files in full, both re-generated JSONs verbatim, the revised <code>main.tex</code>, and both tracker docs; recompiled fresh (pdflatex ×2); and number-matched the new values. Verdict file: <code>refine-logs/pi_review_verdict_round7.md</code>.</p>
+<p>Fix verification: (a) s2c now consumes rel["loadings"], re-run bit-identical (pcdist 0.8813, ΔT2 +0.0026±0.0047, ΔT3 +0.1020); (b) S7 at 5 splits 0.684/0.681/0.564/0.640/0.808 ±0.009–0.014, control 0.504, PC 0.347/≈0.65; (c) all round-1 slips gone, compile 0 errors/0 undefined refs, 6pp, operating point accurate, F/M taxonomy defined, missingness caveat present.</p>
+<p>Score: 7.5/10. Verdict: READY: Almost — one clause from Yes.</p>
+<p>Remaining &amp; minimum fixes: (1) abstract add loadings conditional; (2) tracker S7 row one line; (3) nit: condition bit absent from Mn enumeration; (4) cosmetic overfull boxes.</p>
+<p>Memory Update: previous suspicions addressed (loadings gap closed, s7 multi-split, slips fixed); no new material suspicions.</p>
+</details>
+<h3 id="actions-taken-1">Actions Taken</h3>
+<ul><li>Added the loadings conditional to the abstract.</li><li>Added M4 (condition bit) to the §6 enumeration.</li><li>Synced the tracker S7 row to the new multi-split numbers.</li><li>Recompiled twice: 0 errors, 0 undefined references.</li></ul>
+<h3 id="results-1">Results</h3>
+<ul><li>Paper: 6 pages, clean compile.</li></ul>
+<h3 id="status-1">Status</h3>
+<ul><li><strong>Stopping</strong> — policy-approved positive: score 7.5 ≥ 6 AND verdict "almost".</li><li>Difficulty: medium</li></ul>
+<h2 id="method-description">Method Description</h2>
+<p>The paper is a controlled measurement study of membership leakage from released statistics in multi-site GWAS. Pipeline: (1) <strong>Panels.</strong> Three ancestries of 300 individuals each are simulated under a Balding--Nichols model ($F_{ST}=0.08$) and split three ways <em>disjointly</em> into study members, an attacker reference panel, and independent non-member targets; an msprime 3-population demography and real 1000 Genomes Phase-3 chr22 pseudo-sites (EUR/EAS/AFR) serve as cross-checks. QC keeps MAF $\in[0.05,0.95]$. (2) <strong>Release objects.</strong> Each run emits the workflow's released quantities: per-site allele frequencies, the study-fitted PC basis (eigenvalues, loadings, scores), $\lambda_{GC}$, and a missingness table, at several precision/visibility tiers (F2 top-$k$; F4 AF-1dp; F3 AF-2dp; F5 AF-full; F5 per-site). (3) <strong>Attacks.</strong> An allele-frequency likelihood-ratio membership score plus two functional-form variants (correlation, learned squared-deviation), and a study-fitted PC projection-distance attack; an ancestry/structure-only control projects both target panels onto an <em>independent</em> reference basis (chance by construction). (4) <strong>Measurement.</strong> AUROC and TPR@FPR$\le$1% with bootstrap CIs, per-ancestor breakdowns, and a cross-validated logistic meta-attack for marginal leakage of intermediate reveals. Data flow: simulator/real-VCF $\to$ <code>release_objects</code> $\to$ attack scores $\to$ metrics JSON in <code>results/raw/</code> $\to$ tables/figures in the paper. All steps are CPU-only, seeded, and traceable 1:1 from paper numbers to <code>results/raw/*.json</code>.</p>
+<hr />
+<h2 id="final-summary-run20261004d429b8c1">Final Summary (run_20261004_d429b8c1)</h2>
+<p>Score progression: 7.0 (round 1) → 7.5 (round 2). <strong>Stopped at round 2 on a policy-approved positive verdict</strong> (score 7.5 ≥ 6 AND verdict "almost").</p>
+<p>Result-to-claim verdict (<code>CLAIMS_FROM_RESULTS.md</code>): <strong>partial</strong>, confidence high. The PC-diagnostic dominance claim is supported in simulation (paired 5/5 seeds, PC 0.881 vs AF 0.845; +0.10 increment; mechanism = in-sample-ness via five convergent controls); the per-site AF channel (0.964) and the self-reference bias (0.132) are supported; <strong>PC dominance is not reproduced on real 1000G chr22</strong> (only the AF-tier ordering is; real PC-distance 0.347 naive / ≈0.65 flipped), and the paper already restricts the PC channel to simulated panels. The remaining gap to a full "yes" is claim scoping (operating point + attack-side sign calibration + real-data scope), not new simulation work.</p>
+<p>Artifacts: <code>paper/main.tex</code> / <code>main.pdf</code> (6 pp, 0 errors, 0 undefined refs); <code>results/raw/*.json</code>; <code>review-stage/REVIEWER_MEMORY.md</code>; <code>.aris/traces/auto-review-loop/2026-10-04_run02/</code>.</p>
+<hr />
+<h1 id="autoreview--run20261004bcd63f1a-round-8-re-entry-experiment-gap-closure">AUTO_REVIEW — run_20261004_bcd63f1a (round 8 re-entry: experiment-gap closure)</h1>
+<p>Backend: pi-review (local glm-flash, xhigh), difficulty: medium, MAX_ROUNDS=3. State: <code>review-stage/REVIEW_STATE.json</code>. Traces: <code>.aris/traces/auto-review-loop/2026-10-04_run03/</code>. Reviewer memory: <code>review-stage/REVIEWER_MEMORY.md</code>.</p>
+<p>Entry context: the previous run stopped at 7.5/"almost" and the result-to-claim gate returned "partial", naming five evidence gaps. Three sub-agents planned the next experiments; this run implemented them (s9-s14 plus the s15 control artifact), updated the paper, then re-entered the review loop at round 1.</p>
+<h2 id="round-1-2026-10-04--score-710-almost">Round 1 (2026-10-04) — Score 7/10, "Almost"</h2>
+<h3 id="assessment-summary-2">Assessment (Summary)</h3>
+<ul><li>The measured core verifies (≈65 cited numbers match raw JSON; S9c re-run bit-identical). Design integrity confirmed (disjoint splits, train-only PC calibration, out-of-fold CV, attacks consume released loadings).</li><li>Weaknesses: W1 the real-data "less structured" explanation is refuted by the repo's own data; W2 a truncated sentence; W3 the batch-missingness result (0.761) was unreported and misread; W4 the real-data paired test was free; W5 seed-inventory / figure-label items.</li></ul>
+<h3 id="actions-taken-2">Actions Taken</h3>
+<ul><li>W1: replaced both "less structured" sentences with an honest "no simple explanation" plus a measured structure comparison (Fst-like 0.10 real vs 0.05 sim; top-10 variance fraction 0.26 vs 0.14), backed by <code>code/s15_controls.py</code>.</li><li>W2: completed the truncated sentence.</li><li>W3: added a Discussion sentence interpreting the batch variant as coverage-degraded AF (0.76, below 0.85 full-coverage and 0.80 uniform-70 controls, <code>s15_controls.py</code>), not an additional channel.</li><li>W4: added the real-data paired test (+0.043, CI [+0.033,+0.053], 20/20 positive, p=1.3e-7).</li><li>W5: seed inventory updated; figure-5(a) labels fixed; "mid-marker" → "small-panel".</li></ul>
+<h2 id="round-2-2026-10-04--score-7510-almost">Round 2 (2026-10-04) — Score 7.5/10, "Almost"</h2>
+<p>W1-W4 verified fixed. Remaining: a residual "closer" sign string (should be members-farther), a "large-panel" regression at the crossover peak, the batch gloss 0.81 (unbacked) vs the artifact's 0.845, and the unnamed Fst-like estimator. All fixed in round 3; the estimator is now named and backed by <code>s15_controls.py</code>; the batch sentence cites the three artifact-backed numbers.</p>
+<h2 id="round-3-2026-10-04--score-810-verdict-ready">Round 3 (2026-10-04) — Score 8/10, VERDICT: ready</h2>
+<p>All prior items verified fixed; <code>s15</code> re-run from seeds bit-identical. No blocking weaknesses. One cosmetic item ("mechanism paragraph below"→"above"), applied. <strong>Loop stopped on a policy-approved positive verdict</strong> (score 8 ≥ 6 AND verdict "ready").</p>
+<h2 id="final-summary-run20261004bcd63f1a">Final Summary (run_20261004_bcd63f1a)</h2>
+<p>Score progression: 7.0 → 7.5 → 8.0; verdict "almost" → "almost" → "ready".</p>
+<p>Result-to-claim (round 2, <code>CLAIMS_FROM_RESULTS.md</code>): <strong>partial</strong>, high confidence — a <em>scoped</em> partial. All five round-1 gaps closed; the residual is that the unscoped "PC is THE dominant channel" claim is over-broad: on real 1000G chr22 the calibrated PC channel (0.652) sits below AF (0.688) while adding a small consistent increment (+0.043, p=1.3e-7); in simulation the PC channel dominates (paired +0.046, CI [0.037,0.055], 25/25 seeds). The paper's scoped claim matches what the results support.</p>
+<p>Artifacts: <code>paper/main.tex</code> / <code>main.pdf</code> (8 pp, 0 errors, 0 undefined refs); <code>results/raw/*.json</code> (incl. new s9-s15); <code>review-stage/REVIEWER_MEMORY.md</code>; <code>.aris/traces/auto-review-loop/2026-10-04_run03/</code>.</p>
+<h2 id="method-description-1">Method Description</h2>
+<p>The method is a controlled membership-inference measurement harness for the <em>intermediate</em> objects a federated multi-site GWAS releases (per-site allele frequencies, the study-fitted PCA spectrum, missingness/QC tables) rather than only the final association statistic. It builds matched panels — study members, an attacker reference panel, and an independent non-member set, all drawn disjointly from the same structured population (parametric Balding-Nichols, or real 1000G chr22 splits) — computes the released objects with the standard GWAS pipeline (QC, PCA, marginal association), and scores membership with an allele-frequency likelihood-ratio attack, a release-fitted PC projection-distance attack, and a structure-only control that projects both target panels onto an independent reference basis. Metrics are AUROC and TPR@FPR≤1% with bootstrap CIs and per-ancestor breakdowns; a cross-validated logistic meta-attack measures the marginal leakage of each intermediate reveal. Data flow: simulator/real-VCF → <code>release_objects</code> → attack scores → metrics JSON in <code>results/raw/</code> → tables and figures in the paper. All steps are CPU-only, seeded, and traceable 1:1 from paper numbers to <code>results/raw/*.json</code>.</p>
+<hr />
+<h1 id="autoreview--run202610053e9677f2-limitations-closure-bigger-data--compute">AUTO_REVIEW — run_20261005_3e9677f2 (limitations closure: bigger data + compute)</h1>
+<p>Backend: pi-review (glm-flash, xhigh), difficulty medium, MAX_ROUNDS=3. State: <code>review-stage/REVIEW_STATE.json</code>. Traces: <code>.aris/traces/auto-review-loop/2026-10-05_run01/</code>.</p>
+<p>Entry context: the paper was at 8/"ready" but its Limitations disclosed (i) chr22-only real data, (ii) PC channel measured only on the parametric simulator, (iii) attacks all forms of one marginal channel, (iv) the M3 statistic structureless, (v) no MPC prototype. This run added data and compute to retire (i)-(iv): two independent real chromosomes (chr1, chr2), an msprime recombination-realistic cross-check for the PC channel, a distinct haplotype/LD attack family, a genuine M3 missingness channel, and a larger site-size sweep.</p>
+<h2 id="round-1--score-810-almost">Round 1 — Score 8/10, "Almost"</h2>
+<p>Verified all s16-s20 numbers. Weaknesses: the abstract's ordering claim was contradicted by its own new numbers (hap-LD 0.99, M3 1.00 &gt; PC 0.88); the s18 "swapped" null was structure-contaminated (msprime populations-as-sites); minor "+0.056 at both" / docstring / seed-inventory / structure-reconciliation / operating-point items.</p>
+<h3 id="actions">Actions</h3>
+<ul><li>Reran s18's mechanism with an ancestry-matched WITHIN-population split (in 0.729 ± 0.015, out-of-sample 0.510 ± 0.010, swapped 0.519 ± 0.012) — a genuine de-confounding.</li><li>Re-scoped the ordering claims: "largest among the canonical GWAS diagnostic releases" + explicit statement that the haplotype/LD and membership-correlated-missingness families can be larger still.</li><li>Fixed +0.055–+0.056, s17 docstring, §4 seed inventory, structure reconciliation, hap-LD operating point + release-realism clause.</li></ul>
+<h2 id="round-2--score-8510-almost">Round 2 — Score 8.5/10, "Almost"</h2>
+<p>Prior fixes verified; two residual unscoped "largest single channel" restatements (Discussion, §6 intro) — same error class as round 1, caught only by grepping every instance. Both scoped to "largest marginal-frequency single channel".</p>
+<h2 id="round-3--score-910-verdict-ready">Round 3 — Score 9/10, VERDICT: ready</h2>
+<p>Full ordering-claim sweep clean; all prior fixes hold; compile 10 pp, 0 errors. One optional polish (line 412 → "largest canonical intermediate channel"), applied. <strong>Stopped on a policy-approved positive verdict.</strong></p>
+<h2 id="final-summary-run202610053e9677f2">Final Summary (run_20261005_3e9677f2)</h2>
+<p>Score progression: 8.0 → 8.5 → 9.0; verdict "almost" → "almost" → "ready".</p>
+<p>New experiments (round 9): <code>real_multi.py</code> (chr1/chr2 loader), <code>s16_multichrom.py</code> (chr1/chr2 replication), <code>s17_scale.py</code> (site-size sweep), <code>s18_msprime_pc.py</code> (msprime PC cross-check), <code>s19_haplotype.py</code> (haplotype/LD channel), <code>s20_extra.py</code> (M3 missingness channel + structure comparison). Results in <code>results/raw/s16..s20*.json</code>.</p>
+<p>Key outcomes:</p>
+<ul><li>Real ordering replicates on two independent chromosomes: PC &lt; AF on both (chr1 0.675 vs 0.768; chr2 0.689 vs 0.752) but adds a consistent increment; the in-sample mechanism and loadings-granularity ladder replicate on all three.</li><li>msprime (recombination-realistic) confirms PC &gt; AF (0.691 vs 0.627) with the same granularity ladder and an ancestry-matched in-sample mechanism.</li><li>A distinct haplotype/LD channel reaches 0.990 AUROC but is in-sample-only (transfers to a fresh panel at chance, 0.487) — in-sample-ness is a general property of fitted released objects.</li><li>M3 missingness is a genuine graded channel when the study batch composition is membership-correlated (call-rate excess 0% → 0.49, 1% → 0.93, 2% → 1.00); membership-independent missingness is only coverage-degraded AF (0.76).</li><li>New honest boundary: at realistic site sizes (n ≥ 1200, M = 10k) AF saturates and PC no longer dominates (AF 0.807 vs PC 0.745 at n=3000); the +PC combination increment is stable (+0.055–0.056).</li></ul>
+<p>Result-to-claim remains <strong>partial</strong> (scoped): the PC-dominance ordering is a small-site simulated-regime property; the paper states this boundary explicitly.</p>
+<p>Artifacts: <code>paper/main.tex</code> / <code>main.pdf</code> (10 pp, 0 errors, 0 undefined refs, Fig. 6 added); <code>results/raw/*.json</code>; <code>review-stage/REVIEWER_MEMORY.md</code>; <code>.aris/traces/auto-review-loop/2026-10-05_run01/</code>.</p>
+<h2 id="method-description-updated">Method Description (updated)</h2>
+<p>Same controlled membership-inference harness as before, extended in three ways. (i) Real-data coverage now spans three 1000G chromosomes (chr22, chr1, chr2), each split three ways disjointly per super-population, with matched operating points. (ii) The PC channel is additionally characterized on an msprime three-population demography (real recombination, 5 Mb) and under an ancestry-matched within-population held-out-site split. (iii) Two further attack families are added: a haplotype/LD score using the joint distribution of adjacent markers (fit on the study vs an independent panel), and a genomic-missingness score using the released per-SNP call-rate table. Data flow unchanged: simulator/real-VCF → <code>release_objects</code> → attack scores → metrics JSON in <code>results/raw/</code> → tables/figures in the paper. All steps CPU-only, seeded, and traceable 1:1 from paper numbers to <code>results/raw/*.json</code>.</p>
+<hr />
+<h1 id="autoreview--run20261005d6cf307b-governance-layer--model-dependence-round">AUTO_REVIEW — run_20261005_d6cf307b (governance-layer / model-dependence round)</h1>
+<p>Backend: pi-review (glm-flash, xhigh), difficulty medium, MAX_ROUNDS=4. State: <code>review-stage/REVIEW_STATE.json</code>. Traces: <code>.aris/traces/auto-review-loop/2026-10-05_run02/</code>.</p>
+<p>Entry context: the paper was at 9/"ready" with a Limitations list still naming (i) model-specific magnitudes, (ii) the unexplained real-vs-sim discrepancy, (iii) the sanitized-diagnostics paradox as mere conjecture, (iv) no phased/IBD attack, (v) "the governance mechanism is argued, not built". This run closed all five with new data and compute: an Fst crossover sweep, a Dirichlet admixture sweep, a release-object governance prototype (manifest + egress monitor</p>
+<ul><li>hash-chained ledger) with a violation matrix and a cross-run composition</li></ul>
+<p>measurement, the paradox as a pre-registered result with a falsification control, and an IBS channel.</p>
+<h2 id="round-1--score-810-almost-1">Round 1 — Score 8/10, "Almost"</h2>
+<p>Verified all s21-s26 numbers. Weaknesses: the Dirichlet concentration reading was inverted; the crossover conflated nominal Fst with measured structure; the "IBD" arm actually ran on dosages; the anti-composition flag was producer-asserted; s25 is a corollary of the exposure curve; minor seed/doc items.</p>
+<h3 id="actions-1">Actions</h3>
+<p>Reinterpreted the admixture sweep; restated the crossover in measured terms; reworded the IBS arm; added the ledger-honesty sentence; noted the s25 corollary and the null-side negative Δ_E; extended the seed inventory.</p>
+<h2 id="round-2--score-8510-almost-1">Round 2 — Score 8.5/10, "Almost"</h2>
+<p>5/6 fixed. The crossover conflation survived at summary positions (abstract, contribution 5, §7 sentence, Fig 7a caption/shade) — the recurring summary-restatement failure mode.</p>
+<h3 id="actions-2">Actions</h3>
+<p>Struck the §7 sentence; fixed the abstract, contribution 5, and the caption; moved the Fig 7a shade and verified the regenerated PDF.</p>
+<h2 id="round-3--score-910-almost">Round 3 — Score 9/10, "Almost"</h2>
+<p>One item: the Fig 7a band was drawn at nominal 0.06-0.10 while the caption described measured units (the real level, measured 0.10, is nominal ~0.16).</p>
+<h3 id="actions-3">Actions</h3>
+<p>Redrew the band at nominal 0.09-0.16 with an explicit "measured 0.06 -&gt; 0.10" in-figure label; merged redundant §7 sentences.</p>
+<h2 id="round-4--score-910-verdict-ready">Round 4 — Score 9/10, VERDICT: ready</h2>
+<p>All items verified; two cosmetic one-word polishes applied. <strong>Stopped on a policy-approved positive verdict.</strong></p>
+<h2 id="final-summary-run20261005d6cf307b">Final Summary (run_20261005_d6cf307b)</h2>
+<p>Score progression: 8.0 -&gt; 8.5 -&gt; 9.0 -&gt; 9.0; verdict almost -&gt; almost -&gt; almost -&gt; ready.</p>
+<p>New experiments (round 11): <code>governance.py</code> (manifest + egress monitor + hash-chained ledger), <code>real_phased.py</code> (keeps VCF phase), <code>s21_sensitivity.py</code> (Fst crossover), <code>s22_admixture.py</code> (Dirichlet), <code>s23_governed.py</code> (governed vs ungoverned + injection suite), <code>s24_crossrun.py</code> (composition audit), <code>s25_paradox.py</code> (paradox as result), <code>s26_ibd.py</code> (IBS channel). Results in <code>results/raw/s21..s26*.json</code>; Fig. 7 added.</p>
+<p>Key outcomes:</p>
+<ul><li>The PC-vs-AF ordering is monotone in measured structure and crosses zero at a measured statistic ~0.04-0.06, below the real-1000G level (~0.10) — the real-data attenuation is the same phenomenon at a different structure value, not an unexplained discrepancy.</li><li>A release-object governance prototype blocks/coarsens undeclared or over-precision releases (5 blocked + 1 coarsened; chain verifies) and drives the leakage attacks to the declared-safe tier; individually declared-safe releases compose (cumulative 0.941 &gt; max single 0.882, 5/5 seeds), motivating an anti-composition clause.</li><li>The sanitized-diagnostics paradox is now a pre-registered result (Δ_E = +0.24 at the precision gap, 0 without it, a null control shows no paradox).</li><li>An IBS channel detects planted IBD (0.866) but is at chance unplanted (0.486) and on real chr22 (0.463 ≤ AF 0.653), bounding the haplotype-channel claim.</li></ul>
+<p>Result-to-claim remains <strong>partial</strong> (scoped): the PC-dominance ordering is a small-site simulated-regime property; the paper states this boundary explicitly and now quantifies it as a function of structure.</p>
+<p>Artifacts: <code>paper/main.tex</code> / <code>main.pdf</code> (12 pp, 0 errors, 0 undefined refs, Fig. 7 added); <code>results/raw/*.json</code>; <code>review-stage/REVIEWER_MEMORY.md</code>; <code>.aris/traces/auto-review-loop/2026-10-05_run02/</code>.</p>
+<h2 id="method-description-updated-1">Method Description (updated)</h2>
+<p>The controlled membership-inference harness now additionally (i) sweeps the simulated structure level (Fst) and a Dirichlet admixture concentration to show the PC-vs-AF ordering is governed by measured structure, (ii) wraps the <code>release_objects()</code> output in a declarative reveal manifest + egress monitor + hash-chained ledger and stress-tests it against the standard attack injections, (iii) measures cross-run release composition, (iv) re-runs the leak attacks on the governed release, and (v) adds an identity-by-state window-sharing channel with a planted-IBD positive control and a real-1000G arm. Data flow is unchanged (simulator/real-VCF -&gt; <code>release_objects</code> -&gt; attack scores -&gt; metrics JSON in <code>results/raw/</code> -&gt; tables/figures); all steps CPU-only, seeded, and traceable 1:1 from paper numbers to <code>results/raw/*.json</code>.</p>
+<hr />
+<h1 id="autoreview--run20261006350bbd97-gpu--scale-round">AUTO_REVIEW — run_20261006_350bbd97 (GPU / scale round)</h1>
+<p>Backend: pi-review (local glm-flash), difficulty: medium, MAX_ROUNDS=4. State: <code>review-stage/REVIEW_STATE.json</code>. Reviewer memory: <code>review-stage/REVIEWER_MEMORY.md</code>. Artifacts under review: <code>paper/main.tex</code> / <code>main.pdf</code> (13 pp; new Section <code>sec:scale</code> + Fig. 8), <code>code/common_gpu.py</code>, <code>code/s27..s36*.py</code>, <code>results/raw/s2[7-9]*.json</code>, <code>results/raw/s3[0-6]*.json</code>, <code>refine-logs/GPU_ROUND_RESULTS.md</code>, <code>refine-logs/EXPERIMENT_PLAN_GPU.md</code>.</p>
+<h2 id="round-1-2026-10-06--reviewer-backend-pi-review">Round 1 (2026-10-06) — Reviewer backend: pi-review</h2>
+<h3 id="assessment-summary-3">Assessment (Summary)</h3>
+<ul><li>Score: 7.5/10</li><li>Verdict: almost</li><li>Key criticisms: (1) MAJOR — the "600-seed paired sweep" numbers were one 200-seed shard (dict.update last-wins in the summary); (2) MAJOR− — "saturates near k≈8–10" unsupported (increments still ~+0.014 at k=9→10); (3) eig-only range slip (chr22 is 0.503); (4) "loadings at every scale" overreach (no biobank-scale eig-only arm); (5) undisclosed <code>gauss</code> approximation of the BN frequency draw; (6) unsupported Limitations clause + dangling ref (no GPU parser was benchmarked); (7) consolidation defects (empty S36 section, wrong S28/S29 labels); (8) Fig 8 caption/panel mismatches; (9) s31 3-pop/5-pop not matched; (10) s36 non-member self-excl dummy. Verified clean: all 12 ref-basis controls at chance; monotone in-sample gap; permutation p&lt;5e-5; density/5-pop ordering; s36 0.486/0.671.</li></ul>
+<h2 id="round-2-2026-10-06--reviewer-backend-pi-review">Round 2 (2026-10-06) — Reviewer backend: pi-review</h2>
+<ul><li>Score: 8/10; Verdict: almost</li><li>Both MAJORs genuinely fixed and independently re-verified (independent re-pooling reproduced +0.0943 [+0.0925,+0.0962] P=1.0 n=600; eig-only now real at biobank scale 0.497–0.511 over 12 cells; gauss disclosure adequate and verified immaterial — the 600-seed PN panels use the exact Beta draw).</li><li>Remaining: Fig 8(a) caption false about its own panel (plotted refbasis−AF, not a chance-level control); "six shards" miscount; unstated 200-seed cells; Limitations "+0.095" vs sec:scale "+0.094"; mixed-column gap endpoints; a latent shard-merge inconsistency in the figure path.</li></ul>
+<h2 id="round-3-2026-10-06--reviewer-backend-pi-review--final">Round 3 (2026-10-06) — Reviewer backend: pi-review — FINAL</h2>
+<ul><li>Score: 8.5/10; Verdict: <strong>ready</strong></li><li>Fixes verified against artifacts + the rendered PNG: Fig 8(a) now plots <code>refbasis−0.5</code> so the dashed control genuinely sits at ~0 and the caption is true; shard/seed counts match the artifact trail (3 shards + one slow run); Limitations number reconciled; per-Fst-column endpoints; shard merge made first-wins (setdefault) in both summary and figures.</li><li>Residual items are copy-edit only (one endpoint's M-level; "slow cell" vs "slow cells"; grid seed count stated indirectly).</li><li>STOP: score 8.5 ≥ 6 AND verdict ∈ {ready, almost} → converged.</li></ul>
+<h3 id="reviewer-raw-responses">Reviewer Raw Responses</h3>
+<p>Full verbatim responses for rounds 1–3 are appended in <code>review-stage/REVIEWER_MEMORY.md</code> (reviewer-owned audit trail).</p>
+<h3 id="reviewer-backend">Reviewer backend</h3>
+<p>pi-review (model glm-flash, local pi agent), difficulty: medium. Thread: <code>a23d84b2238441adb813100537127f22</code>. run_id: <code>run_20261006_350bbd97</code>. Stop gate: <code>{&quot;decision&quot;:&quot;stop&quot;,&quot;identity_assurance&quot;:&quot;not_required&quot;}</code>.</p>
+<h3 id="actions-taken-3">Actions Taken</h3>
+<ul><li><code>code/s29_negation.py</code>: per-seed deltas stored; PAIRED_FAST/PAIRED_SLOW split.</li><li><code>code/s29_paired_slow.py</code>, <code>code/s29_ladder.py</code>: new (correct pooling pieces).</li><li><code>code/gpu_round_summary.py</code>: <code>merge_paired</code> concatenates per-seed deltas; eig-only column; S36 schema fixed.</li><li><code>code/s27_gpu_scale.py</code>: eigenvalue-only control added to every cell; shard2 re-run so all 12 cells carry it.</li><li><code>code/s36_phased_ibd.py</code>: non-member self-exclusion fixed (no <code>-1</code> dummy).</li><li><code>code/make_figures.py</code>: fig8(a) plots refbasis−0.5; first-wins shard merge.</li><li><code>paper/main.tex</code>: Section <code>sec:scale</code> + Fig 8 caption reworded; Limitations gauss/parser disclosures; numbers reconciled.</li></ul>
+<h3 id="results-2">Results</h3>
+<ul><li>Paired PC-AF gap (pooled): small-$n$ +0.094 [+0.092,+0.096] P=1.0 (600 seeds); $M{=}8000$ +0.009 P=0.94; $n{=}1600$ −0.014 P=0.21.</li><li>Exact k-ladder monotone, decaying increments; eig-only at chance in all 12 biobank cells (0.497–0.511), real (0.50–0.53), msprime.</li><li>Paper: <code>paper/main.pdf</code>, 14 pp, 0 errors, 0 undefined refs.</li></ul>
+<h3 id="status-2">Status</h3>
+<ul><li>stopped (converged, positive assessment)</li><li>Difficulty: medium</li></ul>
+<h2 id="method-description-gpu--scale-round-updated">Method Description (GPU / scale round, updated)</h2>
+<p>The leak-measurement harness adds a GPU kernel layer (<code>code/common_gpu.py</code>): a host-resident int8 panel simulator (exact Balding–Nichols <code>Beta</code> draw for small panels; a Gaussian diffusion approximation of the per-population frequency for biobank-scale cells), streamed AF-LRT scoring, streamed projection-distance scoring, and a blocked exact-Gram PCA (<code>torch.linalg.eigh</code>, TF32 off). Data flow: host int8 panel -&gt; marker blocks streamed to GPU -&gt; n×n Gram / attack scores -&gt; AUROC -&gt; <code>results/raw/*.json</code> -&gt; tables/figures. A new experiment family (s27–s36) locates the PC-vs-AF boundary in (study-size × marker-count × Fst) at biobank dimensions, with a reference-fitted basis and an eigenvalue-only control in every cell; adds stratified label-permutation nulls and a per-seed-pooled paired sweep; runs an exact k=1..10 ladder on sim/real/msprime; sweeps real marker density (chr22/1/2) across 20× and all five 1000G super-populations; measures the phased haplotype/IBD channel with planted-IBD and self-exclusion controls; and records the VCF-parse cost as a CPU-bound negative result. Aggregation is <code>code/gpu_round_summary.py</code> -&gt; <code>refine-logs/GPU_ROUND_RESULTS.md</code>; the artifact map is <code>refine-logs/PAPER_INDEX.md</code>. CPU analyses use the project env; the GPU kernels use the system torch python. All steps are seeded and traceable 1:1.</p>
+<hr />
+<h1 id="autoreview--run20261006f68b0cd6-round-11--limitation-closure">AUTO_REVIEW — run_20261006_f68b0cd6 (Round 11 — limitation closure)</h1>
+<p>Backend: pi-review (local glm-flash), difficulty: medium, MAX_ROUNDS=4. Artifacts under review: <code>paper/main.tex</code> / <code>main.pdf</code> (15 pp, round-11 revision), <code>code/s37_realsynth_scale.py</code>, <code>code/s38_privacy_metric.py</code>, <code>code/enforce.py</code>, <code>code/s39_enforcement.py</code>, <code>code/s40_bundle.py</code>, <code>code/s41_phased_ibd_genome.py</code>, <code>code/s42_missingness_realistic.py</code>, <code>code/semi_synthetic.py</code>, <code>results/raw/s3[7-9]*.json</code>, <code>results/raw/s4[0-2]*.json</code>, <code>refine-logs/EXPERIMENT_RESULTS.md</code>, <code>EXPERIMENT_AUDIT.md</code>.</p>
+<h2 id="round-1-2026-10-06--reviewer-backend-pi-review-1">Round 1 (2026-10-06) — Reviewer backend: pi-review</h2>
+<ul><li>Score: 7.5/10; Verdict: almost. Thread <code>d3997a6cbc444b8faa219526e48ddd97</code>.</li><li>Verified all six round-11 artifact groups match the paper to quoted precision; stale "remains argued, not built" removed; ~20 round-8/9/10 regression checks pass. Weaknesses W1–W8: A*-vs-2AUC−1 direction inverted; eps_lb≈24 clip-driven (n_neg=900 not 300); §replication future-work contradiction; Limitations cross-ref; saturated base-missingness wording; self-contradictory "full marker density"; stale design-doc grid + CV; dead import/docstring.</li></ul>
+<h2 id="round-2-2026-10-06--reviewer-backend-pi-review-1">Round 2 (2026-10-06) — Reviewer backend: pi-review</h2>
+<ul><li>Score: 8.0/10; Verdict: almost.</li><li>W1–W5, W8 fixed; W6 partially; W7 mostly. New residual R1–R5: paper's "0.53/4.2 for full-precision AF" was af_2dp (af_full 0.55/4.1); results-doc CoV line garbled; tracker S38 direction shorthand stale; s41 still "at full marker density"; eps_lb_*_valid=False undisclosed.</li></ul>
+<h2 id="round-3-2026-10-06--reviewer-backend-pi-review--final-1">Round 3 (2026-10-06) — Reviewer backend: pi-review — FINAL</h2>
+<ul><li>Score: 8.5/10; Verdict: <strong>ready</strong>.</li><li>All W1–W8 and R1–R5 verified fixed against the artifacts; no new defect. Regression: paper diff = the reviewed fix blocks only; s37–s42 JSON unaffected; 15 pp, 0 errors.</li><li>STOP: score 8.5 ≥ 6 AND verdict ∈ {ready, almost} → converged.</li></ul>
+<h3 id="reviewer-raw-responses-1">Reviewer Raw Responses</h3>
+<p>Full verbatim responses for rounds 1–3 are appended in <code>review-stage/REVIEWER_MEMORY.md</code>.</p>
+<h3 id="reviewer-backend-1">Reviewer backend</h3>
+<p>pi-review (model glm-flash, local pi agent), difficulty: medium. Thread: <code>d3997a6cbc444b8faa219526e48ddd97</code>. run_id: <code>run_20261006_f68b0cd6</code>. Stop gate R3: <code>{&quot;decision&quot;:&quot;stop&quot;,&quot;identity_assurance&quot;:&quot;not_required&quot;}</code>. Traces: <code>.aris/traces/auto-review-loop/2026-10-07_run01/</code>.</p>
+<h3 id="actions-taken-4">Actions Taken</h3>
+<ul><li><code>code/s38_privacy_metric.py</code>: <code>eps_lower_bound</code> takes <code>n_pos, n_neg</code> and floors the false-negative rate at <code>1/n_pos</code> (was <code>1e-12</code>, clip-driven); dead import removed.</li><li><code>paper/main.tex</code>: two-branch eps_lb formula + n_pos=n_neg=900 + ordering-only caveat; A*-vs-2AUC−1 direction corrected; §replication IBD sentence redirected to §scale; Limitations cohort cross-ref → sec:scale; s41 "uniform genome-wide density"; base-missingness wording "stays saturated at ρ=1".</li><li><code>code/governance.py</code>: docstring / TCB note (binding built in <code>code/enforce.py</code>).</li><li><code>refine-logs/EXPERIMENT_RESULTS.md</code>, <code>refine-logs/ROUND11_DESIGN.md</code>, <code>refine-logs/EXPERIMENT_PLAN.md</code>: doc corrections (CoV, delivered grid, removed MLP/anc-only promises, eps validity note).</li></ul>
+<h3 id="results-3">Results</h3>
+<ul><li>Round-11 experiments (s37–s42) all DONE; see <code>refine-logs/EXPERIMENT_RESULTS.md</code>.</li><li><code>paper/main.pdf</code>, 15 pp, 0 errors, 0 undefined refs.</li></ul>
+<h3 id="status-3">Status</h3>
+<ul><li>stopped (converged, positive assessment)</li><li>Difficulty: medium</li></ul>
+<h2 id="method-description-round-11--limitation-closure">Method Description (round 11 — limitation closure)</h2>
+<p>The measurement harness is extended with four governance/measurement additions. (1) An absolute per-individual privacy metric (<code>code/s38_privacy_metric.py</code>) re-expresses each operating point as the membership advantage A* (=KS), a per-individual posterior, and an empirical f-DP lower bound with both trade-off branches and a sample-resolution floor. (2) A built sole-egress binding (<code>code/enforce.py</code>): the study computation runs as a child process whose only writable channel is one pipe descriptor wired to the parent <code>EgressMonitor</code>, with a PEP-578 audit hook denying write-opens/sockets/subprocess/ctypes; the bypass is demonstrated against the plaintext prototype then closed (<code>code/s39_enforcement.py</code>). (3) A joint release-bundle attacker (<code>code/s40_bundle.py</code>): out-of-fold logistic over pooled AF, per-site AF, and the call-rate table, versus the strongest single object, with a structural-zero noise control and leave-one-out attribution. (4) Two extended second channels: multi-chromosome physical-length phased IBD (<code>code/genetic_map.py</code> + <code>code/s41_phased_ibd_genome.py</code>, cM via the 1000G IMPUTE2 map, planted-IBD control) and a batch-composition missingness channel on the real 1000G skeleton (<code>code/s42_missingness_realistic.py</code>, monotone in the batch parameter rho with a rho=0 null). A biobank-scale semi-synthetic cohort with real haplotype structure is built by Li–Stephens mosaic copying (<code>code/semi_synthetic.py</code> + <code>code/s37_realsynth_scale.py</code>) and passed through the s27 attack battery with LD decay, relatedness, AF-spectrum and eigenvalue-fraction controls. Data flow: generated or real panels -&gt; attack scores -&gt; AUROC/absolute metrics -&gt; <code>results/raw/*.json</code> -&gt; paper. All steps are seeded and traceable 1:1.</p>
+<hr />
+<h1 id="autoreview--run202610073a710cda-round-12--residual-limitation-closure">AUTO_REVIEW — run_20261007_3a710cda (Round 12 — residual-limitation closure)</h1>
+<h2 id="round-12-2026-10-07--reviewer-backend-pi-review">Round 12 (2026-10-07) — Reviewer backend: pi-review</h2>
+<ul><li>Score: 8.5/10; Verdict: almost.</li><li>Verified all four round-12 modules are real: (2) the native-code test genuinely raises on <code>ctypes.dlopen</code> (<code>reason=&#x27;ctypes.dlopen&#x27;</code>, <code>child_failed=False</code>, the hook is the only <code>blocked=True</code> path); (3) s46's uncoarsened comparator uses the same full-precision per-site AF as the bundle, and <code>single_coarse</code> (0.94707) reproduces s40's max_single exactly; (4) s44 real/cohort are real data with controls at chance and an honest ordering-only report on real chr22. All round-12 paper numbers match JSON keys.</li><li>Weaknesses W12-1..W12-5 (stale "five of six cells" count; results-doc LOO drop .076→.233; B4 "S47" tag; missing M=3000 clause; "makes valid" → "admits valid").</li></ul>
+<h2 id="round-13-2026-10-07--reviewer-backend-pi-review--final">Round 13 (2026-10-07) — Reviewer backend: pi-review — FINAL</h2>
+<ul><li>Score: 8.5/10; Verdict: <strong>ready</strong>.</li><li>W12-1..W12-5 all verified landed against the artifacts; no new defect. Regression: 16 pp, 0 errors; round-11 and round-12 numbers all preserved.</li><li>STOP: score 8.5 ≥ 6 AND verdict ∈ {ready, almost} → converged.</li></ul>
+<h3 id="reviewer-raw-responses-2">Reviewer Raw Responses</h3>
+<p>Full verbatim responses for rounds 12–13 are appended in <code>review-stage/REVIEWER_MEMORY.md</code>.</p>
+<h3 id="reviewer-backend-2">Reviewer backend</h3>
+<p>pi-review (model glm-flash, local pi agent), difficulty: medium. Thread: <code>d3997a6cbc444b8faa219526e48ddd97</code>. run_id: <code>run_20261007_3a710cda</code>. Stop gate R13: <code>{&quot;decision&quot;:&quot;stop&quot;,&quot;identity_assurance&quot;:&quot;not_required&quot;}</code>. Traces: <code>.aris/traces/auto-review-loop/2026-10-07_run01/004..005</code>.</p>
+<h3 id="actions-taken-round-12">Actions Taken (round 12)</h3>
+<ul><li><code>code/s38_privacy_metric.py</code>: <code>eps_lower_bound</code> gains <code>fnr_mode</code> (resolution / rule3); <code>metrics_from_scores</code> emits both.</li><li><code>code/s44_individual_real.py</code>: new — s38 estimators on real 1000G chr22 + an s37 cohort.</li><li><code>code/s46_bundle_manifest2.py</code>: new — second manifest + uncoarsened single.</li><li><code>code/enforce.py</code> + <code>code/s39_enforcement.py</code>: native-code (<code>ctypes.CDLL</code>) injection; <code>native_egress_blocked_frac</code>.</li><li><code>code/s37_realsynth_scale.py</code>: nsp=16000 cell.</li><li><code>paper/main.tex</code>: native-boundary sentence, per-individual real/cohort paragraph, second-manifest bundle sentence, nsp=16000 + M=3000, Limitations rewritten (16 pp).</li><li><code>refine-logs/EXPERIMENT_RESULTS.md</code>, <code>EXPERIMENT_TRACKER.md</code>, <code>refine-logs/EXPERIMENT_PLAN_R12.md</code> added.</li></ul>
+<h3 id="results-4">Results</h3>
+<ul><li>s44: real chr22 pc A* .27 &lt; af .35; cohort af .14 &gt; pc .04; controls ≤ .07; rule-3 eps valid on cohort, ordering-only on real.</li><li>s46: bundle .973 vs uncoarsened single .964 (+.008, 5/5).</li><li>s39: native-egress blocked 3/3.</li><li>s37: nsp=16000 af .529 vs pc .503 (delta −.026), controls pass.</li><li><code>paper/main.pdf</code>, 16 pp, 0 errors, 0 undefined refs.</li></ul>
+<h3 id="status-4">Status</h3>
+<ul><li>stopped (converged, positive assessment)</li><li>Difficulty: medium</li></ul>
+<hr />
+<h1 id="autoreview--run2026100766850dac-round-13--real-data-structure--size">AUTO_REVIEW — run_20261007_66850dac (Round 13 — real-data structure + size)</h1>
+<h2 id="round-13-2026-10-07--reviewer-backend-pi-review">Round 13 (2026-10-07) — Reviewer backend: pi-review</h2>
+<ul><li>Score: 8.0/10; Verdict: almost.</li><li>Real-genome ladder (s48) validated: controls real + at chance, s49 held-out-half transfer has no leak. But the "measured-structure law" framing over-claimed: W13-1 a cited cross-population range hid the chr2 3-pop +0.023 cell; W13-2 "monotone in structure" contradicted by two rising steps; W13-3 structure confounded with study size, uncontrolled; W13-4 the k/n≈1/3 regime undisclosed; W13-5 fragmented §boundary sentence, imprecise control ranges, wrong B2 chr.</li></ul>
+<h2 id="round-15-2026-10-07--reviewer-backend-pi-review--final">Round 15 (2026-10-07) — Reviewer backend: pi-review — FINAL</h2>
+<ul><li>Score: 8.5/10; Verdict: <strong>ready</strong>.</li><li>Added the decisive scale-matched rerun (<code>s48_scalematched.json</code>, per-group n=20): at matched small n the PC channel dominates even across populations (3pop +0.161, 5pop +0.111), so the AF-first switch needs larger n <em>and</em> structure — the real-data ordering is governed jointly by study size and structure, the same small-(n×M) boundary the simulator locates. Reframed in all five places (abstract/Contributions/§scale/Discussion/Limitations); W13-1..W13-5 fixed; 17 pp, 0 errors.</li><li>STOP: score 8.5 ≥ 6 AND verdict ∈ {ready, almost} → converged.</li></ul>
+<h3 id="reviewer-raw-responses-3">Reviewer Raw Responses</h3>
+<p>Rounds 13/15 verbatim in <code>review-stage/REVIEWER_MEMORY.md</code>.</p>
+<h3 id="reviewer-backend-3">Reviewer backend</h3>
+<p>pi-review (glm-flash, local pi agent), difficulty: medium. Thread: <code>d3997a6cbc444b8faa219526e48ddd97</code>. run_id: <code>run_20261007_66850dac</code>. Stop gate R15: <code>{&quot;decision&quot;:&quot;stop&quot;,&quot;identity_assurance&quot;:&quot;not_required&quot;}</code>. Traces: <code>.aris/traces/auto-review-loop/2026-10-07_run01/006..007</code>.</p>
+<h3 id="actions-taken-round-13">Actions Taken (round 13)</h3>
+<ul><li><code>code/s48_real_structure.py</code>, <code>code/s49_real_mechanism.py</code>, <code>code/s50_real_multichrom.py</code> (new) + <code>s48_scalematched.json</code> (via s48 cohort_cell per=20).</li><li><code>paper/main.tex</code>: abstract, Contributions, §scale ("Where the ordering lives on real genomes" + scale-matched paragraph), Discussion, Limitations reframed to "study size and structure jointly"; the false "monotone"/"below the real-data level" wording removed; k/n disclosed; control ranges corrected.</li><li><code>refine-logs/EXPERIMENT_RESULTS.md</code>, <code>refine-logs/EXPERIMENT_PLAN_REAL.md</code>.</li></ul>
+<h3 id="results-5">Results</h3>
+<ul><li>s48: within-population real gap +0.050…+0.134 (12 cohorts, n_study 28–36); 2-pop +0.112…+0.172; 3/5-pop −0.005/−0.030 (n 450/715).</li><li>s48 scale-matched (per=20): 3pop +0.161, 5pop +0.111 — PC dominates across populations at matched small n.</li><li>s49: top-3 0.88–0.96, full 0.99–1.00, controls 0.55–0.60, oos 0.55–0.58, same-half 0.998–1.000.</li><li>s50: chr1/chr2 within +0.051…+0.086; across −0.039…+0.023.</li><li><code>paper/main.pdf</code>, 17 pp, 0 errors.</li></ul>
+<h3 id="status-5">Status</h3>
+<ul><li>stopped (converged, positive assessment)</li><li>Difficulty: medium</li></ul>
+<hr />
+<h1 id="autoreview--run202610080d685cee-round-17--limitations-re-verify">AUTO_REVIEW — run_20261008_0d685cee (Round 17 — limitations re-verify)</h1>
+<h2 id="round-17-2026-10-08--reviewer-backend-pi-review--final">Round 17 (2026-10-08) — Reviewer backend: pi-review — FINAL</h2>
+<ul><li>Score: 8.5/10; Verdict: almost.</li><li>Mechanical scan of 122 cited numbers against their JSON keys: 120 pass, 2 single-character mismatches (W17-1, W17-2). One (W17-2, eigenvalue-only range lower bound) was real and fixed (0.55→0.54, s49 min 0.5447); the other (W17-1) was a reviewer misread — the paper already reads $0.13$ for the s44 cohort A* (JSON 0.1328), so no change.</li><li>All prior-round numbers still verified; paper byte-identical to the round-16 state apart from this one edit; 17 pp, 0 errors.</li><li>STOP: score 8.5 ≥ 6 AND verdict ∈ {ready, almost} → converged.</li></ul>
+<h3 id="remaining-limitations-all-disclosed-scope-bounds-no-blocker">Remaining limitations (all disclosed scope bounds, no blocker)</h3>
+<p>L1 no real biobank-scale genome cohort (largest external-validity bound; the real within-population cohorts cap at n≈28–36); L2 no per-split dispersion on the real round-13 gaps; L3 <code>_cal</code> orientation on the real ladder; L4 one M-axis contrast on real data; L5 resolution-limited f-DP ε_lb; L6 plaintext governance prototype + declared TCB; L7 constructed missingness channel; L8 3 seeds/cell in s37/s41/s42.</p>
+<h3 id="reviewer-backend-4">Reviewer backend</h3>
+<p>pi-review (glm-flash), difficulty: medium. Thread <code>d3997a6cbc444b8faa219526e48ddd97</code>. run_id <code>run_20261008_0d685cee</code>. Stop gate: <code>{&quot;decision&quot;:&quot;stop&quot;}</code>. Traces: <code>.aris/traces/auto-review-loop/2026-10-08_run01/001</code>.</p>
+<h3 id="actions-taken-5">Actions Taken</h3>
+<ul><li><code>paper/main.tex</code>: eigenvalue-only control range lower bound 0.55→0.54 (§governance per-individual paragraph, matching s49 min 0.5447). No other change.</li></ul>
+<h3 id="status-6">Status</h3>
+<ul><li>stopped (converged, positive assessment)</li><li>Difficulty: medium</li></ul>
+<hr />
+<h2 id="round-18b-2026-10-08--cross-family-reviewer-switch-to-codex-gpt-6-astra">Round 18b (2026-10-08) — cross-family reviewer switch to Codex (gpt-6-astra)</h2>
+<p>Per user request the loop was re-run with the cross-family reviewer <code>mcp__codex__codex</code> (model gpt-6-astra, effort xhigh, read-only), thread <code>01a11a42-2795-7c53-be84-19b6858e9dcf</code>. Reviewer backend: codex.</p>
+<h3 id="score-progression-codex">Score progression (Codex)</h3>
+<ul><li>C1: 4/10 — not ready. 7 findings (s40 missingness-object disconnect; s41 estimator bugs; s38 eps_lb not valid; s37 fit cap + AF-only combined; real-data joint-gating overreach + <code>_cal</code> orientation; s42 constructed missingness; enforce stderr path) + number mismatches.</li><li>C2: 5/10 — not ready. S41 crashed on the final-marker-mismatch case (out-of-bounds <code>cm[sidx]</code>); orientation fix still evaluated the calibration rows; eps/scope language.</li><li>C3: <strong>7/10 — almost</strong>. "No remaining critical implementation defect in the paths checked." Remaining items were a manuscript consistency pass.</li></ul>
+<h3 id="actions-taken-c1--c3">Actions taken (C1 → C3)</h3>
+<ul><li>s40/s46: the attacker now consumes the declared, coarsened released call-rate table (<code>results/raw/s40_bundle.json</code>, <code>s46_bundle_manifest2.json</code>); excess +0.011 / +0.006, 5/5.</li><li>s41: <code>_cm_run_vs_one</code> clipped <code>sidx</code> to <code>m-1</code>; full 3-chromosome re-run (5055 s); JSON regenerated Oct 8 17:37. Real LSR 0.512/0.520/0.471, planted 0.769/0.766/0.749.</li><li>s38: ROC tie-grouped; eps described as an in-sample, resolution-limited summary; binormal-KS reference added then the K-shape inference removed.</li><li>s37: <code>combined</code> = joint AF+PC; <code>n_fit</code>/<code>fit_frac</code> recorded; nsp=12000 re-run to 3 seeds; <code>code/s37_fitsens.py</code> (n_fit 5000 vs 20000) shows fit-size-stable gap.</li><li>s48/s49/s50/scalematched: held-out-half orientation, calibration rows excluded, shared cal_mask for paired AF/PC−AF; s49 saves per-field std; all re-run.</li><li>s42 described as a generative sensitivity curve; enforce.py child stderr → /dev/null; s39 re-run all 1.0.</li><li>Paper scope propagated: site-size-dependent crossover; tested-attack scoping for the eigenvalue/IBD negatives; manifest-permitted/coarsened wording; all numbers re-read from the regenerated JSON.</li></ul>
+<h3 id="status-7">Status</h3>
+<ul><li>Score 7/10, verdict <strong>almost</strong> → satisfies the loop stop condition (score ≥ 6 AND verdict ∈ {ready, almost}).</li><li>Reviewer backend: codex (cross-family, OpenAI). Executor: deepseek-flash (caller-declared). independence: caller_declared / unverified.</li><li>Stopping.</li></ul>
+<hr />
+<h2 id="round-19-2026-10-08--codex-gpt-6-astra-thread-01a11a42-2795-7c53-be84-19b6858e9dcf">Round 19 (2026-10-08) — Codex (gpt-6-astra), thread 01a11a42-2795-7c53-be84-19b6858e9dcf</h2>
+<h3 id="assessment-summary-4">Assessment (Summary)</h3>
+<ul><li>Score: 7/10</li><li>Verdict: <strong>ready</strong> (READY for submission: Yes)</li><li>Key criticisms: three nonblocking copyedits only (strict "monotone" residue in abstract/contributions/limitations; one surviving "f-DP bound"; claims-doc "n=450/715" phrasing).</li></ul>
+<h3 id="reviewer-raw-response-2">Reviewer Raw Response</h3>
+<details>
+<summary>Click to expand full reviewer response</summary>
+<p><strong>7/10. READY for submission: Yes.</strong></p>
+<p>I checked the current source, raw JSON, regenerated Figure 7, and its inclusion in the compiled paper. <strong>No remaining critical scientific or implementation weakness was identified.</strong> No additional experiment is needed for the present, scoped claims.</p>
+<p>The corrections are verified:</p>
+<ul><li><strong>Figure 7:</strong> the old global-crossover annotation is gone. Its three nominal crossing bands match S21 exactly, and the compiled paper contains the updated figure and corrected caption.</li><li><strong>Numerical summaries:</strong> the eigenvalue-control ranges, S50 population subsets, near-parity/AF-first distinction, S38 approximations, and S37 sensitivity wording now match the underlying results.</li><li><strong>Statistical interpretation:</strong> S38's docstrings and CLI now describe an in-sample, resolution-limited summary. The historical audits are explicitly superseded, and the claims document correctly identifies the ε counterexample.</li><li><strong>Earlier substantive conclusions stand:</strong> the corrected real-data evaluation supports within-population PC dominance; the native-route denial is genuine; bundle excess remains <strong>+0.011240/+0.006146</strong>, positive in <strong>5/5 seeds</strong> for both manifests.</li></ul>
+<p>Three small wording residues remain, ranked below. These are <strong>nonblocking copyedits</strong>, not critical weaknesses:</p>
+<ol><li>Strict "monotone" survives in the abstract, contributions, and limitations, although the n=300 curve has two small upward steps. Minimum fix: use "approximately decreasing".</li><li>"f-DP bound" survives once. Minimum fix: replace it with "trade-off summary".</li><li>The claims document retains "switch … at n=450/715." Minimum fix: synchronize to "near parity at 450; AF-first at 715."</li></ol>
+<p>The score remains 7 because this is a credible, useful measurement contribution with bounded generality: selected attacks, small real-data cohorts, and semi-synthetic scaling. Those limitations are now sufficiently explicit. This final pass verified artifact consistency; it did not repeat the expensive full experiment suite.</p>
+</details>
+<h3 id="actions-taken-6">Actions Taken</h3>
+<ul><li>main.tex: "monotone in measured structure" → "approximately decreasing" (abstract, contributions, §limitations).</li><li>main.tex §governance: remaining "the f-DP bound finite" → "the trade-off summary finite".</li><li>CLAIMS_FROM_RESULTS.md: "appears only at n=450/715" → "near parity at n=450 and AF-first at n=715".</li><li>Paper recompiled: 17 pages, 0 errors.</li></ul>
+<h3 id="results-6">Results</h3>
+<ul><li>Score progression this run (Codex cross-family): C1 4/10 → C2 5/10 → C3 7/10 (almost) → <strong>C4 7/10 (ready)</strong>.</li></ul>
+<h3 id="status-8">Status</h3>
+<ul><li><strong>Stopping</strong> — score 7/10 AND verdict "ready" satisfies the stop condition.</li><li>Reviewer backend: codex (cross-family, OpenAI gpt-6-astra). Executor: deepseek-flash (caller-declared). independence: caller_declared / unverified.</li><li>Difficulty: medium.</li></ul>
+<hr />
+<h2 id="final-summary--run20261008d9f3a1b2-codex-cross-family-loop">Final Summary — run_20261008_d9f3a1b2 (Codex cross-family loop)</h2>
+<table><thead><tr><th>Round</th><th>Backend</th><th style="text-align:right">Score</th><th>Verdict</th><th>Outcome</th></tr></thead><tbody><tr><td>C1</td><td>codex/gpt-6-astra</td><td style="text-align:right">4.0</td><td>not ready</td><td>7 code-level findings (s40 missingness object, s41 estimator, s38 eps_lb, s37 combined/fit cap, real-data gating, s42, enforce stderr)</td></tr><tr><td>C2</td><td>codex/gpt-6-astra</td><td style="text-align:right">5.0</td><td>not ready</td><td>s41 crashed on the final-marker-mismatch case; orientation still scored the calibration rows</td></tr><tr><td>C3</td><td>codex/gpt-6-astra</td><td style="text-align:right">7.0</td><td>almost</td><td>implementation paths clean; manuscript consistency pass</td></tr><tr><td>C4</td><td>codex/gpt-6-astra</td><td style="text-align:right">7.0</td><td><strong>ready</strong></td><td>no critical weakness; three copyedits applied</td></tr></tbody></table>
+<p>Final verdict: <strong>ready</strong> (score 7/10 ≥ 6 AND verdict "ready"). Reviewer backend: codex (cross-family, OpenAI gpt-6-astra). Executor: deepseek-flash (caller-declared). Independence: caller_declared / unverified (no host-event attestation on this path).</p>
+<p>Remaining limitations (disclosed in the paper, not blockers for the scoped claims):</p>
+<ul><li>real-data arm is small per-population cohorts; the PC&gt;AF within-population result is an operating-point result, and the size-vs-composition dependence is a qualified interpretation (total n grows across the scale-matched ladder);</li><li>the phased haplotype channel is bounded only for the tested longest-shared-run/IBS estimators, not in general;</li><li>the eigenvalue-only negative is a random-basis projection ablation;</li><li>the ε trade-off summary is an in-sample, resolution-limited descriptive quantity, not a statistically valid f-DP bound.</li></ul>
+<h2 id="method-description-2">Method Description</h2>
+<p>The paper measures \emph{membership-inference leakage} of the objects a multi-site GWAS releases, and builds a governance layer over those objects. Given a phased or dosage genotype panel, a study set is split three ways into disjoint \emph{study members}, attacker \emph{reference}, and independent \emph{non-members}; every attack is a per-individual score that must rank members above non-members (AUROC). The attack families are: an allele-frequency likelihood-ratio (pooled, per-site/stratum, at several release precisions); a projection-distance attack on the study-fitted PCA spectrum (loadings vs a random-basis / reference-fitted-basis control, and an out-of-sample transfer check); a haplotype/LD and a phase-IBD longest-shared-run channel measured in centiMorgans; and a membership-correlated per-SNP call-rate channel. A joint out-of-fold logistic attacker measures the multi-object \emph{bundle} against its strongest single object. Results are reported on a parametric Balding--Nichols simulator, an msprime recombination-realistic demography, real 1000G Phase-3 chromosomes, and a Li--Stephens mosaic biobank-scale cohort (GPU Gram-PCA).</p>
+<p>The governance layer: a declarative \emph{reveal manifest} names each quantity and its declared precision; an \emph{egress monitor} applies the precision and blocks undeclared quantities; a hash-chained \emph{ledger} records cross-run refinements. The binding is a process-isolation runtime (PEP-578 audit hook denying write-opens/sockets/subprocesses/ ctypes, one sanctioned pipe to the monitor, child stdout/stderr discarded). Data flow: panel $\rightarrow$ three-way split $\rightarrow$ attack scores per release object $\rightarrow$ AUROC / per-individual $A^\ast,\rho,\varepsilon$ summary $\rightarrow$ manifest-governed release with monitor + ledger.</p>
+<hr />
+<h2 id="round-20-2026-10-09--fresh-independent-codex-thread-gpt-6-astra">Round 20 (2026-10-09) — fresh independent Codex thread (gpt-6-astra)</h2>
+<p>Round backend: codex (cross-family). New thread <code>01a11b98-9533-72c3-855e-f9f6999ac82e</code> (independent of the prior thread).</p>
+<h3 id="assessment-summary-5">Assessment (Summary)</h3>
+<ul><li>Score: 5/10</li><li>Verdict: not ready</li><li>Key criticisms (all fixed in round C6): (1) novelty vs Zari PSD-2022 PCA MI; (2) missingness result is pre-release info (candidate-only baseline matches; S40 contributor split); (3) s41 releases haplotypes then removes own → direct match AUROC 1.0, relabel; (4) semi-synthetic relatedness control on artificial phase (actual 2.2–2.5× donor); (5) af_by_group dict raises TypeError in the monitor; (6) fig7/s24 λGC-only 0.00 → 0.50; plus: topk keeps largest p-values; ε-ordering statement.</li></ul>
+<h3 id="reviewer-raw-response-3">Reviewer Raw Response</h3>
+<details>
+<summary>Click to expand full reviewer response</summary>
+<p><strong>Score: 5/10; Verdict: not ready.</strong></p>
+<p>The core finding—membership leakage from study-fitted PC loadings—survives this review. Several supporting claims do not. ... [See REVIEWER_MEMORY.md round C5 for the full verbatim text.]</p>
+</details>
+<h3 id="actions-taken-round-c6">Actions Taken (round C6)</h3>
+<ul><li>Novelty: cited Zari et al. (PSD 2022) and reframed the contribution around the controlled GWAS comparison and the boundary measurements; the release object is named as the loading matrix.</li><li>Missingness: added the candidate-only baseline to s42 (own call count, no released or reference table): it matches the released-table attack curve (0.540/0.664/0.760/0.884/1.000 vs 0.502/0.641/0.762/0.891/1.000), so the paragraph is reframed as batch-associated discrimination, not release exposure. s40 now reports the non-contributor-member M3 AUROC (0.511) alongside the all-member 0.705.</li><li>s41: added <code>code/s41_directmatch.py</code> (verbatim self-match AUROC 1.00) and relabeled the leave-self-out LSR arm as a relatedness diagnostic; the raw-haplotype release is stated as trivially leaking.</li><li>Relatedness: <code>semi_synthetic.generate_cohort(..., return_hap=True)</code> + <code>code/s37_phase_control.py</code>: actual copied-phase relatedness is 2.2–2.5× the donor library; text narrowed to the parsimony-proxy statistic.</li><li>Monitor: <code>apply_precision</code>/<code>_value_hash</code> handle dict-valued objects; <code>EgressMonitor.release</code> now delivers per-group AF at full precision and 2 dp with the ledger chained (s39 re-run: pergroup_full 1.0 / pergroup_2dp 1.0 / chained 1.0).</li><li>Fig7/s24: <code>s24_crossrun</code> re-run (λGC-only 0.50 baseline); fig7 regenerated; <code>topk</code> gained <code>order=&quot;small&quot;</code> for the p-value table; the ε-ordering sentence now names the AF full-vs-2dp counterexample.</li></ul>
+<h3 id="results-7">Results</h3>
+<ul><li>Re-ran s24, s39, s40, s42, s46; new probes s41_directmatch, s37_phase_control. Paper 18 pages, 0 errors, 0 undefined refs.</li></ul>
+<h3 id="status-9">Status</h3>
+<ul><li>Continuing to the next review round.</li><li>Difficulty: medium.</li></ul>
+<hr />
+<h2 id="round-21-2026-10-09--codex-gpt-6-astra-same-fresh-thread-01a11b98-9533-72c3-855e-f9f6999ac82e">Round 21 (2026-10-09) — Codex (gpt-6-astra), same fresh thread 01a11b98-9533-72c3-855e-f9f6999ac82e</h2>
+<h3 id="assessment-summary-6">Assessment (Summary)</h3>
+<ul><li>Score: 7/10</li><li>Verdict: <strong>ready</strong> (no remaining critical correctness defect)</li><li>After C7 fixes, three nonblocking terminology items remained: incomplete loading-matrix terminology; a broader "bound"/"governed reading" wording; a transport sentence.</li></ul>
+<h3 id="reviewer-raw-response-4">Reviewer Raw Response</h3>
+<details>
+<summary>Click to expand full reviewer response (round 21)</summary>
+<p><strong>Score: 7/10; Verdict: ready.</strong> The substantive C7 fixes hold up; no remaining critical correctness defect. Verified the conditional comparisons (S40 0.951602→0.959446, +0.007844; S46 0.965482→0.971084, +0.005602), actual-phase relatedness disclosure, missingness-as-confounding-control, raw-haplotype vs leave-self-out distinction, per-group AF monitor delivery, Fig7 λGC 0.50 baseline. Remaining nonblocking: (1) loading-matrix terminology incomplete at contributions/table/discussion; (2) haplotype paragraph still says "bound"; "governed reading"; bundle conditional gain overclaims; (3) one transport sentence inaccurate.</p>
+</details>
+<h3 id="actions-taken-round-22">Actions Taken (round 22)</h3>
+<ul><li>Terminology: contributions and discussion now say "study-fitted PC loading matrix"; table row "PC loadings".</li><li>Haplotype paragraph: "a characterization of the tested IBS statistic and the leave-self-out LSR diagnostic, not a bound on the haplotype channel as a whole".</li><li>Removed the "governed reading" phrase; bundle conditional gain scoped to "the AF channels plus the candidate's total call count (a specific comparator, not all candidate-side information)".</li><li>Transport sentence corrected: "does not yet emit per-group AF through the monitored release path (per-group AF is serialized and restored in the parent, but is omitted from the isolated runtime's monitored release loop)".</li></ul>
+<h3 id="status-10">Status</h3>
+<ul><li>Stopping. Score 7/10 AND verdict "ready" satisfies the stop condition.</li><li>Reviewer backend: codex (gpt-6-astra). Paper: 19 pages, 0 errors, 0 undefined refs.</li></ul>
+<h2 id="sidecar-state">Sidecar — <code>REVIEW_STATE.json</code></h2>
+<details><summary>Sidecar JSON: <code>/data/lvvyongji1/GWAS/review-stage/REVIEW_STATE.json</code></summary><pre><code class="language-json">{
+  &quot;run_id&quot;: &quot;run_20261009_06032c94&quot;,
+  &quot;round&quot;: 21,
+  &quot;threadId&quot;: &quot;01a11b98-9533-72c3-855e-f9f6999ac82e&quot;,
+  &quot;reviewer_backend&quot;: &quot;codex&quot;,
+  &quot;executor_model&quot;: &quot;deepseek-flash&quot;,
+  &quot;executor_model_source&quot;: &quot;caller-declared&quot;,
+  &quot;executor_family&quot;: &quot;unknown&quot;,
+  &quot;requested_reviewer_model&quot;: &quot;gpt-6-astra&quot;,
+  &quot;reported_reviewer_model&quot;: &quot;gpt-6-astra&quot;,
+  &quot;reviewer_model_source&quot;: &quot;backend-reported&quot;,
+  &quot;reviewer_family&quot;: &quot;openai&quot;,
+  &quot;family_relation&quot;: &quot;different&quot;,
+  &quot;identity_assurance&quot;: &quot;caller_declared&quot;,
+  &quot;independence_verified&quot;: &quot;unverified&quot;,
+  &quot;requires_external_acquittal&quot;: false,
+  &quot;status&quot;: &quot;completed&quot;,
+  &quot;difficulty&quot;: &quot;medium&quot;,
+  &quot;last_score&quot;: 7.0,
+  &quot;last_verdict&quot;: &quot;ready&quot;,
+  &quot;pending_experiments&quot;: [],
+  &quot;timestamp&quot;: &quot;2026-10-09T16:40&quot;
+}</code></pre></details>
+
+<footer class="aris-footer">
+  Generated by <a href="https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/main/skills/render-html/SKILL.md">ARIS <code>/render-html</code></a> ·
+  source path <code>review-stage/AUTO_REVIEW.md</code> ·
+  SHA256 <code>b2c8c59b6783</code> ·
+  generated at 2026-10-09 09:25 UTC.
+  This is a generated view — edit the source Markdown, then re-render.
+</footer>
+</main>
+
+</div>
+
+<!-- P0 polish: paper popover host (populated by IIFE below) -->
+<div id="cite-pop" hidden role="dialog" aria-labelledby="cite-pop-title">
+  <button class="cp-close" type="button" aria-label="Close">×</button>
+  <div class="cp-content"></div>
+</div>
+
+<!-- P0 polish: figure lightbox (native <dialog>, graceful fallback) -->
+<dialog class="lightbox" id="figure-lightbox" aria-label="Figure detail">
+  <div class="lb-inner">
+    <button class="lb-close" type="button" aria-label="Close">×</button>
+    <img alt="" />
+    <figcaption></figcaption>
+  </div>
+</dialog>
+
+<!-- P0 polish: paper registry sidecar, embedded by render_html.py (--papers) -->
+<script>window.PAPER_REGISTRY = {};</script>
+
+<!-- P0 polish: interactive enhancements (TOC scrollspy, code-card auto-collapse,
+     paper popovers, figure lightbox, print-restore for <details>, blog-mode H2). -->
+<script>
+(function () {
+  "use strict";
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[c];
+    });
+  }
+
+  // --- Feature 5: Print degradation fix ---------------------------------
+  // Force every <details> open during print, restore the pre-print state after.
+  var _stashOpen = [];
+  var _printing = false;
+  window.addEventListener("beforeprint", function () {
+    if (_printing) return;  // guard against multi-fire (Chrome print preview)
+    _printing = true;
+    _stashOpen = [];
+    document.querySelectorAll("details:not([open])").forEach(function (d) {
+      _stashOpen.push(d);
+      d.open = true;
+    });
+  });
+  window.addEventListener("afterprint", function () {
+    _stashOpen.forEach(function (d) { if (d.isConnected) d.open = false; });
+    _stashOpen = [];
+    _printing = false;
+  });
+
+  // --- Feature 3: TOC scrollspy -----------------------------------------
+  var tocLinks = [].slice.call(document.querySelectorAll("nav.toc a"));
+  var headings = tocLinks.map(function (a) {
+    var id = a.getAttribute("href").replace(/^#/, "");
+    return document.getElementById(id);
+  }).filter(Boolean);
+  if (headings.length && typeof IntersectionObserver !== "undefined") {
+    var linkById = new Map();
+    headings.forEach(function (h, i) { linkById.set(h.id, tocLinks[i]); });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        tocLinks.forEach(function (l) { l.classList.remove("active"); });
+        var lk = linkById.get(en.target.id);
+        if (lk) lk.classList.add("active");
+      });
+    }, { rootMargin: "-15% 0px -75% 0px" });
+    headings.forEach(function (h) { io.observe(h); });
+  }
+
+  // --- Feature 1: Long-code auto-collapse -------------------------------
+  var COLLAPSE_THRESHOLD = 30;
+
+  function wrapCodeCard(pre, openByDefault) {
+    if (!pre || pre.closest("details.code-card")) return;
+    var code = pre.querySelector("code");
+    if (!code) return;
+    var lines = code.textContent.replace(/\n+$/, "").split("\n").length;
+    var det = document.createElement("details");
+    det.className = "code-card";
+    det.open = openByDefault;
+    var sum = document.createElement("summary");
+    function updateSummary() {
+      sum.textContent = (det.open ? "▾ Collapse code · " : "▸ Expand code · ") + lines + " lines";
+    }
+    updateSummary();
+    det.addEventListener("toggle", updateSummary);
+    pre.parentNode.insertBefore(det, pre);
+    det.appendChild(sum);
+    det.appendChild(pre);
+  }
+
+  // Honor explicit per-block flags first.
+  document.querySelectorAll("pre[data-collapse]").forEach(function (pre) {
+    var flag = pre.getAttribute("data-collapse");
+    if (flag === "collapsed") wrapCodeCard(pre, false);
+    // "open" → leave fully expanded, do not wrap.
+  });
+  // Then auto-wrap long unflagged blocks.
+  document.querySelectorAll("pre > code").forEach(function (code) {
+    var pre = code.closest("pre");
+    if (!pre || pre.closest("details") || pre.hasAttribute("data-collapse")) return;
+    var lines = code.textContent.replace(/\n+$/, "").split("\n").length;
+    if (lines >= COLLAPSE_THRESHOLD) wrapCodeCard(pre, false);
+  });
+
+  // --- Feature 10: Figure lightbox --------------------------------------
+  var lightbox = document.getElementById("figure-lightbox");
+  if (lightbox) {
+    var lbImg = lightbox.querySelector("img");
+    var lbCap = lightbox.querySelector("figcaption");
+    var lbClose = lightbox.querySelector(".lb-close");
+    function openLightbox(srcImg) {
+      lbImg.src = srcImg.src;
+      lbImg.alt = srcImg.alt || "";
+      var cap = srcImg.closest("figure") ? srcImg.closest("figure").querySelector("figcaption") : null;
+      lbCap.textContent = cap ? cap.textContent : "";
+      lbCap.hidden = !cap;
+      if (typeof lightbox.showModal === "function") lightbox.showModal();
+      else lightbox.hidden = false;
+    }
+    function closeLightbox() {
+      if (typeof lightbox.close === "function") lightbox.close();
+      else lightbox.hidden = true;
+    }
+    document.querySelectorAll("main figure img, main > p > img").forEach(function (img) {
+      if (img.closest("dialog")) return;
+      img.style.cursor = "zoom-in";
+      img.addEventListener("click", function () { openLightbox(img); });
+    });
+    if (lbClose) lbClose.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", function (e) {
+      // Backdrop click closes; clicks inside .lb-inner do not bubble here.
+      if (e.target === lightbox) closeLightbox();
+    });
+  }
+
+  // --- Feature 2: Paper popover -----------------------------------------
+  var PAPERS = window.PAPER_REGISTRY || {};
+  var pop = document.getElementById("cite-pop");
+  var popContent = pop ? pop.querySelector(".cp-content") : null;
+  var popClose = pop ? pop.querySelector(".cp-close") : null;
+  var popTrigger = null;
+
+  function showPopover(el) {
+    var key = el.dataset.ref;
+    var info = PAPERS[key];
+    if (!info || !pop || !popContent) return;
+    popContent.innerHTML =
+      '<div class="cp-title" id="cite-pop-title">' + escapeHtml(info.title || key) + '</div>' +
+      (info.authors
+        ? '<div class="cp-meta">' + escapeHtml(info.authors) +
+            (info.date ? ' · ' + escapeHtml(info.date) : '') +
+            (info.inst ? ' · ' + escapeHtml(info.inst) : '') + '</div>'
+        : '') +
+      (info.key ? '<div class="cp-key">' + escapeHtml(info.key) + '</div>' : '') +
+      (info.arxiv
+        ? '<a class="cp-link" href="https://arxiv.org/abs/' + encodeURIComponent(info.arxiv) +
+          '" target="_blank" rel="noopener">arXiv ' + escapeHtml(info.arxiv) + ' ↗</a>'
+        : '');
+    var r = el.getBoundingClientRect();
+    pop.hidden = false;  // unhide first so offsetHeight is measurable
+    var margin = 16;
+    var popWidth = Math.min(360, Math.max(0, window.innerWidth - margin * 2));
+    var popHeight = Math.min(pop.offsetHeight || 200, Math.max(0, window.innerHeight - margin * 2));
+    pop.style.left = Math.max(margin, Math.min(r.left, window.innerWidth - popWidth - margin)) + "px";
+    pop.style.top = Math.max(margin, Math.min(r.bottom + 8, window.innerHeight - popHeight - margin)) + "px";
+    popTrigger = el;
+    if (popClose) popClose.focus();
+  }
+  function hidePopover() {
+    if (pop) pop.hidden = true;
+    if (popTrigger) popTrigger.focus();
+    popTrigger = null;
+  }
+  document.querySelectorAll("[data-ref]").forEach(function (el) {
+    el.setAttribute("tabindex", "0");
+    el.setAttribute("role", "button");
+    el.addEventListener("click", function (e) { e.stopPropagation(); showPopover(el); });
+    el.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); showPopover(el); }
+    });
+  });
+  if (popClose) popClose.addEventListener("click", hidePopover);
+  document.addEventListener("click", function (e) {
+    if (pop && !pop.hidden && !pop.contains(e.target) && !e.target.matches("[data-ref]")) hidePopover();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && pop && !pop.hidden) hidePopover();
+  });
+
+  // --- Feature 7: Blog-mode active-H2 highlight (opt-in) ----------------
+  if (document.body.classList.contains("aris-blog")) {
+    var h2s = [].slice.call(document.querySelectorAll("main h2"));
+    if (h2s.length && typeof IntersectionObserver !== "undefined") {
+      var io2 = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            h2s.forEach(function (h) { h.classList.remove("aris-active-h2"); });
+            en.target.classList.add("aris-active-h2");
+          }
+        });
+      }, { rootMargin: "-15% 0px -75% 0px" });
+      h2s.forEach(function (h) { io2.observe(h); });
+    }
+  }
+})();
+</script>
+</body>
+</html>

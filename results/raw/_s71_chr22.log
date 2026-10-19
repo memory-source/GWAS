@@ -1,0 +1,7 @@
+### within:EUR  baseline lam 1.072 power 0.025
+   passive   lam 1.095  power 0.025  fp 5.51e-05  agree 0.584  minp 2.6e-02
+   perturbed lam 1.096  power 0.025  fp 5.51e-05  agree 0.584  minp 2.6e-02
+### super:3pop  baseline lam 1.136 power 0.050
+   passive   lam 1.149  power 0.050  fp 1.93e-04  agree 0.833  minp 2.0e-02
+   perturbed lam 1.148  power 0.050  fp 1.93e-04  agree 0.833  minp 2.0e-02
+done 20.6 s

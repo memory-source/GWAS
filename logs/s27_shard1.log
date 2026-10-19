@@ -1,0 +1,2 @@
+nsp500_m1000000_f0.04 {"af_only": 1.0, "pc_calibrated": 1.0, "combined": 1.0, "delta_pc_minus_af": 0.0, "pc_refbasis": 0.4957, "pc_in_sample_gap": 0.5043, "fst_like": 0.0268}
+OOM 8000 100000 0.04

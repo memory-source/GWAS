@@ -1,0 +1,16 @@
+{
+  "config": {
+    "n_site": 900,
+    "n_ref": 900,
+    "n_snps_tested": 3814,
+    "seed": 0
+  },
+  "lambda_gc_uncorrected": 1.1717899781035908,
+  "lambda_gc_corrected": 0.9531174386761915,
+  "n_causal": 10,
+  "n_causal_tested": 9,
+  "min_p_causal": 1.8049604180859574e-05,
+  "attack_auroc": 0.835658024691358,
+  "ancestry_only_auroc": 0.11502839506172839,
+  "noise_auroc": 0.4994543209876543
+}

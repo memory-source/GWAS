@@ -1,0 +1,30 @@
+# Environment / large local artifacts
+env/
+scratch/
+results/cache/
+*.pyc
+__pycache__/
+
+# Downloaded genotype data (2.5 GB; see data/README.md for provenance)
+data/external/*.vcf.gz
+data/external/*.vcf.gz.tbi
+data/external/genetic_map/*.txt
+
+# LaTeX build products and per-build logs
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.bbl
+paper/*.blg
+paper/_*.log
+paper/main_2*.tex
+paper/main_2*.pdf
+
+# Local agent settings
+.claude/settings.local.json
+.claude/skills/
+.aris/tools
+
+# Round-scoped scratch scripts
+_getc8*.py
+plink2.log

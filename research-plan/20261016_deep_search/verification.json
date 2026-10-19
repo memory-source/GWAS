@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-16",
+  "original_inputs_unchanged": true,
+  "changed_original_inputs": [],
+  "json_files_parse": true,
+  "synthetic_witnesses_run_and_assertions_passed": true,
+  "real_genomic_attacks_run": false,
+  "primary_source_entries": 19,
+  "document_characters": 7448,
+  "sha256": {
+    "DEEP_DIRECTIONS_ZH.md": "743c8e035793c1e282ecc1d7363f90b9ce5ad978705899e2835b17feaf7f059b",
+    "algebra_witnesses.json": "189d709d158aa743fbc3e43a593e1a6790d719feac608a6cc9b92c4840769a26",
+    "algebra_witnesses.py": "d791ecabbf51b55f796334105f21c40095d4a4d6bd3e3a08a1174d0265682485",
+    "search_method.json": "cf4edd1e0168d601b54a7f5fed86558fa0e3183358e6862dccd7252072043942",
+    "sources.json": "befa9b76232fc5f1ebca3188ad72413941aeb9353f1f78749c4b33fb74ca5b90"
+  }
+}

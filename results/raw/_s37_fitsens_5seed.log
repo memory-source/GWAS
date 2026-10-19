@@ -1,0 +1,8 @@
+nsp8000_m8000 nfit  5000  fit_frac 0.208  AF 0.536  PC 0.502  gap -0.034 (sd 0.008)
+nsp8000_m8000 nfit 10000  fit_frac 0.417  AF 0.536  PC 0.503  gap -0.034 (sd 0.008)
+nsp8000_m8000 nfit 20000  fit_frac 0.833  AF 0.536  PC 0.502  gap -0.034 (sd 0.008)
+nsp8000_m8000 nfit 24000  fit_frac 1.000  AF 0.536  PC 0.503  gap -0.034 (sd 0.008)
+nsp16000_m3000 nfit  5000  fit_frac 0.104  AF 0.527  PC 0.501  gap -0.026 (sd 0.003)
+nsp16000_m3000 nfit 10000  fit_frac 0.208  AF 0.527  PC 0.501  gap -0.026 (sd 0.003)
+nsp16000_m3000 nfit 20000  fit_frac 0.417  AF 0.527  PC 0.501  gap -0.026 (sd 0.003)
+fitsens sweep done

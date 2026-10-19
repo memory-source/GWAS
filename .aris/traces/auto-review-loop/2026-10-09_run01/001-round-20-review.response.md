@@ -1,0 +1,1 @@
+5/10, not ready. Core (study-fitted PC loadings membership leak) survives. Six findings: Zari novelty; s42 pre-release missingness info; s41 direct-match AUROC 1.0; semi-synthetic artificial-phase relatedness 2.23x; af_by_group dict TypeError in monitor; s24/fig7 lambdaGC-only 0.00. Plus topk pvals and eps ordering.

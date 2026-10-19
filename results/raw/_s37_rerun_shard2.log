@@ -1,0 +1,2 @@
+nsp2000_m8000 {"af_only": 0.5888, "pc_calibrated": 0.5224, "combined": 0.5906, "delta_pc_minus_af": -0.0664, "pc_refbasis": 0.4974, "pc_eigonly": 0.4989, "pc_in_sample_gap": 0.025, "fst_like": 0.095}
+shard2 done 91.3 s

@@ -1,0 +1,89 @@
+{
+  "date": "2026-10-15",
+  "scope": "Targeted primary-source novelty check, not exhaustive novelty certification; some entries checked only at abstract level.",
+  "tools_note": "Academic database MCP unavailable; direct web tools used.",
+  "sources": [
+    {
+      "title": "Membership Inference Attack Against Principal Component Analysis",
+      "year": 2022,
+      "url": "https://ps.tm.kit.edu/downloads/publications/zari22membership.pdf",
+      "checked_scope": "Primary paper full text",
+      "implication": "PCA membership, sample-size/component effects, and DP defenses already established."
+    },
+    {
+      "title": "Privacy preserving identification of population stratification for collaborative genomic research",
+      "year": 2023,
+      "url": "https://academic.oup.com/bioinformatics/article/39/Supplement_1/i168/7210481",
+      "checked_scope": "Primary full text checked in preceding review",
+      "implication": "Genomic collaborative PCA outputs versus AF is prior art; distinguish scores and public reference basis from study loadings."
+    },
+    {
+      "title": "Secure and Distributed Assessment of Privacy-Preserving GWAS Releases",
+      "year": 2022,
+      "url": "https://orbilu.uni.lu/bitstream/10993/52124/1/GenDPR_Middleware22_3528535.3565253.pdf",
+      "checked_scope": "Primary paper full text",
+      "implication": "Release auditing and colluding-site subtraction are prior art."
+    },
+    {
+      "title": "I-GWAS: Privacy-preserving interdependent genome-wide association studies",
+      "year": 2023,
+      "url": "https://petsymposium.org/popets/2023/popets-2023-0026.pdf",
+      "checked_scope": "Primary paper full text",
+      "implication": "Overlapping and dynamic release risk already studied."
+    },
+    {
+      "title": "Revisiting Assumptions for Membership Inference on Summary Statistics",
+      "year": 2026,
+      "url": "https://www.petsymposium.org/popets/2026/popets-2026-0134.php",
+      "checked_scope": "Official proceedings abstract",
+      "implication": "Realistic auxiliary information and individual-versus-cohort confounding are not new general claims."
+    },
+    {
+      "title": "PLINK 2 Population stratification",
+      "url": "https://www.cog-genomics.org/plink/2.0/strat",
+      "checked_scope": "Official current documentation",
+      "implication": "Variance-standardized PCA, LD pruning guidance, optional allele-weights export."
+    },
+    {
+      "title": "PLINK 2 Linear scoring and PCA projection",
+      "url": "https://www.cog-genomics.org/plink/2.0/score",
+      "checked_scope": "Official current documentation",
+      "implication": "Projection example exports and reads allele counts; evaluate full payload rather than weights in isolation."
+    },
+    {
+      "title": "Secure and federated genome-wide association studies for biobank-scale datasets",
+      "year": 2025,
+      "url": "https://davidfroelicher.com/publication/sfgwas/sfgwas.pdf",
+      "checked_scope": "Author-hosted primary full text checked in preceding review",
+      "implication": "PCs retained encrypted; optional export does not imply default plaintext."
+    },
+    {
+      "title": "Optimal Differentially Private PCA and Estimation for Spiked Covariance Matrices",
+      "year": 2024,
+      "url": "https://arxiv.org/abs/2401.03820",
+      "checked_scope": "Author abstract; year is initial preprint submission",
+      "implication": "Spiked-covariance DP-PCA sensitivity/minimax is occupied prior art."
+    },
+    {
+      "title": "Tight Differentially Private PCA via Matrix Coherence",
+      "year": 2026,
+      "url": "https://epubs.siam.org/doi/10.1137/1.9781611978971.2",
+      "checked_scope": "Official SODA proceedings abstract",
+      "implication": "Generic private PCA innovation requires strong modern comparisons."
+    },
+    {
+      "title": "Assessing Per-Sample Membership Inference Vulnerability without Retraining",
+      "year": 2026,
+      "url": "https://arxiv.org/abs/2602.15919",
+      "checked_scope": "Author abstract, preprint",
+      "implication": "Leverage-related per-sample exposure is prior art."
+    },
+    {
+      "title": "The Sample Complexity of Membership Inference and Privacy Auditing",
+      "year": 2025,
+      "url": "https://arxiv.org/abs/2508.19458",
+      "checked_scope": "Author abstract; revised 2026-10-08",
+      "implication": "Finite-reference mean attacks may understate fully informed risk."
+    }
+  ]
+}

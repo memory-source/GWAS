@@ -1,0 +1,4 @@
+python+gzip {'n': 20000, 'seconds': 6.078815937042236, 'variants_per_s': 3290.114424772562}
+decompress only {'seconds': 173.70083236694336}
+pigz pipe p16 {'n': 20000, 'seconds': 8.092006206512451, 'variants_per_s': 2471.5749703582765}
+done

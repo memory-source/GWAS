@@ -1,0 +1,34 @@
+Review the experiment implementation for correctness before re-deployment.
+
+## Experiment plan (condensed)
+CPU-only measurement study: membership-inference leakage of released statistics
+in multi-site GWAS. Steps:
+  S0 sanity: pooled lambda_GC inflated uncorrected, ~1 after PC correction; a
+    planted signal detectable; AF-LRT attack beats chance; noise ~chance.
+  S1c frontier: study members vs INDEPENDENT non-members (disjoint from study AND
+    from the attacker's reference panel), ancestry-matched; tiers F2(top200)/
+    F4(AF 1dp)/F3(AF 2dp)/F5(full)/F5-per-site; 5 seeds; bootstrap CI + ancestry
+    control + per-ancestor AUROC.
+  S2c mechanism: cross-validated logistic meta-attack over per-target features
+    (base AF-LRT score + PC projection distance/alignment); controls T2 (loadings
+    refit on attacker reference -> out-of-sample), T3 (study-mean centering),
+    permutation; 5 seeds.
+  S3b paradox: scripted analyst, stopping rule COMPUTED from revealed spectrum,
+    quality MEASURED by re-running the association pipeline; 2 families x 3 seeds.
+  S4 msprime cross-check; S5 site-size x precision boundary; S6 dimension sweep.
+
+## Implementation
+Scripts in /data/lvvyongji1/GWAS/code/ : common.py (simulator, PCA, marginal
+association, AF-LRT attack, ancestry control, AUROC/TPR@FPR), s0..s6.
+
+## Check for
+1. Does the code implement the described method (esp. the DISJOINT-negative
+   split in split_population3, and that S1c/S2c/S4 score the third non-member
+   panel, not the attacker reference)?
+2. Is the AF-LRT score sign/orientation correct (members score higher)?
+3. Is AUROC / TPR@FPR computed correctly, and is the CV in S2c leak-free
+   (scaler fit on train folds only)?
+4. Any CRITICAL logic bug that would invalidate the reported numbers?
+5. Seeds fixed and results saved as JSON?
+Report CRITICAL / MAJOR / MINOR with exact fixes. Say plainly if correct; do not
+manufacture findings. You may read files under /data/lvvyongji1/GWAS/code/.

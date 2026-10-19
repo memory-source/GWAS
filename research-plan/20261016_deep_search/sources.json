@@ -1,0 +1,178 @@
+[
+  {
+    "id": "ukc2026",
+    "title": "UK BioCoin: swift trait-specific summary statistics regression for UK Biobank",
+    "year": 2026,
+    "type": "peer-reviewed primary study",
+    "url": "https://www.nature.com/articles/s41467-026-71788-z",
+    "fulltext": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13276075/",
+    "use": "A reusable sufficient-statistics package is a real scientific release object; MAF cutoff 0.001; do not treat its repeated postprocessing as new private measurements.",
+    "verification": "Root read primary full text and Methods."
+  },
+  {
+    "id": "metastaarlite2026",
+    "title": "MetaSTAARlite: an all-in-one tool for biobank-scale whole-genome sequencing meta-analysis",
+    "year": 2026,
+    "type": "peer-reviewed primary study",
+    "url": "https://www.nature.com/articles/s43588-026-00995-x",
+    "fulltext": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13244640/",
+    "use": "Rare-variant score and sparse LD summary format; no actual attack on this implementation was performed.",
+    "verification": "Root verified version of record 2026-06-03; primary text search available, PMC later browser challenge."
+  },
+  {
+    "id": "metastaar2023",
+    "title": "Powerful, scalable and resource-efficient meta-analysis of rare variant associations in large whole-genome sequencing studies",
+    "year": 2023,
+    "type": "peer-reviewed primary study",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10084891/",
+    "use": "Actual score/covariance equations involve fitted residuals and projection/weight matrices, not raw unadjusted incidence.",
+    "verification": "Root checked primary equation excerpts."
+  },
+  {
+    "id": "hartebrodt2024",
+    "title": "Federated singular value decomposition for high-dimensional data",
+    "year": 2024,
+    "online_year": 2023,
+    "type": "peer-reviewed primary study",
+    "url": "https://link.springer.com/article/10.1007/s10618-023-00983-z",
+    "preprint": "https://arxiv.org/abs/2205.12109",
+    "use": "Covariance recovery from intermediate subspace-iteration messages is known; final-only constrained-input probing is the candidate extension.",
+    "verification": "Root read original full text including introduction and section references; agent independently read."
+  },
+  {
+    "id": "truthserum2022",
+    "title": "Truth Serum: Poisoning Machine Learning Models to Reveal Their Secrets",
+    "year": 2022,
+    "type": "peer-reviewed conference study",
+    "url": "https://arxiv.org/abs/2204.00032",
+    "doi": "10.1145/3548606.3560554",
+    "use": "Active data manipulation amplifying privacy inference is established; not a novelty claim for this proposal.",
+    "verification": "Root checked author abstract and publication metadata; agent reviewed."
+  },
+  {
+    "id": "sfpca2023",
+    "title": "Scalable and Privacy-Preserving Federated Principal Component Analysis",
+    "year": 2023,
+    "type": "peer-reviewed conference study",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11044025/",
+    "use": "Final outputs may optionally be decrypted; encrypted downstream-only use is a different interface.",
+    "verification": "Root read decryption options and security proof."
+  },
+  {
+    "id": "grinde2024",
+    "title": "Adjusting for principal components can induce collider bias in genome-wide association studies",
+    "year": 2024,
+    "type": "peer-reviewed primary study",
+    "url": "https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1011242",
+    "use": "Some PCs reflecting local genetic features can distort associations; linkage with privacy is our hypothesis, not that paper's result.",
+    "verification": "Root and science agent read primary full text."
+  },
+  {
+    "id": "pcair2015",
+    "title": "Robust inference of population structure for ancestry prediction and correction of stratification in the presence of relatedness",
+    "year": 2015,
+    "type": "peer-reviewed primary study",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4836868/",
+    "use": "Representative unrelated training subset plus projection is an existing strong baseline.",
+    "verification": "Science agent primary-source review."
+  },
+  {
+    "id": "projection2020",
+    "title": "Fast and robust ancestry prediction using principal component analysis",
+    "year": 2020,
+    "type": "peer-reviewed primary study",
+    "url": "https://academic.oup.com/bioinformatics/article/36/11/3439/5810493",
+    "use": "AP/OADP projection shrinkage correction; cross-fitting or projection alone is not new.",
+    "verification": "Science agent primary-source review."
+  },
+  {
+    "id": "grg2026",
+    "title": "GRG/grapp work with leave-one-chromosome-out PCA",
+    "year": 2026,
+    "type": "preprint; exact title not normalized in this ledger",
+    "url": "https://www.biorxiv.org/content/10.64898/2026.04.10.717786v1",
+    "use": "LOCO-PCA already appears in a 2026 preprint.",
+    "verification": "Science agent primary-source review; root has not independently read full text."
+  },
+  {
+    "id": "pnas2026",
+    "title": "Family-based study of direct genetic effects captured by principal components",
+    "year": 2026,
+    "type": "peer-reviewed primary study; title not normalized in this ledger",
+    "url": "https://doi.org/10.1073/pnas.2525790123",
+    "use": "Do not generalize that all PCA adjustment harms scientific inference.",
+    "verification": "Science agent reviewed primary study; root DOI open returned an error."
+  },
+  {
+    "id": "phenotype_lp2025",
+    "title": "Genomic privacy risks in GWAS summary statistics",
+    "year": 2025,
+    "type": "preprint and reviewed-preprint lineage",
+    "url": "https://www.medrxiv.org/content/10.1101/2025.09.09.25335252v1.full",
+    "use": "Known individual phenotypes plus multi-trait summary-based genotype reconstruction is a direct prior.",
+    "verification": "Root read primary abstract and method excerpts; previous turn also reviewed."
+  },
+  {
+    "id": "quantitative2012",
+    "title": "On Sharing Quantitative Trait GWAS Results in an Era of Multiple-omics Data and the Limits of Genomic Privacy",
+    "year": 2012,
+    "type": "peer-reviewed primary study",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3322234/",
+    "use": "Known-genotype phenotype recovery and multi-phenotype membership inference predate these proposals.",
+    "verification": "Root read primary full-text excerpts."
+  },
+  {
+    "id": "metaseq2013",
+    "title": "METASEQ: Privacy Preserving Meta-Analysis of Sequencing-Based Association Studies",
+    "year": 2013,
+    "type": "primary study",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3605551/",
+    "use": "Singleton-related membership disclosure is already known; candidate blind mixture recovery must exceed it.",
+    "verification": "Root checked primary text."
+  },
+  {
+    "id": "grs2021",
+    "title": "Reconstructing Genotypes in Private Genomic Databases from Genetic Risk Scores",
+    "year": 2021,
+    "type": "peer-reviewed primary study",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8165474/",
+    "use": "Repeated overlapping studies enabling genotype reconstruction are known.",
+    "verification": "Root checked primary text and threat model."
+  },
+  {
+    "id": "fplier2026",
+    "title": "FPLIER: Federated Pathway-Level Information Extractor",
+    "year": 2026,
+    "type": "author preprint; author reports conference acceptance",
+    "url": "https://arxiv.org/html/2605.29587v1#S5.SS2",
+    "use": "Known/colluding contribution subtraction and remaining rank are already discussed.",
+    "verification": "Root opened primary full text this and prior turn."
+  },
+  {
+    "id": "vertigo2025",
+    "title": "Revisiting VERTIGO and VERTIGO-CI: Identifying confidentiality breaches and introducing a statistically sound, efficient alternative",
+    "year": 2025,
+    "type": "preprint",
+    "url": "https://www.medrxiv.org/content/10.1101/2025.05.30.25328653v2.full",
+    "use": "Discrete binary structure can make summary-statistic inverse problems uniquely solvable; generic discrete identifiability is not itself new.",
+    "verification": "Root checked primary method excerpts."
+  },
+  {
+    "id": "imputation2023",
+    "title": "Reconstruction of private genomes through reference-based genotype imputation",
+    "year": 2023,
+    "type": "peer-reviewed primary study",
+    "url": "https://doi.org/10.1186/s13059-023-03105-6",
+    "use": "Reference/query access can enable genome reconstruction; broader active genomic privacy context.",
+    "verification": "Root checked original study indexed excerpts; not used as direct evidence for PCA mechanism."
+  },
+  {
+    "id": "pcapred",
+    "title": "pcapred reference data and software",
+    "year": null,
+    "type": "author software repository",
+    "url": "https://github.com/danjlawson/pcapred-script#further-reference-data",
+    "use": "A genuine shared reference-model interface, not evidence of membership vulnerability.",
+    "verification": "Root verified previous turn; not refreshed this turn."
+  }
+]

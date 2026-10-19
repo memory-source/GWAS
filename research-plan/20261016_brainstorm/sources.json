@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-16",
+  "scope": "Targeted primary-source checks, not exhaustive novelty certification.",
+  "sources": [
+    {
+      "title": "pcapred-script",
+      "url": "https://github.com/danjlawson/pcapred-script#further-reference-data",
+      "supports": "作者说明分发UKB-derived AF/eigenvalue/loading参考包做投影。",
+      "does_not_establish": "准确训练n、成员集合、真实攻击性能或所有模型生成细节。"
+    },
+    {
+      "title": "pcapred",
+      "url": "https://github.com/danjlawson/pcapred",
+      "supports": "参考模型用于新数据projection。"
+    },
+    {
+      "title": "FPLIER: Federated Pathway-Level Information Extractor",
+      "url": "https://arxiv.org/html/2605.29587v1#S5.SS2",
+      "supports": "完整covariance下已知/合谋贡献扣除与秩风险是直接近邻。",
+      "scope": "作者标注ACM BCB26 accepted；本轮未重放其攻击，不声称其安全结论已被推翻。"
+    },
+    {
+      "title": "Investigating Privacy Leakage in Dimensionality Reduction Methods via Reconstruction Attack",
+      "url": "https://arxiv.org/html/2408.17151v2",
+      "supports": "全样本embedding、known n-1记录的重构先例；与loadings-only不同。"
+    },
+    {
+      "title": "GOPHER",
+      "url": "https://arxiv.org/html/2512.04225v1",
+      "supports": "phenotype label-DP，genotype固定；下游结构噪声是作者提及的研究问题。"
+    },
+    {
+      "title": "PRIMO: Private Regression in Multiple Outcomes",
+      "url": "https://arxiv.org/abs/2303.04195",
+      "supports": "多输出私有回归已有直接近邻。"
+    },
+    {
+      "title": "Direct and Inverse Spectral Problems for Rank-One Perturbations of Self-adjoint Operators",
+      "url": "https://link.springer.com/article/10.1007/s00020-021-02630-y",
+      "supports": "动态rank-one逆谱研究已有经典近邻。"
+    },
+    {
+      "title": "PLINK 2 population stratification",
+      "url": "https://www.cog-genomics.org/plink/2.0/strat",
+      "supports": "标准化关系矩阵、LD处理与可选载荷导出。"
+    }
+  ]
+}

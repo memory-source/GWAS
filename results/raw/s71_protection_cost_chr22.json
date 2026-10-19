@@ -1,0 +1,84 @@
+{
+  "chrom": 22,
+  "seeds": 5,
+  "p_threshold": 0.0001,
+  "cohorts": {
+    "within:EUR": {
+      "baseline": {
+        "lambda_gc": 1.0723687663839652,
+        "power": 0.025,
+        "n_causal_recovered": 0.2
+      },
+      "rounds": {
+        "passive": {
+          "lambda_gc_mean": 1.094699973280523,
+          "power_mean": 0.025,
+          "n_causal_recovered_mean": 0.2,
+          "n_causal_mean": 8.0,
+          "n_causal_in_qc_mask_mean": 7.8,
+          "n_off_causal_discoveries_mean": 0.2,
+          "n_test_off_causal_mean": 3641.8,
+          "off_causal_fraction_mean": 5.5096418732782364e-05,
+          "effect_agreement_mean": 0.5838122861938138,
+          "min_p_causal_mean": 0.026291221007981192
+        },
+        "perturbed": {
+          "lambda_gc_mean": 1.0955814573806246,
+          "power_mean": 0.025,
+          "n_causal_recovered_mean": 0.2,
+          "n_causal_mean": 8.0,
+          "n_causal_in_qc_mask_mean": 7.8,
+          "n_off_causal_discoveries_mean": 0.2,
+          "n_test_off_causal_mean": 3641.8,
+          "off_causal_fraction_mean": 5.5096418732782364e-05,
+          "effect_agreement_mean": 0.5843396217308257,
+          "min_p_causal_mean": 0.026385940874092618
+        }
+      },
+      "qc": {
+        "histograms_identical": true,
+        "max_abs_variance_change": 2.220446049250313e-16,
+        "max_abs_row_heterozygosity_change": 0.004541811381244987
+      }
+    },
+    "super:3pop": {
+      "baseline": {
+        "lambda_gc": 1.1361222662030894,
+        "power": 0.05,
+        "n_causal_recovered": 0.4
+      },
+      "rounds": {
+        "passive": {
+          "lambda_gc_mean": 1.148601964203139,
+          "power_mean": 0.05,
+          "n_causal_recovered_mean": 0.4,
+          "n_causal_mean": 8.0,
+          "n_causal_in_qc_mask_mean": 7.4,
+          "n_off_causal_discoveries_mean": 0.6,
+          "n_test_off_causal_mean": 3116.2,
+          "off_causal_fraction_mean": 0.0001925017592201463,
+          "effect_agreement_mean": 0.8330769745904816,
+          "min_p_causal_mean": 0.01967057878487638
+        },
+        "perturbed": {
+          "lambda_gc_mean": 1.1481155958133484,
+          "power_mean": 0.05,
+          "n_causal_recovered_mean": 0.4,
+          "n_causal_mean": 8.0,
+          "n_causal_in_qc_mask_mean": 7.4,
+          "n_off_causal_discoveries_mean": 0.6,
+          "n_test_off_causal_mean": 3116.2,
+          "off_causal_fraction_mean": 0.0001925017592201463,
+          "effect_agreement_mean": 0.8331089524260495,
+          "min_p_causal_mean": 0.01966824761330955
+        }
+      },
+      "qc": {
+        "histograms_identical": true,
+        "max_abs_variance_change": 3.885780586188048e-16,
+        "max_abs_row_heterozygosity_change": 0.0036686028737389353
+      }
+    }
+  },
+  "elapsed_s": 17.0
+}

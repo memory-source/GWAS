@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Membership Inference Attack Against Principal Component Analysis",
+    "year": 2022,
+    "url": "https://ps.tm.kit.edu/downloads/publications/zari22membership.pdf",
+    "used_for": "Direct PCA membership-inference prior work; small training sets, number of components and DP."
+  },
+  {
+    "title": "Secure and federated genome-wide association studies for biobank-scale datasets",
+    "year": 2025,
+    "url": "https://davidfroelicher.com/publication/sfgwas/sfgwas.pdf",
+    "used_for": "Methods page 7: jointly computed PCs remain encrypted; final association statistics decrypted. Does not establish claimed plaintext-loading interface."
+  },
+  {
+    "title": "Scalable and Privacy-Preserving Federated Principal Component Analysis",
+    "year": 2023,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11044025/",
+    "used_for": "Section 5 Step 8 permits optional controlled decryption of PCs and/or projected data; not a default plaintext-GWAS contract."
+  },
+  {
+    "title": "Federated singular value decomposition for high-dimensional data",
+    "year": 2023,
+    "url": "https://link.springer.com/article/10.1007/s10618-023-00983-z",
+    "used_for": "Section 4.1: covariance reconstruction from iterative eigenvector updates; distinguish internal iterations from chosen-input final outputs."
+  },
+  {
+    "title": "Truth Serum: Poisoning Machine Learning Models to Reveal Their Secrets",
+    "year": 2022,
+    "url": "https://arxiv.org/abs/2204.00032",
+    "used_for": "Active control of training inputs to amplify inference attacks is prior art."
+  },
+  {
+    "title": "Python sys.addaudithook documentation",
+    "url": "https://docs.python.org/3/library/sys.html#sys.addaudithook",
+    "used_for": "Audit hooks are unsuitable as standalone sandbox mechanisms."
+  }
+]

@@ -1,0 +1,45 @@
+chr22 3pop af=0.689 pc=0.655 n=450
+  chr22: parsed 20000
+  chr22: parsed 40000
+  chr22: parsed 60000
+  chr22: parsed 80000
+chr22 5pop af=0.708 pc=0.611 n=500
+  chr1: parsed 20000
+  chr1: parsed 40000
+  chr1: parsed 60000
+  chr1: parsed 80000
+  chr1: parsed 100000
+  chr1: parsed 120000
+  chr1: parsed 140000
+  chr1: parsed 160000
+  chr1: parsed 180000
+  chr2: parsed 20000
+  chr2: parsed 40000
+  chr2: parsed 60000
+  chr2: parsed 80000
+  chr2: parsed 100000
+  chr2: parsed 120000
+  chr2: parsed 140000
+  chr2: parsed 160000
+  chr2: parsed 180000
+chr12 3pop af=0.917 pc=0.731 n=300
+  chr1: parsed 20000
+  chr1: parsed 40000
+  chr1: parsed 60000
+  chr1: parsed 80000
+  chr1: parsed 100000
+  chr1: parsed 120000
+  chr1: parsed 140000
+  chr1: parsed 160000
+  chr1: parsed 180000
+  chr2: parsed 20000
+  chr2: parsed 40000
+  chr2: parsed 60000
+  chr2: parsed 80000
+  chr2: parsed 100000
+  chr2: parsed 120000
+  chr2: parsed 140000
+  chr2: parsed 160000
+  chr2: parsed 180000
+chr12 5pop af=0.780 pc=0.611 n=500
+done

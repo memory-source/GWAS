@@ -1,0 +1,2 @@
+nsp10000_m10000 {"af_only": 0.5422, "pc_calibrated": 0.5038, "combined": 0.5447, "delta_pc_minus_af": -0.0384, "pc_refbasis": 0.499, "pc_eigonly": 0.4975, "pc_in_sample_gap": 0.0048, "fst_like": 0.0946}
+shard4 done 5932.3 s

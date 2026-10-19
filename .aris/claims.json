@@ -1,0 +1,10 @@
+[
+ {"id":"c1_boundary","value":0.008,"source":"results/raw/s35_frontier.json"},
+ {"id":"c2_paired_small","value":0.094,"source":"results/raw/s29_negation_shard0.json"},
+ {"id":"c3_paired_neg","value":-0.0136,"source":"results/raw/s29_negation_slow.json"},
+ {"id":"c4_eigonly_range","value":0.497,"source":"results/raw/s27_gpu_scale_shard0.json"},
+ {"id":"c5_density","value":0.667,"source":"results/raw/s30_density.json"},
+ {"id":"c6_fivepop","value":0.708,"source":"results/raw/s31_fivepop.json"},
+ {"id":"c7_phased","value":0.486,"source":"results/raw/s36_phased_ibd.json"},
+ {"id":"c8_perm","value":0.00005,"source":"results/raw/s28_permnull_shard0.json"}
+]

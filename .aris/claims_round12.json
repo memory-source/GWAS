@@ -1,0 +1,11 @@
+[
+  {"id": "r12_s44_real_pc_A", "value": 0.2713888888888889, "source": "results/raw/s44_individual_real.json"},
+  {"id": "r12_s44_real_af_A", "value": 0.35, "source": "results/raw/s44_individual_real.json"},
+  {"id": "r12_s44_cohort_pc_A", "value": 0.03716666666666668, "source": "results/raw/s44_individual_real.json"},
+  {"id": "r12_s44_cohort_af_A", "value": 0.1345, "source": "results/raw/s44_individual_real.json"},
+  {"id": "r12_s46_bundle2", "value": 0.9725701234567901, "source": "results/raw/s46_bundle_manifest2.json"},
+  {"id": "r12_s46_single_uncoarse", "value": 0.9642125925925926, "source": "results/raw/s46_bundle_manifest2.json"},
+  {"id": "r12_s46_excess_uncoarse", "value": 0.008357530864197504, "source": "results/raw/s46_bundle_manifest2.json"},
+  {"id": "r12_s39_native_blocked", "value": 1.0, "source": "results/raw/s39_enforcement.json"},
+  {"id": "r12_s37_nsp16000_af", "value": 0.5290768543879191, "source": "results/raw/s37_realsynth_scale.json"}
+]

@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep Review — Selection-Input Spectral Tomography</title>
+
+<meta name="generator" content="ARIS render-html (academic, v1)">
+<meta name="aris:source-path" content="review-stage/DEEP_REVIEW_20261016.md">
+<meta name="aris:source-sha256" content="b90b2393e330ce68d0ea633f90fa8d23691502d1f0a18262a7301816e195bb2e">
+<meta name="aris:generated-at" content="2026-10-16 11:31 UTC">
+
+<!-- MathJax 3 -->
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']], processEscapes: true },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+
+<!-- highlight.js -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/atom-one-light.min.css">
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+<script>document.addEventListener('DOMContentLoaded', () => hljs.highlightAll());</script>
+
+
+<style>
+:root {
+  --bg: #fdfcf7;
+  --bg-soft: #f4f1ea;
+  --bg-code: #f8f5ec;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --ink-muted: #6b6b6b;
+  --primary: #1a4a8c;
+  --primary-soft: #2d6cb8;
+  --accent: #b8390e;
+  --warn: #b45309;
+  --warn-bg: #fef3c7;
+  --info-bg: #dbeafe;
+  --good-bg: #d1fae5;
+  --good: #065f46;
+  --bad-bg: #fee2e2;
+  --bad: #991b1b;
+  --border: #d6d0c0;
+  --border-soft: #e8e3d5;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Source Serif Pro", "Source Serif 4", "Crimson Pro", "Georgia", "Songti SC", "STSong", serif;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--bg);
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+.layout {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 48px;
+  padding: 40px 32px;
+}
+
+nav.toc {
+  position: sticky;
+  top: 24px;
+  align-self: start;
+  font-size: 13px;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  border-right: 1px solid var(--border-soft);
+  padding-right: 16px;
+}
+nav.toc h3 {
+  margin: 0 0 12px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+  font-weight: 600;
+}
+nav.toc ol { list-style: none; padding: 0; margin: 0; counter-reset: toc; }
+nav.toc ol li { margin: 5px 0; counter-increment: toc; }
+nav.toc ol li::before { content: counter(toc) ". "; color: var(--ink-muted); margin-right: 4px; }
+nav.toc a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px dotted transparent;
+}
+nav.toc a:hover { color: var(--primary); border-bottom-color: var(--primary); }
+nav.toc ul { list-style: none; padding-left: 14px; margin: 3px 0; font-size: 12px; }
+nav.toc ul li::before { content: "→ "; color: var(--border); }
+
+main { min-width: 0; }
+
+header.hero {
+  border-bottom: 3px double var(--primary);
+  padding-bottom: 24px;
+  margin-bottom: 32px;
+}
+header.hero .eyebrow {
+  color: var(--accent);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+body.aris-blog header.hero .eyebrow {
+  font-family: inherit;
+  color: var(--ink-muted);
+  text-transform: none;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+}
+header.hero h1 {
+  font-size: 32px;
+  line-height: 1.2;
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+header.hero .subtitle {
+  font-size: 16px;
+  color: var(--ink-soft);
+  margin: 0 0 8px;
+  font-style: italic;
+}
+header.hero .byline {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin: 0 0 20px;
+}
+header.hero .byline strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+header.hero .meta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--ink-muted);
+  border-top: 1px solid var(--border-soft);
+  padding-top: 14px;
+}
+header.hero .meta span strong { color: var(--ink-soft); }
+header.hero .meta code {
+  font-family: "JetBrains Mono", "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 11px;
+  background: var(--bg-soft);
+  padding: 1px 5px;
+  border-radius: 3px;
+  border: 1px solid var(--border-soft);
+}
+
+h2 {
+  font-size: 24px;
+  margin: 44px 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+  color: var(--ink);
+  font-weight: 700;
+}
+h2 .num { color: var(--primary); font-weight: 600; margin-right: 8px; }
+h3 { font-size: 19px; margin: 28px 0 10px; color: var(--primary); font-weight: 600; }
+h4 { font-size: 16px; margin: 20px 0 8px; color: var(--ink); font-weight: 600; }
+
+p { margin: 10px 0; }
+ul, ol { padding-left: 22px; margin: 10px 0; }
+ul li, ol li { margin: 4px 0; }
+ul li::marker { color: var(--primary); }
+
+strong { color: var(--accent); font-weight: 600; }
+em { color: var(--ink-soft); }
+
+a { color: var(--primary); }
+a:hover { color: var(--accent); }
+
+code:not(.hljs) {
+  font-family: "JetBrains Mono", "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 0.86em;
+  background: var(--bg-code);
+  padding: 1px 5px;
+  border-radius: 3px;
+  border: 1px solid var(--border-soft);
+  color: var(--accent);
+}
+
+pre {
+  background: #fafaf6;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  padding: 0;
+  overflow-x: auto;
+  border-radius: 4px;
+  margin: 14px 0;
+}
+pre code, pre code.hljs {
+  background: transparent !important;
+  display: block;
+  padding: 14px 18px !important;
+  font-size: 13px;
+  line-height: 1.55;
+  font-family: "JetBrains Mono", "SF Mono", "Menlo", monospace;
+  color: var(--ink);
+}
+pre.diagram {
+  background: #f9f6ed;
+  border-left: 4px solid var(--accent);
+  font-size: 12.5px;
+  line-height: 1.4;
+}
+
+.callout {
+  margin: 16px 0;
+  padding: 12px 16px;
+  border-radius: 4px;
+  border-left: 4px solid;
+  font-size: 15px;
+}
+.callout-title {
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.callout-info { background: var(--info-bg); border-left-color: var(--primary); }
+.callout-info .callout-title { color: var(--primary); }
+.callout-warn { background: var(--warn-bg); border-left-color: var(--warn); }
+.callout-warn .callout-title { color: var(--warn); }
+.callout-good { background: var(--good-bg); border-left-color: var(--good); }
+.callout-good .callout-title { color: var(--good); }
+.callout-bad { background: var(--bad-bg); border-left-color: var(--bad); }
+.callout-bad .callout-title { color: var(--bad); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 14px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+thead { background: var(--primary); color: white; }
+th, td {
+  text-align: left;
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--border-soft);
+  vertical-align: top;
+}
+th { font-weight: 600; font-size: 13px; letter-spacing: 0.02em; }
+tr:last-child td { border-bottom: none; }
+tbody tr:nth-child(even) { background: var(--bg-soft); }
+
+details.qa, details {
+  background: white;
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+  margin: 10px 0;
+  padding: 0;
+}
+details summary {
+  cursor: pointer;
+  padding: 10px 14px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--primary);
+  list-style: none;
+  user-select: none;
+}
+details summary::-webkit-details-marker { display: none; }
+details summary::before {
+  content: "▸ ";
+  margin-right: 4px;
+  display: inline-block;
+  transition: transform 0.15s;
+}
+details[open] summary::before { transform: rotate(90deg); }
+details[open] summary { border-bottom: 1px solid var(--border-soft); }
+details > :not(summary) { padding: 10px 14px; }
+details p:first-of-type { margin-top: 8px; }
+
+mjx-container[display="true"] { margin: 12px 0 !important; }
+
+footer.aris-footer {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--ink-muted);
+}
+footer.aris-footer a { color: var(--ink-muted); border-bottom: 1px dotted var(--border); }
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; gap: 20px; padding: 20px 16px; }
+  nav.toc {
+    position: static;
+    max-height: none;
+    border-right: none;
+    border-bottom: 1px solid var(--border-soft);
+    padding-right: 0;
+    padding-bottom: 14px;
+  }
+  header.hero h1 { font-size: 24px; }
+  h2 { font-size: 20px; }
+}
+@media print {
+  nav.toc { display: none; }
+  .layout { grid-template-columns: 1fr; padding: 0; }
+  body { background: white; }
+  header.hero { border-bottom-color: var(--ink); }
+  #cite-pop, dialog.lightbox { display: none !important; }
+}
+
+/* --- P0 polish: TOC scrollspy active state ---------------------------- */
+nav.toc a.active {
+  color: var(--accent);
+  font-weight: 600;
+  border-bottom-color: var(--accent);
+}
+
+/* --- P0 polish: Long-code auto-collapse ------------------------------- */
+details.code-card {
+  margin: 14px 0;
+  background: #fafaf6;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  border-radius: 4px;
+}
+details.code-card > summary {
+  cursor: pointer;
+  padding: 8px 14px;
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-family: "JetBrains Mono", "SF Mono", monospace;
+  list-style: none;
+  user-select: none;
+}
+details.code-card > summary::-webkit-details-marker { display: none; }
+details.code-card > summary::before { content: none; }
+details.code-card > pre {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-left: none;
+  border-radius: 0;
+}
+@media print {
+  details.code-card { border: 1px solid #ccc; background: white; }
+  details.code-card > summary { display: none !important; }
+  details.code-card > pre { border: 1px solid #ddd; border-radius: 4px; background: white; }
+}
+
+/* --- P0 polish: Paper popover ([[ref]] popups) ------------------------ */
+[data-ref] {
+  color: var(--primary);
+  border-bottom: 1px dotted var(--primary);
+  cursor: pointer;
+  white-space: nowrap;
+}
+[data-ref]:hover { background: rgba(26, 74, 140, 0.08); }
+#cite-pop {
+  position: fixed;
+  width: 360px;
+  max-width: calc(100vw - 32px);
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  font-size: 13px;
+  line-height: 1.5;
+  z-index: 1000;
+}
+#cite-pop[hidden] { display: none; }
+#cite-pop .cp-title {
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 4px;
+  padding-right: 24px;
+}
+#cite-pop .cp-meta {
+  color: var(--ink-muted);
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+#cite-pop .cp-key {
+  color: var(--accent);
+  font-style: italic;
+  margin-bottom: 8px;
+}
+#cite-pop .cp-link {
+  display: inline-block;
+  color: var(--primary);
+  font-weight: 500;
+}
+#cite-pop .cp-close {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--ink-muted);
+}
+
+/* --- P0 polish: Figure lightbox (native <dialog>) --------------------- */
+dialog.lightbox {
+  border: none;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.92);
+  width: 96vw;
+  height: 96vh;
+  max-width: 96vw;
+  max-height: 96vh;
+}
+dialog.lightbox::backdrop { background: rgba(0, 0, 0, 0.92); }
+dialog.lightbox .lb-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 16px;
+  position: relative;
+}
+dialog.lightbox img {
+  max-width: 90vw;
+  max-height: 84vh;
+  object-fit: contain;
+  cursor: zoom-out;
+}
+dialog.lightbox figcaption {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  text-align: center;
+  max-width: 700px;
+}
+dialog.lightbox .lb-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* --- P0 polish: blog/talk mode active-H2 highlight (opt-in) ----------- */
+body.aris-blog h2 { scroll-margin-top: 24px; }
+body.aris-blog h2.aris-active-h2 {
+  background: linear-gradient(to right, rgba(26, 74, 140, 0.06), transparent);
+  border-radius: 4px;
+  padding-left: 12px;
+  margin-left: -12px;
+}
+</style>
+</head>
+<body class="">
+<div class="layout">
+
+<nav class="toc">
+  <h3>Contents</h3>
+  <ol>
+<li><a href="#phase-1--codex-deep-review-loop-converged-verdict-ready">Phase 1 — codex deep-review loop (converged, verdict ready)</a>
+<ul>
+<li><a href="#round-1--score-410-verdict-not-ready">Round 1 — Score 4/10, Verdict not ready</a></li>
+<li><a href="#round-2--score-510-verdict-not-ready">Round 2 — Score 5/10, Verdict not ready</a></li>
+<li><a href="#round-3--score-510-verdict-not-ready">Round 3 — Score 5/10, Verdict not ready</a></li>
+<li><a href="#rounds-48--score-5--6--65">Rounds 4–8 — Score 5 → 6 → 6.5</a></li>
+<li><a href="#rounds-910--score-710-verdict-ready-converged">Rounds 9–10 — Score 7/10, Verdict ready (converged)</a></li>
+<li><a href="#status-converged--verdict-yes-ready-at-710">Status: CONVERGED — verdict YES (ready) at 7/10</a></li>
+</ul>
+</li>
+<li><a href="#phase-2--pi-review-glm-flash-cross-family-loop">Phase 2 — pi-review (glm-flash, cross-family) loop</a>
+<ul>
+<li><a href="#round-1--score-6510-verdict-almost">Round 1 — Score 6.5/10, Verdict almost</a></li>
+<li><a href="#round-2--score-710-verdict-almost">Round 2 — Score 7/10, Verdict almost</a></li>
+</ul>
+</li>
+<li><a href="#phase-3--codex-round-2-integrity-re-audit">Phase 3 — codex round-2 integrity re-audit</a>
+</li>
+<li><a href="#code-honesty-note">Code-honesty note</a>
+</li>
+<li><a href="#what-was-fixed-cumulative">What was fixed (cumulative)</a>
+</li>
+<li><a href="#terminal-headline-bounded">Terminal headline (bounded)</a>
+</li>
+<li><a href="#method-description">Method Description</a>
+</li>
+</ol>
+</nav>
+
+<main>
+<header class="hero">
+  <div class="eyebrow">Workflow 2 / deep-search round</div>
+  <h1>Deep Review — Selection-Input Spectral Tomography</h1>
+  
+  
+  <div class="meta">
+    <span><strong>Source:</strong> <code>review-stage/DEEP_REVIEW_20261016.md</code></span>
+    <span><strong>SHA256:</strong> <code>b90b2393e330</code></span>
+    <span><strong>Rendered:</strong> 2026-10-16 11:31 UTC</span>
+    
+  </div>
+</header>
+
+<h1 id="deep-review-log--selection-input-spectral-tomography-2026-10-16">Deep-Review Log — Selection-Input Spectral Tomography (2026-10-16)</h1>
+<p>Direction: <code>research-plan/20261016_deep_search/DEEP_DIRECTIONS_ZH.md</code> Backend: codex (gpt-6-astra, read-only, cross-family vs the deepseek-flash executor) Thread: <code>01a14176-aaa4-7bf0-bf4c-9065eda1a1fe</code> New artifacts: <code>refine-logs/EXPERIMENT_PLAN_DEEP_20261016.md</code>, <code>code/s61_spectral_tomography.py</code>, <code>results/raw/s61_spectral_tomography_chr22.json</code>, <code>refine-logs/EXPERIMENT_RESULTS_DEEP_20261016.md</code>, <code>EXPERIMENT_AUDIT_DEEP.md</code>/<code>.json</code>.</p>
+<h2 id="phase-1--codex-deep-review-loop-converged-verdict-ready">Phase 1 — codex deep-review loop (converged, verdict ready)</h2>
+<h3 id="round-1--score-410-verdict-not-ready">Round 1 — Score 4/10, Verdict not ready</h3>
+<p>Critical weaknesses (ranked):</p>
+<ol><li>The AF baseline was not given the same allowed information as the spectral  attack (only the reference estimated the background frequency). → Add pooled  background (reference+partner+shadow) and a conditioned single-release spectral  baseline.</li><li>Scatter recovery is numerically fragile at the fixed <code>1e-9</code> cutoff (min singular  value ~6e-12) and breaks under float32/6dp export. → Add an export-precision  probe and limit the scatter claim to ideal precision.</li><li>The real workflow interface (plaintext loadings/eigenvalues + center/scale) is  asserted, not verified against an actual pipeline.</li><li>The adaptive strategy shows no advantage; the coverage curves are partly  tautological (visible coverage necessarily rises with more outputs).</li><li>Scientific cost is not measured (the GWAS row recomputes the honest PCA, not the  per-release joint PCA).</li><li>Scope: one chromosome prefix, n=120/360 honest rows, no cross-cohort check.</li></ol>
+<h3 id="round-2--score-510-verdict-not-ready">Round 2 — Score 5/10, Verdict not ready</h3>
+<p>Fixed: pooled/conditioned baselines added (information matched), second within-population arm (EAS), export-precision probe, changed-count semantics. New critical weakness: <code>spec_cond</code> fixed its orientation AFTER removing the calibration members, so its calibration half was uninformative and the sign flipped randomly per split; corrected <code>spec_cond</code> is EUR 0.985 / 3pop 0.757 / EAS 0.987, lowering the EUR increment from +0.039 to +0.015. Also flagged: the probe quantized the attacker's own <code>K</code> (should only quantize released V/Λ), and the precision table showed seed0 only.</p>
+<h3 id="round-3--score-510-verdict-not-ready">Round 3 — Score 5/10, Verdict not ready</h3>
+<p>Fixed: <code>spec_cond</code> orientation fixed on the unconditioned release (matching the conditioned-AF path); the precision probe quantizes only released quantities and uses a precision-matched strong passive baseline; the report aggregates all five splits and includes EAS in the GWAS range. Codex confirmed the corrected q8 gaps and that the report matches the JSON.</p>
+<h3 id="rounds-48--score-5--6--65">Rounds 4–8 — Score 5 → 6 → 6.5</h3>
+<p>Added per-release scientific cost (<code>sci_cost</code>), chr1 replication, real-software export (PLINK 2.0), nested honest-sample-size ladder. Each new artifact was independently recomputed and the report/JSON reconciled. Codex closed the implementation and scope items in turn and raised the score to 6.5 ("almost").</p>
+<h3 id="rounds-910--score-710-verdict-ready-converged">Rounds 9–10 — Score 7/10, Verdict ready (converged)</h3>
+<p>Round 9 closed the export-interface item (verdict "almost"). Round 10 closed three closing items: the s63 <code>K</code>-shadowing artifact (408 MB JSON → 7.8 KB, <code>&quot;k&quot;: 10</code>), baseline consistency (s63 now reports conditioned AF), and the report wording. Codex returned <strong>verdict ready</strong>: for a bounded measurement paper under the declared information conditions, it is submittable — no further large experiment is required as a submission gate.</p>
+<h3 id="status-converged--verdict-yes-ready-at-710">Status: CONVERGED — verdict YES (ready) at 7/10</h3>
+<p>Codex confirmed the round-10 closing items and changed the verdict from "almost" to "ready": for a bounded measurement paper under the declared information conditions and the real PLINK export precision, it is submittable. Score progression across the ten rounds: 4 → 5 → 5 → 6 → 6 → 6.5 → 6.5 → 6.5 → 7 → 7. No further large experiment is required as a submission gate.</p>
+<h2 id="phase-2--pi-review-glm-flash-cross-family-loop">Phase 2 — pi-review (glm-flash, cross-family) loop</h2>
+<p>A fresh <code>/auto-review-loop</code> was run with the local pi agent as an independent second cross-family reviewer. Thread <code>54e81425ae86484ba6c4e751d772fe15</code>.</p>
+<h3 id="round-1--score-6510-verdict-almost">Round 1 — Score 6.5/10, Verdict almost</h3>
+<p>Seven weaknesses (W1–W7): W1 effects reported only as ceiling-censored AUC; W2 the capability question at a single design point (q ≤ 8); W3 no-release control absent; W4 adaptive framed as machinery; W5 effect heterogeneity under-narrated; W6 interface generality asserted from one package; W7 nits (unused <code>Zh</code>, bootstrap seed, HWE wording, span-restricted scatter). The reviewer independently ran an identity ablation, a no-release control, and a ceiling analysis, and could not break the core.</p>
+<p>Actions: added TPR@5%FPR columns to every table (s61/s62/s63); added the no-release control (<code>cal_pca_k</code>/<code>cal_pca_qk</code>/<code>random_k</code>, |z| ≤ 5-clipped to remove a preprocessing artifact); added the q-saturation cell (s64, q = 16 on three chr22 cohorts); reframed adaptive as a stronger-threat negative result; declared the interface scope; removed the unused <code>Zh</code> param and documented the bootstrap seed and the span-restricted scatter claim.</p>
+<h3 id="round-2--score-710-verdict-almost">Round 2 — Score 7/10, Verdict almost</h3>
+<p>W1/W2/W3 verified genuine (the reviewer re-ran the pipeline: the current code reproduces the JSON to ≤1.4e-8 with bit-identical swap sequences; s64 matches exactly). New findings: R1 the EAS random-span control 0.579 was a preprocessing artifact (global-MAF panel + monomorphic markers), corrected to 0.463 with the q8 gap surviving; R2 the W4/W6 sentences were claimed but not written (now written); R3 the adaptive-CI list was incomplete (now all three cells); R4 s64 was unintegrated and "engulfed" beyond the censored cohort (now integrated with the 3pop q16 headroom cell); R5 TPR columns missing from some tables; R6 the fragile EAS-q4 claim.</p>
+<p>Actions: clipped the control rows; corrected the EAS control to 0.463; ran s64 on 3pop (q8→q16 +0.049/+0.048, TPR 0.580→0.775); wrote the stronger-threat and interface-scope sentences; added TPR to all tables; corrected the adaptive-CI list and the effect-heterogeneity wording.</p>
+<h2 id="phase-3--codex-round-2-integrity-re-audit">Phase 3 — codex round-2 integrity re-audit</h2>
+<p>Thread <code>01a14455-c02b-7c93-b103-24ed8aace24a</code>, verdict FAIL → WARN → <strong>PASS</strong> within the declared scope. It re-verified all new artifacts (105 s65 fields, 83 s66 fields, 322 table values) and closed: reporting contradictions (chr1 q4 5/5 → 3/5; adaptive max cell; EAS-q4 list; clipping disclosure), a missing s64 tracker row, a reviewer-only ablation (now artifact s65), an S66 coordinate-system bug (fixed), an overstated identity-necessity claim (scoped), an overstated "all at chance" (now the descriptive 0.455–0.509 bound), a mislabeled s65 field, and two rounding slips.</p>
+<h2 id="code-honesty-note">Code-honesty note</h2>
+<p>The executor drove phase 1 and phase 3 with <code>mcp__codex__codex</code> (gpt-6-astra) and phase 2 with <code>mcp__pi-review__pi</code> (glm-flash) — both cross-family backends, read-only against the repo. Every numeric claim was independently recomputed by a reviewer; the pi reviewer re-ran the pipeline (≤1.4e-8, bit-identical swaps), the codex auditor replayed 105 s65 + 83 s66 fields and 322 table values.</p>
+<h2 id="what-was-fixed-cumulative">What was fixed (cumulative)</h2>
+<ul><li>Information-matched AF baselines (<code>af_ref</code>, <code>af_pooled</code>, <code>af_cond</code>).</li><li>Conditioned single-release spectral baseline (<code>spec_cond</code>), orientation fixed on the unconditioned release.</li><li>Export-precision probe over released V/Λ (float32, 6 dp, 4 dp) with a precision-matched strong passive baseline.</li><li><code>gap_vs_strongest_passive</code> with bootstrap CIs at every checkpoint.</li><li>TPR@5%FPR columns (s61/s62/s63) to counter AUC ceiling-censoring.</li><li>No-release control (<code>cal_pca_k</code>/<code>cal_pca_qk</code>/<code>random_k</code>), |z| ≤ 5-clipped, plus the s66 three-preprocessing provenance check.</li><li>q-saturation cell (s64) to q = 16 on three chr22 cohorts.</li><li>Identity ablation made an artifact (s65).</li><li>Second within-population arm (EAS); second chromosome (chr1); nested honest-sample-size ladder (s62); real PLINK 2.0 export read-back (s63).</li><li>Honest-only GWAS-power fit; per-release <code>sci_cost</code>; membership score free of a recovered-rank divisor; permutation null on the evaluated half; adaptive ranking free of default <code>pinv</code>.</li><li>Artifact fixes: chromosome-scoped output filenames; the s63 <code>K</code> shadowing that wrote a 408 MB JSON; the s62 role truncation replaced by an explicit error plus a nested design.</li></ul>
+<h2 id="terminal-headline-bounded">Terminal headline (bounded)</h2>
+<p>Under the declared information conditions, accumulating several final outputs of an AF-preserving collaborative PCA beats the strongest passive baseline (composition- balanced conditioned AF and the conditioned single release) by a small membership increment (+0.014 [+0.007,+0.021], 5/5) that survives a real PLINK 2.0 export at its printed precision; the practical reading is TPR@5%FPR 1.000 (EUR/EAS) and 0.580 (3pop) at q8; the full scatter recovery remains a float64-only witness.</p>
+<h2 id="method-description">Method Description</h2>
+<p>The direction measures ACTIVE leakage from a <em>sequence</em> of final outputs, not a single fixed release. A cooperating analysis partner holds an "own" genotype panel and varies its own input across re-fits of a joint PCA with the honest study. Each re-fit returns a truncated final output — the top-k joint eigenvectors <code>V_t</code> and eigenvalues <code>Λ_t</code> — which the partner (who also knows its own scatter <code>K_t = Z_P(t)^T Z_P(t)</code>) converts into <code>Y_t = V_t Λ_t − K_t V_t</code>. The central identity <code>Y_t = C_H V_t</code> is exact: each output is a linear measurement of the honest sample scatter <code>C_H</code> along the released directions. Stacking q outputs gives <code>C_H Q = Y</code> over <code>Q = [V_1..V_q]</code>, so the range of <code>Y</code> recovers the span-restricted operator <code>C_H P_Q</code> and the projection norm onto that range is a study-inclusion score. Input variation is an AF-preserving block exchange between two of the partner's own rows, which leaves every per-SNP histogram, allele frequency, variance and HWE/missing count unchanged while moving individual structure. Three component studies make the mechanism verifiable, and the adversarial ablation in s65 (raw-eigenvector stacking reproduces nothing) plus the no-release control in s66 (known calibration-member genotypes at chance under three preprocessing choices) isolate the effect to the tomography identity and the release, not to the partner's own data. Data flow: real 1000G chr22/chr1 prefixes → disjoint 5-role split (honest/partner/non-member/reference/shadow) → joint-PCA re-fits → stacked recovered operator → held-out-half-oriented membership AUROC and TPR@5%FPR vs information-matched passive baselines (conditioned AF, conditioned single release) → per-split JSON → results tables.</p>
+<h2 id="sidecar-state">Sidecar — <code>REVIEW_STATE_DEEP.json</code></h2>
+<details><summary>Sidecar JSON: <code>/data/lvvyongji1/GWAS/review-stage/REVIEW_STATE_DEEP.json</code></summary><pre><code class="language-json">{
+  &quot;run_id&quot;: &quot;run_20261016_deep0001&quot;,
+  &quot;round&quot;: 2,
+  &quot;threadId&quot;: &quot;54e81425ae86484ba6c4e751d772fe15&quot;,
+  &quot;reviewer_backend&quot;: &quot;pi-review&quot;,
+  &quot;executor_model&quot;: &quot;deepseek-flash&quot;,
+  &quot;executor_model_source&quot;: &quot;caller-declared&quot;,
+  &quot;executor_family&quot;: &quot;unknown&quot;,
+  &quot;requested_reviewer_model&quot;: &quot;glm-flash&quot;,
+  &quot;reported_reviewer_model&quot;: &quot;glm-flash&quot;,
+  &quot;reviewer_model_source&quot;: &quot;backend-reported&quot;,
+  &quot;reviewer_family&quot;: &quot;zhipu&quot;,
+  &quot;family_relation&quot;: &quot;different&quot;,
+  &quot;identity_assurance&quot;: &quot;caller_declared&quot;,
+  &quot;independence_verified&quot;: &quot;unverified&quot;,
+  &quot;requires_external_acquittal&quot;: false,
+  &quot;status&quot;: &quot;completed&quot;,
+  &quot;difficulty&quot;: &quot;medium&quot;,
+  &quot;last_score&quot;: 7.0,
+  &quot;last_verdict&quot;: &quot;almost&quot;,
+  &quot;gate_decision&quot;: &quot;stop&quot;,
+  &quot;pending_experiments&quot;: [],
+  &quot;threads&quot;: {
+    &quot;codex_deep_review&quot;: &quot;01a14176-aaa4-7bf0-bf4c-9065eda1a1fe&quot;,
+    &quot;pi_review&quot;: &quot;54e81425ae86484ba6c4e751d772fe15&quot;,
+    &quot;codex_round2_audit&quot;: &quot;01a14455-c02b-7c93-b103-24ed8aace24a&quot;
+  },
+  &quot;artifacts&quot;: {
+    &quot;plan&quot;: &quot;refine-logs/EXPERIMENT_PLAN_DEEP_20261016.md&quot;,
+    &quot;results&quot;: &quot;refine-logs/EXPERIMENT_RESULTS_DEEP_20261016.md&quot;,
+    &quot;raw&quot;: [
+      &quot;results/raw/s61_spectral_tomography_chr22.json&quot;,
+      &quot;results/raw/s61_spectral_tomography_chr1.json&quot;,
+      &quot;results/raw/s62_sample_size_chr22.json&quot;,
+      &quot;results/raw/s63_plink_export_chr22.json&quot;,
+      &quot;results/raw/s64_saturation_chr22.json&quot;,
+      &quot;results/raw/s65_identity_ablation_chr22.json&quot;,
+      &quot;results/raw/s66_control_provenance_chr22.json&quot;
+    ],
+    &quot;audit&quot;: [
+      &quot;EXPERIMENT_AUDIT_DEEP.md&quot;,
+      &quot;EXPERIMENT_AUDIT_DEEP.json&quot;
+    ],
+    &quot;claims&quot;: &quot;CLAIMS_FROM_RESULTS_DEEP_20261016.md&quot;,
+    &quot;log&quot;: &quot;review-stage/DEEP_REVIEW_20261016.md&quot;
+  },
+  &quot;timestamp&quot;: &quot;2026-10-16T19:40&quot;
+}</code></pre></details>
+
+<footer class="aris-footer">
+  Generated by <a href="https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/main/skills/render-html/SKILL.md">ARIS <code>/render-html</code></a> ·
+  source path <code>review-stage/DEEP_REVIEW_20261016.md</code> ·
+  SHA256 <code>b90b2393e330</code> ·
+  generated at 2026-10-16 11:31 UTC.
+  This is a generated view — edit the source Markdown, then re-render.
+</footer>
+</main>
+
+</div>
+
+<!-- P0 polish: paper popover host (populated by IIFE below) -->
+<div id="cite-pop" hidden role="dialog" aria-labelledby="cite-pop-title">
+  <button class="cp-close" type="button" aria-label="Close">×</button>
+  <div class="cp-content"></div>
+</div>
+
+<!-- P0 polish: figure lightbox (native <dialog>, graceful fallback) -->
+<dialog class="lightbox" id="figure-lightbox" aria-label="Figure detail">
+  <div class="lb-inner">
+    <button class="lb-close" type="button" aria-label="Close">×</button>
+    <img alt="" />
+    <figcaption></figcaption>
+  </div>
+</dialog>
+
+<!-- P0 polish: paper registry sidecar, embedded by render_html.py (--papers) -->
+<script>window.PAPER_REGISTRY = {};</script>
+
+<!-- P0 polish: interactive enhancements (TOC scrollspy, code-card auto-collapse,
+     paper popovers, figure lightbox, print-restore for <details>, blog-mode H2). -->
+<script>
+(function () {
+  "use strict";
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[c];
+    });
+  }
+
+  // --- Feature 5: Print degradation fix ---------------------------------
+  // Force every <details> open during print, restore the pre-print state after.
+  var _stashOpen = [];
+  var _printing = false;
+  window.addEventListener("beforeprint", function () {
+    if (_printing) return;  // guard against multi-fire (Chrome print preview)
+    _printing = true;
+    _stashOpen = [];
+    document.querySelectorAll("details:not([open])").forEach(function (d) {
+      _stashOpen.push(d);
+      d.open = true;
+    });
+  });
+  window.addEventListener("afterprint", function () {
+    _stashOpen.forEach(function (d) { if (d.isConnected) d.open = false; });
+    _stashOpen = [];
+    _printing = false;
+  });
+
+  // --- Feature 3: TOC scrollspy -----------------------------------------
+  var tocLinks = [].slice.call(document.querySelectorAll("nav.toc a"));
+  var headings = tocLinks.map(function (a) {
+    var id = a.getAttribute("href").replace(/^#/, "");
+    return document.getElementById(id);
+  }).filter(Boolean);
+  if (headings.length && typeof IntersectionObserver !== "undefined") {
+    var linkById = new Map();
+    headings.forEach(function (h, i) { linkById.set(h.id, tocLinks[i]); });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        tocLinks.forEach(function (l) { l.classList.remove("active"); });
+        var lk = linkById.get(en.target.id);
+        if (lk) lk.classList.add("active");
+      });
+    }, { rootMargin: "-15% 0px -75% 0px" });
+    headings.forEach(function (h) { io.observe(h); });
+  }
+
+  // --- Feature 1: Long-code auto-collapse -------------------------------
+  var COLLAPSE_THRESHOLD = 30;
+
+  function wrapCodeCard(pre, openByDefault) {
+    if (!pre || pre.closest("details.code-card")) return;
+    var code = pre.querySelector("code");
+    if (!code) return;
+    var lines = code.textContent.replace(/\n+$/, "").split("\n").length;
+    var det = document.createElement("details");
+    det.className = "code-card";
+    det.open = openByDefault;
+    var sum = document.createElement("summary");
+    function updateSummary() {
+      sum.textContent = (det.open ? "▾ Collapse code · " : "▸ Expand code · ") + lines + " lines";
+    }
+    updateSummary();
+    det.addEventListener("toggle", updateSummary);
+    pre.parentNode.insertBefore(det, pre);
+    det.appendChild(sum);
+    det.appendChild(pre);
+  }
+
+  // Honor explicit per-block flags first.
+  document.querySelectorAll("pre[data-collapse]").forEach(function (pre) {
+    var flag = pre.getAttribute("data-collapse");
+    if (flag === "collapsed") wrapCodeCard(pre, false);
+    // "open" → leave fully expanded, do not wrap.
+  });
+  // Then auto-wrap long unflagged blocks.
+  document.querySelectorAll("pre > code").forEach(function (code) {
+    var pre = code.closest("pre");
+    if (!pre || pre.closest("details") || pre.hasAttribute("data-collapse")) return;
+    var lines = code.textContent.replace(/\n+$/, "").split("\n").length;
+    if (lines >= COLLAPSE_THRESHOLD) wrapCodeCard(pre, false);
+  });
+
+  // --- Feature 10: Figure lightbox --------------------------------------
+  var lightbox = document.getElementById("figure-lightbox");
+  if (lightbox) {
+    var lbImg = lightbox.querySelector("img");
+    var lbCap = lightbox.querySelector("figcaption");
+    var lbClose = lightbox.querySelector(".lb-close");
+    function openLightbox(srcImg) {
+      lbImg.src = srcImg.src;
+      lbImg.alt = srcImg.alt || "";
+      var cap = srcImg.closest("figure") ? srcImg.closest("figure").querySelector("figcaption") : null;
+      lbCap.textContent = cap ? cap.textContent : "";
+      lbCap.hidden = !cap;
+      if (typeof lightbox.showModal === "function") lightbox.showModal();
+      else lightbox.hidden = false;
+    }
+    function closeLightbox() {
+      if (typeof lightbox.close === "function") lightbox.close();
+      else lightbox.hidden = true;
+    }
+    document.querySelectorAll("main figure img, main > p > img").forEach(function (img) {
+      if (img.closest("dialog")) return;
+      img.style.cursor = "zoom-in";
+      img.addEventListener("click", function () { openLightbox(img); });
+    });
+    if (lbClose) lbClose.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", function (e) {
+      // Backdrop click closes; clicks inside .lb-inner do not bubble here.
+      if (e.target === lightbox) closeLightbox();
+    });
+  }
+
+  // --- Feature 2: Paper popover -----------------------------------------
+  var PAPERS = window.PAPER_REGISTRY || {};
+  var pop = document.getElementById("cite-pop");
+  var popContent = pop ? pop.querySelector(".cp-content") : null;
+  var popClose = pop ? pop.querySelector(".cp-close") : null;
+  var popTrigger = null;
+
+  function showPopover(el) {
+    var key = el.dataset.ref;
+    var info = PAPERS[key];
+    if (!info || !pop || !popContent) return;
+    popContent.innerHTML =
+      '<div class="cp-title" id="cite-pop-title">' + escapeHtml(info.title || key) + '</div>' +
+      (info.authors
+        ? '<div class="cp-meta">' + escapeHtml(info.authors) +
+            (info.date ? ' · ' + escapeHtml(info.date) : '') +
+            (info.inst ? ' · ' + escapeHtml(info.inst) : '') + '</div>'
+        : '') +
+      (info.key ? '<div class="cp-key">' + escapeHtml(info.key) + '</div>' : '') +
+      (info.arxiv
+        ? '<a class="cp-link" href="https://arxiv.org/abs/' + encodeURIComponent(info.arxiv) +
+          '" target="_blank" rel="noopener">arXiv ' + escapeHtml(info.arxiv) + ' ↗</a>'
+        : '');
+    var r = el.getBoundingClientRect();
+    pop.hidden = false;  // unhide first so offsetHeight is measurable
+    var margin = 16;
+    var popWidth = Math.min(360, Math.max(0, window.innerWidth - margin * 2));
+    var popHeight = Math.min(pop.offsetHeight || 200, Math.max(0, window.innerHeight - margin * 2));
+    pop.style.left = Math.max(margin, Math.min(r.left, window.innerWidth - popWidth - margin)) + "px";
+    pop.style.top = Math.max(margin, Math.min(r.bottom + 8, window.innerHeight - popHeight - margin)) + "px";
+    popTrigger = el;
+    if (popClose) popClose.focus();
+  }
+  function hidePopover() {
+    if (pop) pop.hidden = true;
+    if (popTrigger) popTrigger.focus();
+    popTrigger = null;
+  }
+  document.querySelectorAll("[data-ref]").forEach(function (el) {
+    el.setAttribute("tabindex", "0");
+    el.setAttribute("role", "button");
+    el.addEventListener("click", function (e) { e.stopPropagation(); showPopover(el); });
+    el.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); showPopover(el); }
+    });
+  });
+  if (popClose) popClose.addEventListener("click", hidePopover);
+  document.addEventListener("click", function (e) {
+    if (pop && !pop.hidden && !pop.contains(e.target) && !e.target.matches("[data-ref]")) hidePopover();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && pop && !pop.hidden) hidePopover();
+  });
+
+  // --- Feature 7: Blog-mode active-H2 highlight (opt-in) ----------------
+  if (document.body.classList.contains("aris-blog")) {
+    var h2s = [].slice.call(document.querySelectorAll("main h2"));
+    if (h2s.length && typeof IntersectionObserver !== "undefined") {
+      var io2 = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            h2s.forEach(function (h) { h.classList.remove("aris-active-h2"); });
+            en.target.classList.add("aris-active-h2");
+          }
+        });
+      }, { rootMargin: "-15% 0px -75% 0px" });
+      h2s.forEach(function (h) { io2.observe(h); });
+    }
+  }
+})();
+</script>
+</body>
+</html>

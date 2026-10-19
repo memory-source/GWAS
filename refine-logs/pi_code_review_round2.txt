@@ -1,0 +1,38 @@
+# Code review — round 2 (verify fixes)
+
+You previously found 1 CRITICAL (no-op ancestry control) and 1 MAJOR (maf()
+dropping f>0.475) in the GWAS experiment code. Both are fixed. Verify and give a
+final verdict.
+
+## Fixes applied
+1. **maf()** (`code/common.py`): now `f = G.mean(0)/2.0; return min(f, 1-f)`.
+   Same correction inlined in `s4_msprime.py` (two places). Verified effect:
+   S0 tested SNPs rose 1874 -> 3817 of 4000; causal-tested 4 -> 9-10 of 10.
+2. **ancestry control**: removed the no-op `ancestry_only_attack` (each panel's
+   own centered scores). Added `anc_only_attack(target_G, study_loadings,
+   study_mean, mask)` that centers targets by the study mean and projects onto
+   the study-fitted PC basis. `s0_sanity.py` and `s1c_frontier.py` now use it on
+   BOTH the study panel and the independent non-member panel.
+   - S1c reports two controls per tier: `ancestry_only_auroc` = reference-fitted
+     basis (out-of-sample for both panels -> ~0.50, a clean structure-only
+     control keeping the disjoint design) and `study_pc_distance_auroc` = the
+     study-fitted distance attack (the S2c leak, naive orientation).
+   - S0 reports the study-fitted control on the three-way disjoint split.
+3. Removed the dead `(n,1,m)` line in `af_lrt_attack`; fixed the s2c docstring
+   sign ("farther").
+
+## Fresh results (all re-run in /data/lvvyongji1/GWAS/env)
+- S1c: F2 0.584 / F4(1dp) 0.604 / F3(2dp) 0.788 / F5 0.795 / F5-per-site 0.935;
+  reference-basis control 0.502 (chance); per-ancestor uniform; 5 seeds.
+- S2c: base 0.839, pcdist-only 0.881, pcalign 0.501, base+M2 0.941 (Δ+0.102),
+  T2 (ref-fit) Δ+0.003, T3 (study-mean center) Δ+0.102, eig ratio 1.000, perm 0.486.
+- S2b: base 0.844, +PC 0.942 (Δ+0.098).
+- S5 boundary, S6 sweep, S4 msprime all re-run.
+
+## Check
+1. Confirm the two fixes are correct and the two old defects are gone (read the
+   code + fresh JSONs).
+2. Is the structure-only control now meaningful, and is the paper's claim that it
+   sits at chance (0.502) at every tier correct for S1c?
+3. Any remaining CRITICAL/MAJOR issue that would invalidate the numbers?
+Verdict: PASS / REVISE with exact fixes. Do not manufacture findings.

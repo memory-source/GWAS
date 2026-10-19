@@ -1,0 +1,13 @@
+### within:EUR  af_cond 0.882  spec_cond 0.985
+  passive  q1 auc0.908 tpr050.675 gap-0.0763 vis0.593 recon0.805 | q2 auc0.908 tpr050.675 gap-0.0763 vis0.593 recon0.805 | q4 auc0.908 tpr050.675 gap-0.0763 vis0.593 recon0.805 | q8 auc0.908 tpr050.675 gap-0.0763 vis0.593 recon0.805 | q16 auc0.908 tpr050.675 gap-0.0763 vis0.593 recon0.805
+  random   q1 auc0.908 tpr050.675 gap-0.0763 vis0.593 recon0.805 | q2 auc0.961 tpr050.837 gap-0.0238 vis0.661 recon0.749 | q4 auc0.996 tpr050.981 gap+0.0110 vis0.761 recon0.648 | q8 auc1.000 tpr051.000 gap+0.0151 vis0.853 recon0.521 | q16 auc1.000 tpr051.000 gap+0.0153 vis0.927 recon0.376
+  adaptive q1 auc0.908 tpr050.675 gap-0.0763 vis0.593 recon0.805 | q2 auc0.975 tpr050.876 gap-0.0100 vis0.680 recon0.733 | q4 auc0.998 tpr050.983 gap+0.0131 vis0.770 recon0.638 | q8 auc1.000 tpr051.000 gap+0.0152 vis0.860 recon0.510 | q16 auc1.000 tpr051.000 gap+0.0153 vis0.932 recon0.362
+### super:3pop  af_cond 0.784  spec_cond 0.757
+  passive  q1 auc0.655 tpr050.139 gap-0.1286 vis0.920 recon0.393 | q2 auc0.655 tpr050.139 gap-0.1286 vis0.920 recon0.393 | q4 auc0.655 tpr050.139 gap-0.1286 vis0.920 recon0.393 | q8 auc0.655 tpr050.139 gap-0.1286 vis0.920 recon0.393 | q16 auc0.655 tpr050.139 gap-0.1286 vis0.920 recon0.393
+  random   q1 auc0.655 tpr050.139 gap-0.1286 vis0.920 recon0.393 | q2 auc0.739 tpr050.213 gap-0.0448 vis0.930 recon0.367 | q4 auc0.830 tpr050.384 gap+0.0466 vis0.943 recon0.333 | q8 auc0.907 tpr050.580 gap+0.1233 vis0.956 recon0.294 | q16 auc0.956 tpr050.775 gap+0.1725 vis0.969 recon0.247
+  adaptive q1 auc0.655 tpr050.139 gap-0.1286 vis0.920 recon0.393 | q2 auc0.741 tpr050.219 gap-0.0430 vis0.930 recon0.367 | q4 auc0.833 tpr050.395 gap+0.0489 vis0.944 recon0.331 | q8 auc0.912 tpr050.609 gap+0.1277 vis0.957 recon0.290 | q16 auc0.959 tpr050.801 gap+0.1755 vis0.970 recon0.242
+### within:EAS  af_cond 0.915  spec_cond 0.987
+  passive  q1 auc0.915 tpr050.616 gap-0.0720 vis0.602 recon0.798 | q2 auc0.915 tpr050.616 gap-0.0720 vis0.602 recon0.798 | q4 auc0.915 tpr050.616 gap-0.0720 vis0.602 recon0.798 | q8 auc0.915 tpr050.616 gap-0.0720 vis0.602 recon0.798 | q16 auc0.915 tpr050.616 gap-0.0720 vis0.602 recon0.798
+  random   q1 auc0.915 tpr050.616 gap-0.0720 vis0.602 recon0.798 | q2 auc0.964 tpr050.810 gap-0.0230 vis0.667 recon0.743 | q4 auc0.991 tpr050.956 gap+0.0037 vis0.768 recon0.640 | q8 auc0.999 tpr051.000 gap+0.0126 vis0.854 recon0.520 | q16 auc1.000 tpr051.000 gap+0.0130 vis0.923 recon0.384
+  adaptive q1 auc0.915 tpr050.616 gap-0.0720 vis0.602 recon0.798 | q2 auc0.974 tpr050.829 gap-0.0128 vis0.687 recon0.727 | q4 auc0.994 tpr050.948 gap+0.0068 vis0.782 recon0.623 | q8 auc0.999 tpr051.000 gap+0.0124 vis0.866 recon0.501 | q16 auc1.000 tpr051.000 gap+0.0131 vis0.934 recon0.356
+done 201.6 s

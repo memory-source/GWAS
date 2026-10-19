@@ -1,0 +1,1 @@
+C2b/C3b/C4b yes; C1b/C1c partial as posed but paper wording already correct; confidence high.

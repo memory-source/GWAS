@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-16",
+  "auditor": "codex-gpt-6-astra-read-only",
+  "thread": "01a14126-7f48-7912-9d7f-88dc574296b9",
+  "reaudit_thread": "01a14455-c02b-7c93-b103-24ed8aace24a",
+  "overall_verdict": "pass",
+  "integrity_status": "pass",
+  "scope_note": "PASS is within the declared experimental scope (real 1000G chr22/chr1 prefixes, 5 splits, k=10); it does not establish broader generalization or preprocessing equivalence.",
+  "checks": {
+    "gt_provenance": {"status": "pass", "details": "real 1000G study-inclusion labels on a disjoint 5-role split; simulated phenotype only for the GWAS-power row"},
+    "score_normalization": {"status": "pass", "details": "membership score is a plain norm; no recovered-rank divisor; other denominators reference-based"},
+    "result_existence": {"status": "pass", "details": "chr22/chr1/s62/s63/s64/s65/s66 JSONs exist; every summary number re-verified against them (322 table values checked in the final pass)"},
+    "dead_code": {"status": "warn", "details": "all metric functions called and present in the JSON; common.stratified_permutation_auroc is unused (s61 implements its own permutation test) — harmless"},
+    "scope": {"status": "warn", "details": "2 chromosomes x 5 seeds; one k=10; q=16 only in the chr22 saturation cell; chr replication reuses subjects; no comprehensive/robust wording"},
+    "eval_type": "real_gt"
+  },
+  "claims": [
+    {"id": "D1", "impact": "supported"},
+    {"id": "D2", "impact": "supported"},
+    {"id": "D3", "impact": "supported"},
+    {"id": "D4", "impact": "supported"},
+    {"id": "D5", "impact": "supported"},
+    {"id": "D6", "impact": "unsupported"},
+    {"id": "D7", "impact": "unsupported"},
+    {"id": "D8", "impact": "supported"},
+    {"id": "D9", "impact": "supported"}
+  ]
+}
+

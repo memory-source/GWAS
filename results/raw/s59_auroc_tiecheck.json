@@ -1,0 +1,32 @@
+{
+  "constant_tie": {
+    "scores": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "labels": [
+      1,
+      1,
+      0,
+      0
+    ],
+    "cpu_midrank": 0.5,
+    "gpu_argsort_rule": 0.0,
+    "tie_handled_by_cpu": true,
+    "gpu_rule_wrong": true
+  },
+  "half_tied_vector": {
+    "cpu_midrank": 0.505,
+    "gpu_argsort_rule": 0.252,
+    "abs_gap": 0.253
+  },
+  "archived_cell_tie_mass": {
+    "n_scores": 3000,
+    "n_unique": 3000,
+    "tie_mass": 0.0,
+    "cpu_auroc": 0.9999733333333334
+  },
+  "note": "GPU auroc_gpu assigns arbitrary distinct ranks to ties; CPU common.auroc uses midrank. Disclosed as a bounded correctness defect; the archived s27-s36 cells are dense (continuous AF-LRT / projection scores) with negligible tie mass, so headline precision is unaffected."
+}

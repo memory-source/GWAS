@@ -1,0 +1,101 @@
+{
+  "date": "2026-10-16",
+  "seeded_and_synthetic": true,
+  "spectral": {
+    "scope": "Artificial independent-locus dosage arrays, no real people, no LD model, no membership classifier.",
+    "dimensions": {
+      "snps": 24,
+      "honest_rows": 80,
+      "own_rows": 20,
+      "top_k": 3
+    },
+    "input_change": "Each release starts from own_initial; after the baseline, exactly one 4-SNP block is exchanged between two own rows.",
+    "marginal_histograms_preserved": true,
+    "changed_rows_per_nonbaseline_release": 2,
+    "changed_fraction_of_own_rows": 0.1,
+    "max_eigen_equation_residual": 8.526512829121202e-14,
+    "checkpoints": [
+      {
+        "releases": 1,
+        "measurement_span_rank": 3,
+        "smallest_reported_singular_value": 0.9999999999999993,
+        "relative_scatter_error": 0.8172966091863522
+      },
+      {
+        "releases": 2,
+        "measurement_span_rank": 6,
+        "smallest_reported_singular_value": 0.0031319553108604364,
+        "relative_scatter_error": 0.7219148537565154
+      },
+      {
+        "releases": 4,
+        "measurement_span_rank": 12,
+        "smallest_reported_singular_value": 0.000561409272012771,
+        "relative_scatter_error": 0.5376215630744012
+      },
+      {
+        "releases": 8,
+        "measurement_span_rank": 24,
+        "smallest_reported_singular_value": 3.25022922504238e-05,
+        "relative_scatter_error": 1.1898637919431128e-11
+      },
+      {
+        "releases": 12,
+        "measurement_span_rank": 24,
+        "smallest_reported_singular_value": 0.0005682264060357742,
+        "relative_scatter_error": 4.074055880936032e-13
+      }
+    ],
+    "rounded_export_checks": [
+      {
+        "decimal_places": 4,
+        "releases": 12,
+        "relative_scatter_error": 0.03553028411595549
+      },
+      {
+        "decimal_places": 6,
+        "releases": 12,
+        "relative_scatter_error": 0.0005758801604836747
+      },
+      {
+        "decimal_places": 8,
+        "releases": 12,
+        "relative_scatter_error": 5.521386533276726e-06
+      }
+    ],
+    "not_established": [
+      "real genomic feasibility",
+      "an adaptive selection algorithm",
+      "small-query membership improvement",
+      "real export normalization or missingness",
+      "population or individual reconstruction"
+    ]
+  },
+  "pair_sums": {
+    "scope": "A known-incidence linear inverse subproblem, not blind carrier discovery or a real GWAS release.",
+    "results": [
+      {
+        "graph": "even_cycle",
+        "rows_per_measurement": 2,
+        "incidence_rank": 5,
+        "individuals": 6,
+        "traits": 4,
+        "max_recovery_error": 0.2532378108561468
+      },
+      {
+        "graph": "even_cycle_with_odd_chord",
+        "rows_per_measurement": 2,
+        "incidence_rank": 6,
+        "individuals": 6,
+        "traits": 4,
+        "max_recovery_error": 1.9984014443252818e-15
+      }
+    ],
+    "not_established": [
+      "recovering an unknown carrier graph",
+      "recovering raw clinical phenotypes",
+      "sufficient overlap in real local genealogies",
+      "handling GLMM weighting, missingness, or MAC filters"
+    ]
+  }
+}

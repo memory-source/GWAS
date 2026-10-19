@@ -1,0 +1,23 @@
+{
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "lambda_uncorrected_mean": 3.919110316829384,
+  "lambda_uncorrected_median": 4.145450001711154,
+  "lambda_uncorrected_range": [
+    1.1717899781035908,
+    5.848410003385021
+  ],
+  "lambda_corrected_mean": 1.030174839720467,
+  "lambda_corrected_median": 1.0235789596445461,
+  "attack_auroc_mean": 0.843857561728395,
+  "study_pc_distance_auroc_mean": 0.11953009259259259,
+  "noise_auroc_mean": 0.49584953703703705
+}

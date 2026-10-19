@@ -1,0 +1,4 @@
+chr22:GBR    AF 0.903 full 0.999 gap +0.096 top1/top3 0.679/0.907 eig 0.497 refb 0.478 oos 0.506 same 1.000
+chr22:CHB    AF 0.891 full 0.996 gap +0.105 top1/top3 0.687/0.913 eig 0.415 refb 0.511 oos 0.601 same 1.000
+chr1:GBR     AF 0.967 full 0.999 gap +0.032 top1/top3 0.750/0.930 eig 0.446 refb 0.416 oos 0.477 same 1.000
+chr1:CHB     AF 0.903 full 0.999 gap +0.095 top1/top3 0.747/0.909 eig 0.479 refb 0.520 oos 0.442 same 1.000

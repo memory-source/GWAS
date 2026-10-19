@@ -1,0 +1,4 @@
+single:GBR   ngrp 1 n_tot 20  fst 0.0000  AF 0.920  PC 1.000  gap +0.080 (sd 0.048)  refb 0.409  eigo 0.580
+single:CHB   ngrp 1 n_tot 20  fst 0.0000  AF 0.924  PC 1.000  gap +0.076 (sd 0.050)  refb 0.477  eigo 0.570
+3pop         ngrp 3 n_tot 60  fst 0.0997  AF 0.769  PC 0.963  gap +0.193 (sd 0.020)  refb 0.516  eigo 0.509
+5pop         ngrp 5 n_tot 100  fst 0.0885  AF 0.731  PC 0.868  gap +0.137 (sd 0.076)  refb 0.445  eigo 0.456

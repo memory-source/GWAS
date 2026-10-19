@@ -1,0 +1,52 @@
+{
+  "review_date": "2026-10-15",
+  "sources": [
+    {
+      "title": "Secure and federated genome-wide association studies for biobank-scale datasets",
+      "year": 2025,
+      "url": "https://davidfroelicher.com/publication/sfgwas/sfgwas.pdf",
+      "location": "Methods, PDF page 8",
+      "use": "PCs remain encrypted; association statistics decrypted as final output."
+    },
+    {
+      "title": "SF-GWAS official output format",
+      "url": "https://github.com/hhcho/sfgwas#output-format",
+      "use": "Publicly documented outputs assoc.txt and gkeep.txt; no claim about every optional/debug configuration."
+    },
+    {
+      "title": "Scalable and Privacy-Preserving Federated Principal Component Analysis",
+      "year": 2023,
+      "url": "https://arxiv.org/html/2304.00129v1",
+      "location": "Step 8 Projection",
+      "use": "Conditional collective decryption or recipient-specific re-encryption."
+    },
+    {
+      "title": "Membership Inference Attack Against Principal Component Analysis",
+      "year": 2022,
+      "url": "https://link.springer.com/chapter/10.1007/978-3-031-13945-1_19",
+      "use": "Direct PCA membership-inference prior art and small training-set effect."
+    },
+    {
+      "title": "Privacy preserving identification of population stratification for collaborative genomic research",
+      "year": 2023,
+      "url": "https://academic.oup.com/bioinformatics/article/39/Supplement_1/i168/7210481",
+      "use": "Genomic collaborative PCA membership privacy and AF baseline; different release objects and public-reference fitted basis."
+    },
+    {
+      "title": "The Limits of Individual Identification from Sample Allele Frequencies: Theory and Statistical Analysis",
+      "year": 2009,
+      "url": "https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1000628",
+      "use": "Reference/test/proband assumptions, finite reference, LD, population differences; does not establish identical self-reference-bias result."
+    },
+    {
+      "title": "Python sys.addaudithook documentation",
+      "url": "https://docs.python.org/3/library/sys.html#sys.addaudithook",
+      "use": "Audit hooks are not a security sandbox."
+    },
+    {
+      "title": "PEP 578 Why Not A Sandbox",
+      "url": "https://peps.python.org/pep-0578/#why-not-a-sandbox",
+      "use": "Audit visibility and sandboxing are distinct."
+    }
+  ]
+}

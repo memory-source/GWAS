@@ -1,0 +1,39 @@
+{
+  "batch_controls": {
+    "per_seed": [
+      {
+        "seed": 0,
+        "full_coverage_af": 0.835658024691358,
+        "uniform70_coverage_af": 0.7866395061728395,
+        "batch_mixed": 0.7565271604938272
+      },
+      {
+        "seed": 2,
+        "full_coverage_af": 0.8585271604938272,
+        "uniform70_coverage_af": 0.8054296296296296,
+        "batch_mixed": 0.7630962962962963
+      },
+      {
+        "seed": 4,
+        "full_coverage_af": 0.8433074074074074,
+        "uniform70_coverage_af": 0.8090382716049382,
+        "batch_mixed": 0.7580777777777777
+      }
+    ],
+    "agg": {
+      "full_coverage_af": 0.8458308641975307,
+      "uniform70_coverage_af": 0.8003691358024692,
+      "batch_mixed": 0.7592337448559671
+    }
+  },
+  "structure": {
+    "real": {
+      "fst_like": 0.09943178358034252,
+      "top10_var_frac": 0.2582526124352604
+    },
+    "sim_matched": {
+      "fst_like": 0.05030017507266939,
+      "top10_var_frac": 0.14219180883921442
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "chrom": 22,
+  "seeds": 5,
+  "k": 10,
+  "interface_manifest": {
+    "joint_topk_loadings": {
+      "obtainable": true,
+      "demonstrated_by": "PLINK 2.0 --pca <k> allele-wts -> .eigenvec.allele (ALT rows)",
+      "note": "the joint PCA is on (honest, partner); the partner receives the returned allele weights"
+    },
+    "eigenvalues": {
+      "obtainable": true,
+      "demonstrated_by": "PLINK 2.0 --pca <k> allele-wts -> .eigenval",
+      "note": "equals scatter-eigenvalues / marker count"
+    },
+    "public_center_scale": {
+      "obtainable": true,
+      "demonstrated_by": "released pooled AF (honest+partner mean)",
+      "note": "deterministic function of the released AF; grants nothing beyond it"
+    },
+    "rerun_right": {
+      "obtainable": true,
+      "demonstrated_by": "joint VCF rewritten with the partner's modified input per release",
+      "note": "the same honest rows stay in the joint VCF; only the partner's own rows change"
+    },
+    "printed_precision": {
+      "obtainable": true,
+      "demonstrated_by": "the .eigenvec.allele decimals (6 significant digits)",
+      "note": "measured as the identity residual below"
+    },
+    "honest_private_matrix": {
+      "obtainable": false,
+      "demonstrated_by": "n/a",
+      "note": "the attack never reads C_H or the honest genotypes beyond the released output and the public center/scale"
+    }
+  },
+  "per_seed": [
+    {
+      "seed": 0,
+      "marker_order_ok_approx": true,
+      "rel_identity_residual_exact": 6.242441427536798e-06,
+      "rel_identity_residual_approx": 6.242441427536798e-06,
+      "auc_q8_exact": 1.0,
+      "tpr05_q8_exact": 1.0,
+      "auc_q8_approx": 1.0,
+      "tpr05_q8_approx": 1.0,
+      "same_input_span_move_sin": 5.5755039852469285e-08,
+      "same_input_stack_tpr05": 0.7741935483870968,
+      "same_input_single_tpr05": 0.7741935483870968
+    },
+    {
+      "seed": 1,
+      "marker_order_ok_approx": true,
+      "rel_identity_residual_exact": 4.824865183696755e-06,
+      "rel_identity_residual_approx": 4.824865183696755e-06,
+      "auc_q8_exact": 1.0,
+      "tpr05_q8_exact": 1.0,
+      "auc_q8_approx": 1.0,
+      "tpr05_q8_approx": 1.0,
+      "same_input_span_move_sin": 8.161702118890973e-08,
+      "same_input_stack_tpr05": 0.5833333333333334,
+      "same_input_single_tpr05": 0.5833333333333334
+    },
+    {
+      "seed": 2,
+      "marker_order_ok_approx": true,
+      "rel_identity_residual_exact": 5.285898245698434e-06,
+      "rel_identity_residual_approx": 5.285898245698434e-06,
+      "auc_q8_exact": 0.9995964487489911,
+      "tpr05_q8_exact": 1.0,
+      "auc_q8_approx": 0.9995964487489911,
+      "tpr05_q8_approx": 1.0,
+      "same_input_span_move_sin": 5.960464477539063e-08,
+      "same_input_stack_tpr05": 0.8983050847457628,
+      "same_input_single_tpr05": 0.8983050847457628
+    },
+    {
+      "seed": 3,
+      "marker_order_ok_approx": true,
+      "rel_identity_residual_exact": 5.25254507113801e-06,
+      "rel_identity_residual_approx": 5.25254507113801e-06,
+      "auc_q8_exact": 1.0,
+      "tpr05_q8_exact": 1.0,
+      "auc_q8_approx": 1.0,
+      "tpr05_q8_approx": 1.0,
+      "same_input_span_move_sin": 5.7711949142924205e-08,
+      "same_input_stack_tpr05": 0.5625,
+      "same_input_single_tpr05": 0.5625
+    },
+    {
+      "seed": 4,
+      "marker_order_ok_approx": true,
+      "rel_identity_residual_exact": 5.094961881641933e-06,
+      "rel_identity_residual_approx": 5.094961881641933e-06,
+      "auc_q8_exact": 0.9935897435897436,
+      "tpr05_q8_exact": 0.9615384615384616,
+      "auc_q8_approx": 0.9935897435897436,
+      "tpr05_q8_approx": 0.9615384615384616,
+      "same_input_span_move_sin": 4.470348358154297e-08,
+      "same_input_stack_tpr05": 0.5576923076923077,
+      "same_input_single_tpr05": 0.5576923076923077
+    }
+  ],
+  "resid_exact_max": 6.242441427536798e-06,
+  "resid_approx_max": 6.242441427536798e-06,
+  "auc_q8_exact_mean": 0.998637238467747,
+  "auc_q8_approx_mean": 0.998637238467747,
+  "span_move_mean": 5.987842770824736e-08,
+  "same_input_stack_gain_mean": 0.0,
+  "elapsed_s": 191.9
+}

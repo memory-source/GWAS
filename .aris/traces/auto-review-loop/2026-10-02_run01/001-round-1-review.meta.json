@@ -1,0 +1,18 @@
+{
+  "call_number": 1,
+  "purpose": "round-1-review",
+  "timestamp": "2026-10-02T03:57:00+08:00",
+  "thread_id": "474d6be6d200468eb5c73c41a51b4906",
+  "model": "glm-flash",
+  "model_family": "unknown",
+  "executor_model": "deepseek-flash",
+  "executor_model_source": "caller-declared",
+  "executor_family": "unknown",
+  "reviewer_model_source": "backend-reported",
+  "family_relation": "unknown",
+  "independence_verified": "unverified",
+  "reviewer_profile": null,
+  "status": "ok",
+  "content_file": "001-round-1-review.response.md",
+  "verdict": {"C1": "partial", "C2": "partial", "C3": "not_supported"}
+}

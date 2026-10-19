@@ -1,0 +1,43 @@
+{
+  "run_id": "run_20261016_deep0001",
+  "round": 2,
+  "threadId": "54e81425ae86484ba6c4e751d772fe15",
+  "reviewer_backend": "pi-review",
+  "executor_model": "deepseek-flash",
+  "executor_model_source": "caller-declared",
+  "executor_family": "unknown",
+  "requested_reviewer_model": "glm-flash",
+  "reported_reviewer_model": "glm-flash",
+  "reviewer_model_source": "backend-reported",
+  "reviewer_family": "zhipu",
+  "family_relation": "different",
+  "identity_assurance": "caller_declared",
+  "independence_verified": "unverified",
+  "requires_external_acquittal": false,
+  "status": "completed",
+  "difficulty": "medium",
+  "last_score": 7.0,
+  "last_verdict": "almost",
+  "gate_decision": "stop",
+  "pending_experiments": [],
+  "threads": {
+    "codex_deep_review": "01a14176-aaa4-7bf0-bf4c-9065eda1a1fe",
+    "pi_review": "54e81425ae86484ba6c4e751d772fe15",
+    "codex_round2_audit": "01a14455-c02b-7c93-b103-24ed8aace24a"
+  },
+  "artifacts": {
+    "plan": "refine-logs/EXPERIMENT_PLAN_DEEP_20261016.md",
+    "results": "refine-logs/EXPERIMENT_RESULTS_DEEP_20261016.md",
+    "raw": ["results/raw/s61_spectral_tomography_chr22.json",
+            "results/raw/s61_spectral_tomography_chr1.json",
+            "results/raw/s62_sample_size_chr22.json",
+            "results/raw/s63_plink_export_chr22.json",
+            "results/raw/s64_saturation_chr22.json",
+            "results/raw/s65_identity_ablation_chr22.json",
+            "results/raw/s66_control_provenance_chr22.json"],
+    "audit": ["EXPERIMENT_AUDIT_DEEP.md", "EXPERIMENT_AUDIT_DEEP.json"],
+    "claims": "CLAIMS_FROM_RESULTS_DEEP_20261016.md",
+    "log": "review-stage/DEEP_REVIEW_20261016.md"
+  },
+  "timestamp": "2026-10-16T19:40"
+}

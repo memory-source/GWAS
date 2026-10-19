@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-16",
+  "workflow": "Cross-domain targeted literature search plus hypothesis construction",
+  "sources_routing": {
+    "academic_mcp": "not exposed in current tool inventory",
+    "openalex_fallback": "attempted academic_search.py; HTTP 429",
+    "primary_web": "Used author preprints, publisher full texts, PMC and author repositories; secondary discovery hits were not treated as technical evidence."
+  },
+  "query_families": [
+    "GWAS privacy reconstruction summary statistics PCA phenotypes 2025 2026",
+    "PCA membership inference phase transition / spiked covariance",
+    "genomic PCA rare ancestry relatives leakage",
+    "covariate adjustment phenotype reconstruction GWAS",
+    "active or malicious PCA inputs, spectral probing, privacy poisoning",
+    "Hartebrodt federated SVD covariance reconstruction",
+    "Truth Serum active privacy inference",
+    "GWAS blind reconstruction / dictionary learning / ICA",
+    "rare variant phenotype privacy / score statistics / covariance",
+    "genotype reconstruction linkage disequilibrium pairwise statistics",
+    "binary Gram-matrix reconstruction privacy",
+    "UK BioCoin sufficient statistics",
+    "MetaSTAARlite score and sparse LD release",
+    "PCA collider bias, PC-AiR, AP/OADP, LOCO-PCA"
+  ],
+  "scope_note": "Targeted scoping and hypothesis search, not an exhaustive systematic review; absence of a retrieved direct match is not a firstness certificate.",
+  "agents": [
+    {
+      "name": "/root/deep_active_spectral",
+      "status": "final received",
+      "focus": "constrained active inputs and final-only spectral measurements"
+    },
+    {
+      "name": "/root/deep_scientific_release",
+      "status": "final and cross-review received; supports active route for security/ML framing",
+      "focus": "transferable structure, cohort fingerprints, scientific utility and subgroup privacy"
+    },
+    {
+      "name": "/root/deep_joint_reconstruction",
+      "status": "stage findings received; final generation failed with a tool content-risk flag",
+      "focus": "blind rare-carrier mixtures and cross-release reconstruction",
+      "integration": "Only stage hypotheses are retained; root checked the central release formats and mathematical assumptions independently."
+    }
+  ],
+  "new_empirical_scope": "Only seeded synthetic linear-algebra witnesses; no real genomic attack, no benchmark of the new methods, no individual data recovered."
+}

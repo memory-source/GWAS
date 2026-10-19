@@ -1,0 +1,28 @@
+### within:EUR
+   cal_pca_k_public         0.467
+   cal_pca_k_owncs          0.489
+   cal_pca_k_rawcentered    0.484
+   cal_pca_qk_public        0.459
+   cal_pca_qk_owncs         0.503
+   cal_pca_qk_rawcentered   0.487
+   random_k_public          0.488
+   random_k_rawcentered     0.477
+### super:3pop
+   cal_pca_k_public         0.501
+   cal_pca_k_owncs          0.509
+   cal_pca_k_rawcentered    0.499
+   cal_pca_qk_public        0.494
+   cal_pca_qk_owncs         0.506
+   cal_pca_qk_rawcentered   0.494
+   random_k_public          0.485
+   random_k_rawcentered     0.481
+### within:EAS
+   cal_pca_k_public         0.497
+   cal_pca_k_owncs          0.504
+   cal_pca_k_rawcentered    0.500
+   cal_pca_qk_public        0.455
+   cal_pca_qk_owncs         0.556
+   cal_pca_qk_rawcentered   0.471
+   random_k_public          0.463
+   random_k_rawcentered     0.475
+done 1.9 s

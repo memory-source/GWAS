@@ -1,0 +1,13 @@
+### within:EUR  oracle bar={'fused_cal': 4, 'fused_z': 1} 0.9932077647343333  fused_z 0.989  fused_cal 0.993  pooled 0.791  af_cond 0.882  spec_cond 0.985
+  passive  q1 auc0.908 gapJoint-0.0848 [-0.1060,-0.0617] pos0 | q2 auc0.908 gapJoint-0.0848 [-0.1060,-0.0617] pos0 | q4 auc0.908 gapJoint-0.0848 [-0.1060,-0.0617] pos0 | q8 auc0.908 gapJoint-0.0848 [-0.1060,-0.0617] pos0
+  random   q1 auc0.908 gapJoint-0.0848 [-0.1060,-0.0617] pos0 | q2 auc0.961 gapJoint-0.0324 [-0.0779,-0.0041] pos0 | q4 auc0.996 gapJoint+0.0025 [-0.0077,+0.0102] pos4 | q8 auc1.000 gapJoint+0.0066 [+0.0027,+0.0111] pos5
+  adaptive q1 auc0.908 gapJoint-0.0848 [-0.1060,-0.0617] pos0 | q2 auc0.975 gapJoint-0.0185 [-0.0345,-0.0029] pos1 | q4 auc0.998 gapJoint+0.0046 [-0.0010,+0.0106] pos4 | q8 auc1.000 gapJoint+0.0067 [+0.0028,+0.0111] pos5
+### super:3pop  oracle bar={'fused_cal': 3, 'fused_z': 2} 0.8416213494275111  fused_z 0.840  fused_cal 0.837  pooled 0.695  af_cond 0.784  spec_cond 0.757
+  passive  q1 auc0.655 gapJoint-0.1863 [-0.2045,-0.1676] pos0 | q2 auc0.655 gapJoint-0.1863 [-0.2045,-0.1676] pos0 | q4 auc0.655 gapJoint-0.1863 [-0.2045,-0.1676] pos0 | q8 auc0.655 gapJoint-0.1863 [-0.2045,-0.1676] pos0
+  random   q1 auc0.655 gapJoint-0.1863 [-0.2045,-0.1676] pos0 | q2 auc0.739 gapJoint-0.1025 [-0.1215,-0.0823] pos0 | q4 auc0.830 gapJoint-0.0112 [-0.0230,+0.0028] pos1 | q8 auc0.907 gapJoint+0.0656 [+0.0541,+0.0822] pos5
+  adaptive q1 auc0.655 gapJoint-0.1863 [-0.2045,-0.1676] pos0 | q2 auc0.741 gapJoint-0.1008 [-0.1204,-0.0772] pos0 | q4 auc0.833 gapJoint-0.0089 [-0.0267,+0.0163] pos1 | q8 auc0.912 gapJoint+0.0699 [+0.0576,+0.0877] pos5
+### within:EAS  oracle bar={'fused_cal': 3, 'fused_z': 2} 0.9957322442084322  fused_z 0.994  fused_cal 0.996  pooled 0.812  af_cond 0.915  spec_cond 0.987
+  passive  q1 auc0.915 gapJoint-0.0809 [-0.0933,-0.0685] pos0 | q2 auc0.915 gapJoint-0.0809 [-0.0933,-0.0685] pos0 | q4 auc0.915 gapJoint-0.0809 [-0.0933,-0.0685] pos0 | q8 auc0.915 gapJoint-0.0809 [-0.0933,-0.0685] pos0
+  random   q1 auc0.915 gapJoint-0.0809 [-0.0933,-0.0685] pos0 | q2 auc0.964 gapJoint-0.0318 [-0.0542,-0.0181] pos0 | q4 auc0.991 gapJoint-0.0051 [-0.0080,-0.0031] pos0 | q8 auc0.999 gapJoint+0.0037 [+0.0011,+0.0061] pos4
+  adaptive q1 auc0.915 gapJoint-0.0809 [-0.0933,-0.0685] pos0 | q2 auc0.974 gapJoint-0.0217 [-0.0266,-0.0167] pos0 | q4 auc0.994 gapJoint-0.0020 [-0.0051,+0.0011] pos2 | q8 auc0.999 gapJoint+0.0035 [+0.0008,+0.0059] pos4
+done 93.3 s

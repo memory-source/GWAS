@@ -1,0 +1,12 @@
+chr1 pop:GBR          fst 0.0000 AF 0.946 PC 1.000 gap +0.054 refb 0.552 eigo 0.578
+chr1 pop:CHB          fst 0.0000 AF 0.911 PC 0.994 gap +0.083 refb 0.571 eigo 0.563
+chr1 pop:YRI          fst 0.0000 AF 0.949 PC 1.000 gap +0.051 refb 0.595 eigo 0.618
+chr1 super:EUR-2pop   fst 0.0119 AF 0.819 PC 0.971 gap +0.152 refb 0.524 eigo 0.549
+chr1 super:5pop       fst 0.0871 AF 0.606 PC 0.568 gap -0.038 refb 0.508 eigo 0.505
+chr1 super:3pop       fst 0.1025 AF 0.655 PC 0.649 gap -0.005 refb 0.515 eigo 0.524
+chr2 pop:GBR          fst 0.0000 AF 0.919 PC 0.996 gap +0.077 refb 0.557 eigo 0.563
+chr2 pop:CHB          fst 0.0000 AF 0.914 PC 0.999 gap +0.086 refb 0.558 eigo 0.593
+chr2 pop:YRI          fst 0.0000 AF 0.947 PC 1.000 gap +0.053 refb 0.584 eigo 0.564
+chr2 super:EUR-2pop   fst 0.0110 AF 0.818 PC 0.976 gap +0.158 refb 0.510 eigo 0.540
+chr2 super:5pop       fst 0.0772 AF 0.618 PC 0.579 gap -0.039 refb 0.509 eigo 0.519
+chr2 super:3pop       fst 0.0855 AF 0.653 PC 0.676 gap +0.023 refb 0.510 eigo 0.514

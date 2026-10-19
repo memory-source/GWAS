@@ -1,0 +1,13 @@
+{
+  "skill": "auto-review-loop",
+  "run_id": "run_20261004_bcd63f1a",
+  "status": "completed",
+  "rounds": 3,
+  "score_progression": [7.0, 7.5, 8.0],
+  "verdict_progression": ["almost", "almost", "ready"],
+  "threadId": "38bf6a05ff9a4b9884aecbb8419b1932",
+  "backend": "pi-review",
+  "model": "glm-flash",
+  "review_independence": "cross-family",
+  "timestamp": "2026-10-04T22:47:00"
+}

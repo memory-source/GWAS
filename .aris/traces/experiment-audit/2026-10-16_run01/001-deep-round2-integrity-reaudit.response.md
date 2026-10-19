@@ -1,0 +1,1 @@
+Verdict FAIL -> WARN -> PASS within the declared scope; reporting and control-provenance defects closed; 105 s65 fields, 83 s66 fields, 322 table values independently reproduced.

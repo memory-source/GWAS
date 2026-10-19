@@ -1,0 +1,7 @@
+nsp500_m100000_f0.04 {"af_only": 1.0, "pc_calibrated": 0.998, "combined": 1.0, "delta_pc_minus_af": -0.002, "pc_refbasis": 0.4854, "pc_eigonly": 0.5016, "pc_in_sample_gap": 0.5125, "fst_like": 0.0274}
+nsp2000_m100000_f0.04 {"af_only": 0.9777, "pc_calibrated": 0.8664, "combined": 0.9777, "delta_pc_minus_af": -0.1113, "pc_refbasis": 0.4979, "pc_eigonly": 0.5107, "pc_in_sample_gap": 0.3685, "fst_like": 0.0269}
+nsp8000_m50000_f0.04 {"af_only": 0.758, "pc_calibrated": 0.6177, "combined": 0.758, "delta_pc_minus_af": -0.1402, "pc_refbasis": 0.5041, "pc_eigonly": 0.4997, "pc_in_sample_gap": 0.1136, "fst_like": 0.0268}
+nsp500_m100000_f0.08 {"af_only": 1.0, "pc_calibrated": 0.9881, "combined": 1.0, "delta_pc_minus_af": -0.0119, "pc_refbasis": 0.4893, "pc_eigonly": 0.501, "pc_in_sample_gap": 0.4988, "fst_like": 0.0519}
+nsp2000_m100000_f0.08 {"af_only": 0.9781, "pc_calibrated": 0.7978, "combined": 0.9781, "delta_pc_minus_af": -0.1803, "pc_refbasis": 0.4985, "pc_eigonly": 0.5115, "pc_in_sample_gap": 0.2993, "fst_like": 0.0515}
+nsp8000_m50000_f0.08 {"af_only": 0.7515, "pc_calibrated": 0.5852, "combined": 0.7515, "delta_pc_minus_af": -0.1663, "pc_refbasis": 0.5034, "pc_eigonly": 0.4996, "pc_in_sample_gap": 0.0819, "fst_like": 0.0513}
+shard0 done 1169.5 s

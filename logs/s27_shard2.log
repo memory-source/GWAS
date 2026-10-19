@@ -1,0 +1,4 @@
+nsp2000_m100000_f0.04 {"af_only": 0.9783, "pc_calibrated": 0.8629, "combined": 0.9783, "delta_pc_minus_af": -0.1154, "pc_refbasis": 0.5032, "pc_in_sample_gap": 0.3597, "fst_like": 0.0263}
+nsp500_m100000_f0.08 {"af_only": 1.0, "pc_calibrated": 0.9845, "combined": 1.0, "delta_pc_minus_af": -0.0155, "pc_refbasis": 0.4977, "pc_in_sample_gap": 0.4867, "fst_like": 0.0523}
+OOM 8000 50000 0.08
+shard2 done 774.0 s

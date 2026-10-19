@@ -1,0 +1,23 @@
+{
+  "chr22": {
+    "n_members": 240,
+    "n_non": 240,
+    "self_match_auc": 1.0,
+    "frac_members_present": 1.0,
+    "frac_non_present": 0.0
+  },
+  "chr1": {
+    "n_members": 240,
+    "n_non": 240,
+    "self_match_auc": 1.0,
+    "frac_members_present": 1.0,
+    "frac_non_present": 0.0
+  },
+  "chr2": {
+    "n_members": 240,
+    "n_non": 240,
+    "self_match_auc": 1.0,
+    "frac_members_present": 1.0,
+    "frac_non_present": 0.0
+  }
+}

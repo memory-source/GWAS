@@ -1,0 +1,23 @@
+n400_m2000_f0.08 delta=0.0912 [0.0881,0.0944] P(>0)=1.000 (n=200)
+n400_m8000_f0.08 delta=0.0092 [0.0083,0.0102] P(>0)=0.935 (n=200)
+n1600_m8000_f0.08 delta=-0.0144 [-0.0166,-0.0121] P(>0)=0.190 (n=200)
+n400_m2000_f0.24 delta=0.0272 [0.0219,0.0323] P(>0)=0.745 (n=200)
+  chr1: parsed 20000
+  chr1: parsed 40000
+  chr1: parsed 60000
+  chr1: parsed 80000
+  chr1: parsed 100000
+  chr1: parsed 120000
+  chr1: parsed 140000
+  chr1: parsed 160000
+  chr1: parsed 180000
+  chr2: parsed 20000
+  chr2: parsed 40000
+  chr2: parsed 60000
+  chr2: parsed 80000
+  chr2: parsed 100000
+  chr2: parsed 120000
+  chr2: parsed 140000
+  chr2: parsed 160000
+  chr2: parsed 180000
+shard1 done 9233.9 s

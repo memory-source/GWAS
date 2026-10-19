@@ -1,0 +1,1 @@
+7/10. READY for submission: Yes. No remaining critical scientific or implementation weakness. Three nonblocking copyedits (monotone residue x3, one f-DP bound, claims-doc phrasing). Bundle +0.011240/+0.006146 5/5; real within-population PC dominance; native-route denial genuine.

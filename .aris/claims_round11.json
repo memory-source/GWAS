@@ -1,0 +1,22 @@
+[
+  {"id": "r11_C1_pc_Astar", "value": 0.6102222222, "source": "results/raw/s38_privacy_metric.json"},
+  {"id": "r11_C1_pc_eps", "value": 4.9972072966, "source": "results/raw/s38_privacy_metric.json"},
+  {"id": "r11_C1_af1dp_Astar", "value": 0.1871111111, "source": "results/raw/s38_privacy_metric.json"},
+  {"id": "r11_C1_refbasis_Astar", "value": 0.0326666667, "source": "results/raw/s38_privacy_metric.json"},
+  {"id": "r11_C2_af_nsp12000", "value": 0.5371654431, "source": "results/raw/s37_realsynth_scale.json"},
+  {"id": "r11_C2_insample_gap_nsp8000", "value": 0.0002106627, "source": "results/raw/s37_realsynth_scale.json"},
+  {"id": "r11_C3_library_leak", "value": 1.0, "source": "results/raw/s39_enforcement.json"},
+  {"id": "r11_C3_egress_blocked", "value": 1.0, "source": "results/raw/s39_enforcement.json"},
+  {"id": "r11_C3_chain_verified", "value": 1.0, "source": "results/raw/s39_enforcement.json"},
+  {"id": "r11_C3_governed_af", "value": 0.6239148148, "source": "results/raw/s39_enforcement.json"},
+  {"id": "r11_C4_bundle", "value": 0.9619246914, "source": "results/raw/s40_bundle.json"},
+  {"id": "r11_C4_max_single", "value": 0.9470676543, "source": "results/raw/s40_bundle.json"},
+  {"id": "r11_C4_excess", "value": 0.0148570370, "source": "results/raw/s40_bundle.json"},
+  {"id": "r11_C4_noise_control", "value": 0.8388775309, "source": "results/raw/s40_bundle.json"},
+  {"id": "r11_C5_ibd_chr1_real", "value": 0.4561747685, "source": "results/raw/s41_phased_ibd_genome.json"},
+  {"id": "r11_C5_ibd_chr1_planted", "value": 0.7149247685, "source": "results/raw/s41_phased_ibd_genome.json"},
+  {"id": "r11_C5_ibd_chr2_real", "value": 0.4793518519, "source": "results/raw/s41_phased_ibd_genome.json"},
+  {"id": "r11_C5_ibd_chr22_real", "value": 0.4243692130, "source": "results/raw/s41_phased_ibd_genome.json"},
+  {"id": "r11_C5_rho0_null", "value": 0.5016373347, "source": "results/raw/s42_missingness_realistic.json"},
+  {"id": "r11_C5_rho1", "value": 1.0, "source": "results/raw/s42_missingness_realistic.json"}
+]

@@ -1,0 +1,217 @@
+{
+  "per_seed": [
+    {
+      "seed": 0,
+      "library_arm": {
+        "loadings_exfiltrated": true
+      },
+      "isolated": {
+        "seed": 0,
+        "child_failed": false,
+        "natural_egress_blocked": true,
+        "natural_egress_reason": "open('/data/lvvyongji1/GWAS/results/scratch/_s39_iso_leak_0.bin','w')",
+        "native_egress_blocked": null,
+        "native_egress_reason": "",
+        "udp_egress_blocked": true,
+        "udp_egress_reason": "socket.__new__",
+        "sanctioned_undeclared_blocked": true,
+        "declared_ok": true,
+        "chain_verified": true,
+        "n_ledger_records": 4,
+        "governed_af_auc": 0.6257617283950617,
+        "governed_pc_auc": 0.5065950617283951
+      },
+      "native": {
+        "seed": 0,
+        "child_failed": false,
+        "natural_egress_blocked": true,
+        "natural_egress_reason": "open('/data/lvvyongji1/GWAS/results/scratch/_s39_iso_leak_0.bin','w')",
+        "native_egress_blocked": true,
+        "native_egress_reason": "ctypes.dlopen",
+        "udp_egress_blocked": true,
+        "udp_egress_reason": "socket.__new__",
+        "sanctioned_undeclared_blocked": true,
+        "declared_ok": true,
+        "chain_verified": true,
+        "n_ledger_records": 4,
+        "governed_af_auc": 0.6257617283950617,
+        "governed_pc_auc": 0.5065950617283951
+      },
+      "transport": {
+        "seed": 0,
+        "child_failed": false,
+        "natural_egress_blocked": null,
+        "natural_egress_reason": "",
+        "native_egress_blocked": null,
+        "native_egress_reason": "",
+        "udp_egress_blocked": true,
+        "udp_egress_reason": "socket.__new__",
+        "sanctioned_undeclared_blocked": true,
+        "declared_ok": true,
+        "chain_verified": true,
+        "n_ledger_records": 4,
+        "governed_af_auc": 0.6257617283950617,
+        "governed_pc_auc": 0.5065950617283951
+      },
+      "pergroup": {
+        "full": {
+          "delivered": true,
+          "chained": true,
+          "n_groups": 3
+        },
+        "2dp": {
+          "delivered": true,
+          "chained": true,
+          "n_groups": 3
+        }
+      }
+    },
+    {
+      "seed": 1,
+      "library_arm": {
+        "loadings_exfiltrated": true
+      },
+      "isolated": {
+        "seed": 1,
+        "child_failed": false,
+        "natural_egress_blocked": true,
+        "natural_egress_reason": "open('/data/lvvyongji1/GWAS/results/scratch/_s39_iso_leak_1.bin','w')",
+        "native_egress_blocked": null,
+        "native_egress_reason": "",
+        "udp_egress_blocked": true,
+        "udp_egress_reason": "socket.__new__",
+        "sanctioned_undeclared_blocked": true,
+        "declared_ok": true,
+        "chain_verified": true,
+        "n_ledger_records": 4,
+        "governed_af_auc": 0.6178098765432098,
+        "governed_pc_auc": 0.5087493827160494
+      },
+      "native": {
+        "seed": 1,
+        "child_failed": false,
+        "natural_egress_blocked": true,
+        "natural_egress_reason": "open('/data/lvvyongji1/GWAS/results/scratch/_s39_iso_leak_1.bin','w')",
+        "native_egress_blocked": true,
+        "native_egress_reason": "ctypes.dlopen",
+        "udp_egress_blocked": true,
+        "udp_egress_reason": "socket.__new__",
+        "sanctioned_undeclared_blocked": true,
+        "declared_ok": true,
+        "chain_verified": true,
+        "n_ledger_records": 4,
+        "governed_af_auc": 0.6178098765432098,
+        "governed_pc_auc": 0.5087493827160494
+      },
+      "transport": {
+        "seed": 1,
+        "child_failed": false,
+        "natural_egress_blocked": null,
+        "natural_egress_reason": "",
+        "native_egress_blocked": null,
+        "native_egress_reason": "",
+        "udp_egress_blocked": true,
+        "udp_egress_reason": "socket.__new__",
+        "sanctioned_undeclared_blocked": true,
+        "declared_ok": true,
+        "chain_verified": true,
+        "n_ledger_records": 4,
+        "governed_af_auc": 0.6178098765432098,
+        "governed_pc_auc": 0.5087493827160494
+      },
+      "pergroup": {
+        "full": {
+          "delivered": true,
+          "chained": true,
+          "n_groups": 3
+        },
+        "2dp": {
+          "delivered": true,
+          "chained": true,
+          "n_groups": 3
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "library_arm": {
+        "loadings_exfiltrated": true
+      },
+      "isolated": {
+        "seed": 2,
+        "child_failed": false,
+        "natural_egress_blocked": true,
+        "natural_egress_reason": "open('/data/lvvyongji1/GWAS/results/scratch/_s39_iso_leak_2.bin','w')",
+        "native_egress_blocked": null,
+        "native_egress_reason": "",
+        "udp_egress_blocked": true,
+        "udp_egress_reason": "socket.__new__",
+        "sanctioned_undeclared_blocked": true,
+        "declared_ok": true,
+        "chain_verified": true,
+        "n_ledger_records": 4,
+        "governed_af_auc": 0.6281728395061729,
+        "governed_pc_auc": 0.5129617283950617
+      },
+      "native": {
+        "seed": 2,
+        "child_failed": false,
+        "natural_egress_blocked": true,
+        "natural_egress_reason": "open('/data/lvvyongji1/GWAS/results/scratch/_s39_iso_leak_2.bin','w')",
+        "native_egress_blocked": true,
+        "native_egress_reason": "ctypes.dlopen",
+        "udp_egress_blocked": true,
+        "udp_egress_reason": "socket.__new__",
+        "sanctioned_undeclared_blocked": true,
+        "declared_ok": true,
+        "chain_verified": true,
+        "n_ledger_records": 4,
+        "governed_af_auc": 0.6281728395061729,
+        "governed_pc_auc": 0.5129617283950617
+      },
+      "transport": {
+        "seed": 2,
+        "child_failed": false,
+        "natural_egress_blocked": null,
+        "natural_egress_reason": "",
+        "native_egress_blocked": null,
+        "native_egress_reason": "",
+        "udp_egress_blocked": true,
+        "udp_egress_reason": "socket.__new__",
+        "sanctioned_undeclared_blocked": true,
+        "declared_ok": true,
+        "chain_verified": true,
+        "n_ledger_records": 4,
+        "governed_af_auc": 0.6281728395061729,
+        "governed_pc_auc": 0.5129617283950617
+      },
+      "pergroup": {
+        "full": {
+          "delivered": true,
+          "chained": true,
+          "n_groups": 3
+        },
+        "2dp": {
+          "delivered": true,
+          "chained": true,
+          "n_groups": 3
+        }
+      }
+    }
+  ],
+  "agg": {
+    "library_leak_frac": 1.0,
+    "natural_egress_blocked_frac": 1.0,
+    "native_egress_blocked_frac": 1.0,
+    "sanctioned_blocked_frac": 1.0,
+    "declared_flow_frac": 1.0,
+    "chain_verified_frac": 1.0,
+    "governed_af_auc": 0.6239148148148148,
+    "governed_pc_auc": 0.5094353909465021,
+    "pergroup_full_delivered_frac": 1.0,
+    "pergroup_2dp_delivered_frac": 1.0,
+    "pergroup_chained_frac": 1.0,
+    "udp_egress_blocked_frac": 1.0
+  },
+  "n_seeds": 3
+}

@@ -1,0 +1,16 @@
+### within:EUR
+   float64  dY 0.00e+00 geom 65.0 rel 65.0 vis_rel 0.941  auc geo 1.000 rel 1.000
+   float32  dY 6.68e-08 geom 78.0 rel 52.6 vis_rel 0.913  auc geo 1.000 rel 1.000
+   round6   dY 3.22e-05 geom 78.0 rel 30.0 vis_rel 0.830  auc geo 0.996 rel 0.993
+   round4   dY 3.22e-03 geom 78.0 rel 11.2 vis_rel 0.677  auc geo 0.963 rel 0.920
+### super:3pop
+   float64  dY 0.00e+00 geom 60.8 rel 60.8 vis_rel 0.968  auc geo 0.907 rel 0.907
+   float32  dY 8.00e-08 geom 80.0 rel 43.0 vis_rel 0.960  auc geo 0.893 rel 0.864
+   round6   dY 3.26e-05 geom 80.0 rel 15.6 vis_rel 0.938  auc geo 0.806 rel 0.711
+   round4   dY 3.27e-03 geom 80.0 rel 10.0 vis_rel 0.929  auc geo 0.678 rel 0.655
+### within:EAS
+   float64  dY 0.00e+00 geom 63.4 rel 63.4 vis_rel 0.941  auc geo 0.999 rel 0.999
+   float32  dY 6.34e-08 geom 78.0 rel 51.2 vis_rel 0.915  auc geo 0.997 rel 0.998
+   round6   dY 2.83e-05 geom 78.0 rel 29.4 vis_rel 0.834  auc geo 0.990 rel 0.990
+   round4   dY 2.83e-03 geom 78.0 rel 11.2 vis_rel 0.686  auc geo 0.953 rel 0.923
+done 18.9 s

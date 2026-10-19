@@ -1,0 +1,2 @@
+nsp500_m100000_f0.04 {"af_only": 1.0, "pc_calibrated": 0.998, "combined": 1.0, "delta_pc_minus_af": -0.002, "pc_refbasis": 0.4854, "pc_in_sample_gap": 0.5125, "fst_like": 0.0274}
+nsp2000_m100000_f0.04 {"af_only": 0.9777, "pc_calibrated": 0.8664, "combined": 0.9777, "delta_pc_minus_af": -0.1113, "pc_refbasis": 0.4979, "pc_in_sample_gap": 0.3685, "fst_like": 0.0269}

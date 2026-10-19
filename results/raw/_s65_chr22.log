@@ -1,0 +1,10 @@
+### within:EUR  spec_cond 0.985
+  identity  q1 gap-0.0763 | q2 gap-0.0238 | q4 gap+0.0110 | q8 gap+0.0151
+  raw_V     q1 gap-0.1726 | q2 gap-0.1213 | q4 gap-0.0502 | q8 gap-0.0040
+### super:3pop  spec_cond 0.784
+  identity  q1 gap-0.1286 | q2 gap-0.0448 | q4 gap+0.0466 | q8 gap+0.1233
+  raw_V     q1 gap-0.1916 | q2 gap-0.1480 | q4 gap-0.0815 | q8 gap-0.0116
+### within:EAS  spec_cond 0.987
+  identity  q1 gap-0.0720 | q2 gap-0.0230 | q4 gap+0.0037 | q8 gap+0.0126
+  raw_V     q1 gap-0.1902 | q2 gap-0.1426 | q4 gap-0.0860 | q8 gap-0.0498
+done 11.3 s

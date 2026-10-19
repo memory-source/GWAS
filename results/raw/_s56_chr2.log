@@ -1,0 +1,13 @@
+EUR:n167     n_pool 503 n_study 167 n_ref 150  AF 0.740  PC 0.910  gap +0.170 (sd 0.014)  refb 0.478  eigo 0.487
+EUR:n250     n_pool 503 n_study 250 n_ref 150  AF 0.670  PC 0.825  gap +0.155 (sd 0.042)  refb 0.491  eigo 0.512
+EUR:n300     n_pool 503 n_study 300 n_ref 150  AF 0.603  PC 0.808  gap +0.206 (sd 0.073)  refb 0.512  eigo 0.499
+EUR:n350     n_pool 503 n_study 350 n_ref 147  AF 0.695  PC 0.774  gap +0.079 (sd 0.344)  refb 0.518  eigo 0.398
+EAS:n167     n_pool 504 n_study 167 n_ref 150  AF 0.748  PC 0.864  gap +0.116 (sd 0.038)  refb 0.513  eigo 0.503
+EAS:n250     n_pool 504 n_study 250 n_ref 150  AF 0.699  PC 0.800  gap +0.101 (sd 0.054)  refb 0.503  eigo 0.514
+EAS:n300     n_pool 504 n_study 300 n_ref 150  AF 0.544  PC 0.788  gap +0.243 (sd 0.150)  refb 0.540  eigo 0.544
+EAS:n350     n_pool 504 n_study 350 n_ref 148  AF 0.772  PC 0.837  gap +0.065 (sd 0.140)  refb 0.496  eigo 0.519
+AFR:n167     n_pool 661 n_study 167 n_ref 150  AF 0.751  PC 0.931  gap +0.179 (sd 0.037)  refb 0.503  eigo 0.479
+AFR:n250     n_pool 661 n_study 250 n_ref 150  AF 0.688  PC 0.876  gap +0.188 (sd 0.030)  refb 0.512  eigo 0.484
+AFR:n300     n_pool 661 n_study 300 n_ref 150  AF 0.675  PC 0.848  gap +0.173 (sd 0.052)  refb 0.481  eigo 0.485
+AFR:n350     n_pool 661 n_study 350 n_ref 150  AF 0.638  PC 0.819  gap +0.181 (sd 0.037)  refb 0.470  eigo 0.488
+done 19.4 s

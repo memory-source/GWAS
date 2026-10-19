@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-17",
+  "auditor": "codex-gpt-6-astra-read-only",
+  "round": "round 22 — fair comparison and interface confirmation (s67/s68/s69/s70/s71)",
+  "cognitive_threads": {
+    "codex_round22_audit": "01a14948-947a-7f22-9862-5dd2d9935d3c"
+  },
+  "overall_verdict": "pass",
+  "integrity_status": "pass",
+  "scope_note": "PASS for the NARROWED claim: the float64 oracle-baseline superiority is established; printed-output solver agreement, precision sensitivity, known-fraction robustness and scientific cost are established separately; the bounded-precision conjunction (accumulated attack vs the fused baseline in PRINTED output) is explicitly NOT established (J9). No biobank-scale claim.",
+  "checks": {
+    "gt_provenance": {"status": "pass", "details": "real 1000G study-inclusion labels on a disjoint 5-role split; the effect reference in s71 is now the sampled per-marker effect (Pearson agreement), not a distribution SD"},
+    "score_normalization": {"status": "fail_fixed", "details": "s69 no longer divides a reported metric by the operand's own maximum as a rank (the reliability floor is derived from the measured export perturbation of the recovered operand Y_t = V Lambda - K V); the earlier sv/sv[0] relative-rank form is only an internal thresholding step"},
+    "result_existence": {"status": "pass", "details": "five JSON pairs exist (s67/s69/s70/s71 x chr22/chr1, s68 chr22); every s71/s70/s67 summary reproduced by the auditor to ~1e-14; the s69 stale-schema file was replaced"},
+    "dead_code": {"status": "warn", "details": "common.stratified_permutation_auroc remains unused; s70's over-budget fused_cal diagnostic was removed from the execution path"},
+    "scope": {"status": "warn", "details": "2 chromosomes x 5 seeds; one k=10; chr replication reuses subjects; the interface manifest demonstrates LOCAL capability under an assumed access model"},
+    "eval_type": "real_gt (membership) / synthetic_proxy (scientific phenotype) / self_supervised_proxy (scatter geometry)"
+  },
+  "claims": [
+    {"id": "J1", "impact": "supported"},
+    {"id": "J2", "impact": "supported"},
+    {"id": "J3", "impact": "supported_as_capability"},
+    {"id": "J4", "impact": "supported_lower_bound"},
+    {"id": "J5", "impact": "supported_heuristic"},
+    {"id": "J6", "impact": "supported"},
+    {"id": "J7", "impact": "partial"},
+    {"id": "J8", "impact": "not_run"},
+    {"id": "J9", "impact": "not_established"}
+  ],
+  "verdict_history": ["FAIL (packet 1)", "FAIL (packet 2)", "FAIL (packet 3)", "FAIL (packet 4)", "WARN (packet 5)", "PASS (packet 6)"]
+}

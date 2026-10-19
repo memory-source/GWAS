@@ -1,0 +1,6 @@
+seed 0  resid exact 6.24e-06 approx 6.24e-06  auc exact 1.000 approx 1.000  span_move 0.000  tpr stack 0.774 vs single 0.774
+seed 1  resid exact 4.82e-06 approx 4.82e-06  auc exact 1.000 approx 1.000  span_move 0.000  tpr stack 0.583 vs single 0.583
+seed 2  resid exact 5.29e-06 approx 5.29e-06  auc exact 1.000 approx 1.000  span_move 0.000  tpr stack 0.898 vs single 0.898
+seed 3  resid exact 5.25e-06 approx 5.25e-06  auc exact 1.000 approx 1.000  span_move 0.000  tpr stack 0.562 vs single 0.562
+seed 4  resid exact 5.09e-06 approx 5.09e-06  auc exact 0.994 approx 0.994  span_move 0.000  tpr stack 0.558 vs single 0.558
+done 191.9 s

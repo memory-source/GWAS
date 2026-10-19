@@ -1,0 +1,129 @@
+{
+  "grid": {
+    "nsp500_m1000000_f0.04": {
+      "af_only": 1.0,
+      "af_only_std": 0.0,
+      "pc_calibrated": 1.0,
+      "pc_calibrated_std": 0.0,
+      "combined": 1.0,
+      "combined_std": 0.0,
+      "delta_pc_minus_af": 0.0,
+      "delta_pc_minus_af_std": 0.0,
+      "af_member_mean": 649.2545776367188,
+      "af_member_mean_std": 0.7859539247039075,
+      "af_non_mean": -0.06562429169813792,
+      "af_non_mean_std": 0.8761758239478418,
+      "ev_top1_frac": 0.00985762111111111,
+      "ev_top1_frac_std": 8.708621634072312e-06,
+      "ev_top10_frac": 0.021723631555555557,
+      "ev_top10_frac_std": 1.9656008873611765e-05,
+      "fst_like": 0.027390823936129807,
+      "fst_like_std": 3.373976041638974e-05,
+      "n_site": 1500.0,
+      "pc_refbasis": 0.4998437960942586,
+      "pc_refbasis_std": 0.01522879208824297,
+      "pc_in_sample_gap": 0.5001562039057413,
+      "pc_in_sample_gap_std": 0.015228792088242968,
+      "pc_eigonly": 0.5019117593765259,
+      "pc_eigonly_std": 0.005531169796892966,
+      "n_seeds_used": 3
+    },
+    "nsp500_m1000000_f0.08": {
+      "af_only": 1.0,
+      "af_only_std": 0.0,
+      "pc_calibrated": 1.0,
+      "pc_calibrated_std": 0.0,
+      "combined": 1.0,
+      "combined_std": 0.0,
+      "delta_pc_minus_af": 0.0,
+      "delta_pc_minus_af_std": 0.0,
+      "af_member_mean": 633.4188232421875,
+      "af_member_mean_std": 0.6788157119198487,
+      "af_non_mean": 0.45949833529690903,
+      "af_non_mean_std": 0.5682877670028962,
+      "ev_top1_frac": 0.01893251777777778,
+      "ev_top1_frac_std": 1.75404601091172e-05,
+      "ev_top10_frac": 0.0397906,
+      "ev_top10_frac_std": 3.887810438909074e-05,
+      "fst_like": 0.05186734920264167,
+      "fst_like_std": 5.812017413432809e-05,
+      "n_site": 1500.0,
+      "pc_refbasis": 0.4995712737242381,
+      "pc_refbasis_std": 0.011167783915488706,
+      "pc_in_sample_gap": 0.500428726275762,
+      "pc_in_sample_gap_std": 0.011167783915488706,
+      "pc_eigonly": 0.4965124825636546,
+      "pc_eigonly_std": 0.01094082694259201,
+      "n_seeds_used": 3
+    }
+  },
+  "cfg": {
+    "cells": [
+      [
+        500,
+        100000,
+        0.04
+      ],
+      [
+        500,
+        1000000,
+        0.04
+      ],
+      [
+        2000,
+        100000,
+        0.04
+      ],
+      [
+        2000,
+        300000,
+        0.04
+      ],
+      [
+        8000,
+        50000,
+        0.04
+      ],
+      [
+        8000,
+        100000,
+        0.04
+      ],
+      [
+        500,
+        100000,
+        0.08
+      ],
+      [
+        500,
+        1000000,
+        0.08
+      ],
+      [
+        2000,
+        100000,
+        0.08
+      ],
+      [
+        2000,
+        300000,
+        0.08
+      ],
+      [
+        8000,
+        50000,
+        0.08
+      ],
+      [
+        8000,
+        100000,
+        0.08
+      ]
+    ],
+    "n_seeds": 3,
+    "budget": 2000000000.0
+  },
+  "shard": 1,
+  "nshards": 3,
+  "elapsed_s": 299.4
+}

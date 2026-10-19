@@ -1,0 +1,62 @@
+{
+  "scope": "Synthetic exact-arithmetic identity up to floating-point error; no real payload, attack AUC, privacy guarantee, or new-theorem claim.",
+  "seed": 20261015,
+  "normalization": "S=X.T@X/n; X=(G-released_mean)/released_scale",
+  "input_genotype_sha256": "7e4ad1524610073018400b164203498951b7c2dc76fefe2fdf11a088c85cdb88",
+  "mean_equals_twice_AF_max_error": 0.0,
+  "rotation_projection_norm_max_error": 8.881784197001252e-16,
+  "cells": [
+    {
+      "n": 48,
+      "p": 24,
+      "k": 5,
+      "known_members": 0,
+      "unknown_members": 48,
+      "max_abs_mean_error": 2.220446049250313e-16,
+      "max_abs_scatter_error": 9.947598300641403e-14,
+      "relative_scatter_frobenius_error": 7.938833486154927e-16,
+      "inferred_scatter_smallest_eigenvalue": 83.00742246654688,
+      "direct_scatter_rank": 5,
+      "rank_upper_bound": 5
+    },
+    {
+      "n": 48,
+      "p": 24,
+      "k": 5,
+      "known_members": 12,
+      "unknown_members": 36,
+      "max_abs_mean_error": 2.3592239273284576e-16,
+      "max_abs_scatter_error": 1.1368683772161603e-13,
+      "relative_scatter_frobenius_error": 1.1432161121423202e-15,
+      "inferred_scatter_smallest_eigenvalue": 44.107040841383935,
+      "direct_scatter_rank": 5,
+      "rank_upper_bound": 5
+    },
+    {
+      "n": 48,
+      "p": 24,
+      "k": 5,
+      "known_members": 36,
+      "unknown_members": 12,
+      "max_abs_mean_error": 7.771561172376096e-16,
+      "max_abs_scatter_error": 1.3145040611561853e-13,
+      "relative_scatter_frobenius_error": 3.250523065938991e-15,
+      "inferred_scatter_smallest_eigenvalue": 3.558356972130521,
+      "direct_scatter_rank": 5,
+      "rank_upper_bound": 5
+    },
+    {
+      "n": 48,
+      "p": 24,
+      "k": 5,
+      "known_members": 44,
+      "unknown_members": 4,
+      "max_abs_mean_error": 2.4424906541753444e-15,
+      "max_abs_scatter_error": 1.474376176702208e-13,
+      "relative_scatter_frobenius_error": 1.3535612998614638e-14,
+      "inferred_scatter_smallest_eigenvalue": -5.69640347780097e-14,
+      "direct_scatter_rank": 3,
+      "rank_upper_bound": 3
+    }
+  ]
+}

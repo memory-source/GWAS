@@ -1,0 +1,1 @@
+C1-C5 all yes (C2/C3 scoped); confidence high; revisions applied to paper (eps floor statement, nsp=12000 wording, cM-name, artefact wording).

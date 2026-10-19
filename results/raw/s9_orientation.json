@@ -1,0 +1,996 @@
+{
+  "real": {
+    "agg": {
+      "af_only": 0.6878592592592592,
+      "af_only_std": 0.025550138604038264,
+      "pc_naive": 0.6521767901234568,
+      "pc_naive_std": 0.013617199968401147,
+      "pc_flipped": 0.34782320987654314,
+      "pc_flipped_std": 0.01361719996840113,
+      "pc_oracle": 0.6521767901234568,
+      "pc_oracle_std": 0.013617199968401147,
+      "af_plus_calibrated_pc": 0.7306733333333333,
+      "af_plus_calibrated_pc_std": 0.029921348681241546,
+      "orientation_farther_frac": 1.0
+    },
+    "per_seed": [
+      {
+        "af_only": 0.6985432098765432,
+        "pc_naive": 0.657437037037037,
+        "pc_flipped": 0.34256296296296296,
+        "pc_oracle": 0.657437037037037,
+        "af_plus_calibrated_pc": 0.7560987654320988,
+        "pc_orientation": "farther",
+        "seed": 0
+      },
+      {
+        "af_only": 0.6857975308641975,
+        "pc_naive": 0.6474024691358025,
+        "pc_flipped": 0.35259753086419754,
+        "pc_oracle": 0.6474024691358025,
+        "af_plus_calibrated_pc": 0.7137185185185185,
+        "pc_orientation": "farther",
+        "seed": 1
+      },
+      {
+        "af_only": 0.6628888888888889,
+        "pc_naive": 0.6742172839506173,
+        "pc_flipped": 0.3257827160493827,
+        "pc_oracle": 0.6742172839506173,
+        "af_plus_calibrated_pc": 0.6901827160493827,
+        "pc_orientation": "farther",
+        "seed": 2
+      },
+      {
+        "af_only": 0.6764098765432098,
+        "pc_naive": 0.6309925925925925,
+        "pc_flipped": 0.3690074074074074,
+        "pc_oracle": 0.6309925925925925,
+        "af_plus_calibrated_pc": 0.7003506172839506,
+        "pc_orientation": "farther",
+        "seed": 3
+      },
+      {
+        "af_only": 0.6959456790123457,
+        "pc_naive": 0.654,
+        "pc_flipped": 0.346,
+        "pc_oracle": 0.654,
+        "af_plus_calibrated_pc": 0.7690913580246913,
+        "pc_orientation": "farther",
+        "seed": 4
+      },
+      {
+        "af_only": 0.7136543209876544,
+        "pc_naive": 0.6686567901234568,
+        "pc_flipped": 0.3313432098765432,
+        "pc_oracle": 0.6686567901234568,
+        "af_plus_calibrated_pc": 0.7568,
+        "pc_orientation": "farther",
+        "seed": 5
+      },
+      {
+        "af_only": 0.6846271604938272,
+        "pc_naive": 0.6476197530864197,
+        "pc_flipped": 0.3523802469135802,
+        "pc_oracle": 0.6476197530864197,
+        "af_plus_calibrated_pc": 0.7167012345679012,
+        "pc_orientation": "farther",
+        "seed": 6
+      },
+      {
+        "af_only": 0.7136345679012346,
+        "pc_naive": 0.658883950617284,
+        "pc_flipped": 0.34111604938271606,
+        "pc_oracle": 0.658883950617284,
+        "af_plus_calibrated_pc": 0.7310469135802469,
+        "pc_orientation": "farther",
+        "seed": 7
+      },
+      {
+        "af_only": 0.6992888888888888,
+        "pc_naive": 0.6424987654320987,
+        "pc_flipped": 0.3575012345679012,
+        "pc_oracle": 0.6424987654320987,
+        "af_plus_calibrated_pc": 0.7578320987654321,
+        "pc_orientation": "farther",
+        "seed": 8
+      },
+      {
+        "af_only": 0.6898617283950618,
+        "pc_naive": 0.6516641975308642,
+        "pc_flipped": 0.3483358024691358,
+        "pc_oracle": 0.6516641975308642,
+        "af_plus_calibrated_pc": 0.756316049382716,
+        "pc_orientation": "farther",
+        "seed": 9
+      },
+      {
+        "af_only": 0.6768098765432099,
+        "pc_naive": 0.6445481481481482,
+        "pc_flipped": 0.35545185185185185,
+        "pc_oracle": 0.6445481481481482,
+        "af_plus_calibrated_pc": 0.7670419753086419,
+        "pc_orientation": "farther",
+        "seed": 10
+      },
+      {
+        "af_only": 0.7239901234567901,
+        "pc_naive": 0.6655703703703704,
+        "pc_flipped": 0.33442962962962963,
+        "pc_oracle": 0.6655703703703704,
+        "af_plus_calibrated_pc": 0.7535851851851851,
+        "pc_orientation": "farther",
+        "seed": 11
+      },
+      {
+        "af_only": 0.6875703703703704,
+        "pc_naive": 0.6408493827160494,
+        "pc_flipped": 0.3591506172839506,
+        "pc_oracle": 0.6408493827160494,
+        "af_plus_calibrated_pc": 0.7018172839506173,
+        "pc_orientation": "farther",
+        "seed": 12
+      },
+      {
+        "af_only": 0.6735901234567901,
+        "pc_naive": 0.6544345679012346,
+        "pc_flipped": 0.34556543209876545,
+        "pc_oracle": 0.6544345679012346,
+        "af_plus_calibrated_pc": 0.712879012345679,
+        "pc_orientation": "farther",
+        "seed": 13
+      },
+      {
+        "af_only": 0.6232345679012345,
+        "pc_naive": 0.6683753086419754,
+        "pc_flipped": 0.3316246913580247,
+        "pc_oracle": 0.6683753086419754,
+        "af_plus_calibrated_pc": 0.6825777777777777,
+        "pc_orientation": "farther",
+        "seed": 14
+      },
+      {
+        "af_only": 0.7008395061728395,
+        "pc_naive": 0.6204691358024691,
+        "pc_flipped": 0.37953086419753085,
+        "pc_oracle": 0.6204691358024691,
+        "af_plus_calibrated_pc": 0.7107703703703704,
+        "pc_orientation": "farther",
+        "seed": 15
+      },
+      {
+        "af_only": 0.6821283950617284,
+        "pc_naive": 0.635762962962963,
+        "pc_flipped": 0.364237037037037,
+        "pc_oracle": 0.635762962962963,
+        "af_plus_calibrated_pc": 0.7092345679012345,
+        "pc_orientation": "farther",
+        "seed": 16
+      },
+      {
+        "af_only": 0.6862370370370371,
+        "pc_naive": 0.6566913580246914,
+        "pc_flipped": 0.34330864197530864,
+        "pc_oracle": 0.6566913580246914,
+        "af_plus_calibrated_pc": 0.7723012345679012,
+        "pc_orientation": "farther",
+        "seed": 17
+      },
+      {
+        "af_only": 0.6430518518518519,
+        "pc_naive": 0.6523012345679012,
+        "pc_flipped": 0.34769876543209877,
+        "pc_oracle": 0.6523012345679012,
+        "af_plus_calibrated_pc": 0.6905086419753086,
+        "pc_orientation": "farther",
+        "seed": 18
+      },
+      {
+        "af_only": 0.7390814814814815,
+        "pc_naive": 0.6711604938271605,
+        "pc_flipped": 0.3288395061728395,
+        "pc_oracle": 0.6711604938271605,
+        "af_plus_calibrated_pc": 0.7646123456790124,
+        "pc_orientation": "farther",
+        "seed": 19
+      }
+    ]
+  },
+  "sim_matched": {
+    "ld_blocks=0": {
+      "agg": {
+        "af_only": 0.7929441975308642,
+        "af_only_std": 0.014929564943562623,
+        "pc_naive": 0.9068145679012345,
+        "pc_naive_std": 0.00982976855707641,
+        "pc_flipped": 0.09318543209876542,
+        "pc_flipped_std": 0.009829768557076415,
+        "pc_oracle": 0.9068145679012345,
+        "pc_oracle_std": 0.00982976855707641,
+        "af_plus_calibrated_pc": 0.9384029629629629,
+        "af_plus_calibrated_pc_std": 0.0069837059734505855,
+        "orientation_farther_frac": 1.0
+      },
+      "per_seed": [
+        {
+          "af_only": 0.7830123456790123,
+          "pc_naive": 0.8970617283950617,
+          "pc_flipped": 0.10293827160493828,
+          "pc_oracle": 0.8970617283950617,
+          "af_plus_calibrated_pc": 0.9281728395061728,
+          "pc_orientation": "farther",
+          "seed": 0
+        },
+        {
+          "af_only": 0.7851703703703704,
+          "pc_naive": 0.9216543209876543,
+          "pc_flipped": 0.07834567901234568,
+          "pc_oracle": 0.9216543209876543,
+          "af_plus_calibrated_pc": 0.9461777777777778,
+          "pc_orientation": "farther",
+          "seed": 1
+        },
+        {
+          "af_only": 0.7987456790123457,
+          "pc_naive": 0.9096395061728395,
+          "pc_flipped": 0.09036049382716049,
+          "pc_oracle": 0.9096395061728395,
+          "af_plus_calibrated_pc": 0.945516049382716,
+          "pc_orientation": "farther",
+          "seed": 2
+        },
+        {
+          "af_only": 0.7743753086419753,
+          "pc_naive": 0.9133925925925926,
+          "pc_flipped": 0.08660740740740741,
+          "pc_oracle": 0.9133925925925926,
+          "af_plus_calibrated_pc": 0.9405777777777777,
+          "pc_orientation": "farther",
+          "seed": 3
+        },
+        {
+          "af_only": 0.7979604938271605,
+          "pc_naive": 0.9139407407407407,
+          "pc_flipped": 0.08605925925925927,
+          "pc_oracle": 0.9139407407407407,
+          "af_plus_calibrated_pc": 0.9491802469135803,
+          "pc_orientation": "farther",
+          "seed": 4
+        },
+        {
+          "af_only": 0.8032888888888889,
+          "pc_naive": 0.9076592592592593,
+          "pc_flipped": 0.09234074074074074,
+          "pc_oracle": 0.9076592592592593,
+          "af_plus_calibrated_pc": 0.9363160493827161,
+          "pc_orientation": "farther",
+          "seed": 5
+        },
+        {
+          "af_only": 0.8110271604938272,
+          "pc_naive": 0.8968148148148148,
+          "pc_flipped": 0.10318518518518519,
+          "pc_oracle": 0.8968148148148148,
+          "af_plus_calibrated_pc": 0.9388938271604939,
+          "pc_orientation": "farther",
+          "seed": 6
+        },
+        {
+          "af_only": 0.8163604938271605,
+          "pc_naive": 0.8866814814814815,
+          "pc_flipped": 0.11331851851851851,
+          "pc_oracle": 0.8866814814814815,
+          "af_plus_calibrated_pc": 0.9383753086419753,
+          "pc_orientation": "farther",
+          "seed": 7
+        },
+        {
+          "af_only": 0.7893481481481481,
+          "pc_naive": 0.9160592592592592,
+          "pc_flipped": 0.08394074074074075,
+          "pc_oracle": 0.9160592592592592,
+          "af_plus_calibrated_pc": 0.9383802469135802,
+          "pc_orientation": "farther",
+          "seed": 8
+        },
+        {
+          "af_only": 0.756004938271605,
+          "pc_naive": 0.8960246913580246,
+          "pc_flipped": 0.10397530864197531,
+          "pc_oracle": 0.8960246913580246,
+          "af_plus_calibrated_pc": 0.9237185185185185,
+          "pc_orientation": "farther",
+          "seed": 9
+        },
+        {
+          "af_only": 0.7851703703703704,
+          "pc_naive": 0.8968691358024692,
+          "pc_flipped": 0.10313086419753087,
+          "pc_oracle": 0.8968691358024692,
+          "af_plus_calibrated_pc": 0.9337827160493827,
+          "pc_orientation": "farther",
+          "seed": 10
+        },
+        {
+          "af_only": 0.8061432098765432,
+          "pc_naive": 0.9034222222222222,
+          "pc_flipped": 0.09657777777777778,
+          "pc_oracle": 0.9034222222222222,
+          "af_plus_calibrated_pc": 0.932637037037037,
+          "pc_orientation": "farther",
+          "seed": 11
+        },
+        {
+          "af_only": 0.7923555555555556,
+          "pc_naive": 0.9113777777777777,
+          "pc_flipped": 0.08862222222222223,
+          "pc_oracle": 0.9113777777777777,
+          "af_plus_calibrated_pc": 0.9364987654320988,
+          "pc_orientation": "farther",
+          "seed": 12
+        },
+        {
+          "af_only": 0.7733679012345679,
+          "pc_naive": 0.9219901234567901,
+          "pc_flipped": 0.07800987654320987,
+          "pc_oracle": 0.9219901234567901,
+          "af_plus_calibrated_pc": 0.9505333333333333,
+          "pc_orientation": "farther",
+          "seed": 13
+        },
+        {
+          "af_only": 0.7740444444444444,
+          "pc_naive": 0.9066716049382716,
+          "pc_flipped": 0.0933283950617284,
+          "pc_oracle": 0.9066716049382716,
+          "af_plus_calibrated_pc": 0.9354419753086419,
+          "pc_orientation": "farther",
+          "seed": 14
+        },
+        {
+          "af_only": 0.8007358024691358,
+          "pc_naive": 0.9013037037037037,
+          "pc_flipped": 0.0986962962962963,
+          "pc_oracle": 0.9013037037037037,
+          "af_plus_calibrated_pc": 0.9369925925925926,
+          "pc_orientation": "farther",
+          "seed": 15
+        },
+        {
+          "af_only": 0.7955851851851852,
+          "pc_naive": 0.9067901234567901,
+          "pc_flipped": 0.09320987654320988,
+          "pc_oracle": 0.9067901234567901,
+          "af_plus_calibrated_pc": 0.936395061728395,
+          "pc_orientation": "farther",
+          "seed": 16
+        },
+        {
+          "af_only": 0.8068938271604938,
+          "pc_naive": 0.9245382716049383,
+          "pc_flipped": 0.07546172839506173,
+          "pc_oracle": 0.9245382716049383,
+          "af_plus_calibrated_pc": 0.9513876543209877,
+          "pc_orientation": "farther",
+          "seed": 17
+        },
+        {
+          "af_only": 0.8012,
+          "pc_naive": 0.8967901234567901,
+          "pc_flipped": 0.10320987654320987,
+          "pc_oracle": 0.8967901234567901,
+          "af_plus_calibrated_pc": 0.9346913580246914,
+          "pc_orientation": "farther",
+          "seed": 18
+        },
+        {
+          "af_only": 0.8080938271604938,
+          "pc_naive": 0.9076098765432099,
+          "pc_flipped": 0.09239012345679012,
+          "pc_oracle": 0.9076098765432099,
+          "af_plus_calibrated_pc": 0.9343901234567902,
+          "pc_orientation": "farther",
+          "seed": 19
+        }
+      ]
+    },
+    "ld_blocks=50": {
+      "agg": {
+        "af_only": 0.7925506172839505,
+        "af_only_std": 0.014456981664712496,
+        "pc_naive": 0.9082804938271604,
+        "pc_naive_std": 0.009017346503643584,
+        "pc_flipped": 0.0917195061728395,
+        "pc_flipped_std": 0.009017346503643593,
+        "pc_oracle": 0.9082804938271604,
+        "pc_oracle_std": 0.009017346503643584,
+        "af_plus_calibrated_pc": 0.9397246913580247,
+        "af_plus_calibrated_pc_std": 0.006757021513566201,
+        "orientation_farther_frac": 1.0
+      },
+      "per_seed": [
+        {
+          "af_only": 0.7846716049382716,
+          "pc_naive": 0.902558024691358,
+          "pc_flipped": 0.09744197530864197,
+          "pc_oracle": 0.902558024691358,
+          "af_plus_calibrated_pc": 0.9346765432098766,
+          "pc_orientation": "farther",
+          "seed": 0
+        },
+        {
+          "af_only": 0.7885679012345679,
+          "pc_naive": 0.9185037037037037,
+          "pc_flipped": 0.0814962962962963,
+          "pc_oracle": 0.9185037037037037,
+          "af_plus_calibrated_pc": 0.9447654320987654,
+          "pc_orientation": "farther",
+          "seed": 1
+        },
+        {
+          "af_only": 0.7908246913580247,
+          "pc_naive": 0.906074074074074,
+          "pc_flipped": 0.09392592592592593,
+          "pc_oracle": 0.906074074074074,
+          "af_plus_calibrated_pc": 0.9440543209876543,
+          "pc_orientation": "farther",
+          "seed": 2
+        },
+        {
+          "af_only": 0.7762666666666667,
+          "pc_naive": 0.9164296296296296,
+          "pc_flipped": 0.08357037037037036,
+          "pc_oracle": 0.9164296296296296,
+          "af_plus_calibrated_pc": 0.9440246913580247,
+          "pc_orientation": "farther",
+          "seed": 3
+        },
+        {
+          "af_only": 0.8039308641975309,
+          "pc_naive": 0.9170222222222222,
+          "pc_flipped": 0.08297777777777778,
+          "pc_oracle": 0.9170222222222222,
+          "af_plus_calibrated_pc": 0.9527901234567902,
+          "pc_orientation": "farther",
+          "seed": 4
+        },
+        {
+          "af_only": 0.7927308641975309,
+          "pc_naive": 0.9105679012345679,
+          "pc_flipped": 0.0894320987654321,
+          "pc_oracle": 0.9105679012345679,
+          "af_plus_calibrated_pc": 0.9366222222222222,
+          "pc_orientation": "farther",
+          "seed": 5
+        },
+        {
+          "af_only": 0.8122962962962963,
+          "pc_naive": 0.8982320987654321,
+          "pc_flipped": 0.1017679012345679,
+          "pc_oracle": 0.8982320987654321,
+          "af_plus_calibrated_pc": 0.940404938271605,
+          "pc_orientation": "farther",
+          "seed": 6
+        },
+        {
+          "af_only": 0.8186271604938271,
+          "pc_naive": 0.8912444444444444,
+          "pc_flipped": 0.10875555555555555,
+          "pc_oracle": 0.8912444444444444,
+          "af_plus_calibrated_pc": 0.9429975308641976,
+          "pc_orientation": "farther",
+          "seed": 7
+        },
+        {
+          "af_only": 0.7889432098765432,
+          "pc_naive": 0.9147308641975309,
+          "pc_flipped": 0.08526913580246914,
+          "pc_oracle": 0.9147308641975309,
+          "af_plus_calibrated_pc": 0.9399407407407407,
+          "pc_orientation": "farther",
+          "seed": 8
+        },
+        {
+          "af_only": 0.7556543209876543,
+          "pc_naive": 0.8982222222222223,
+          "pc_flipped": 0.10177777777777777,
+          "pc_oracle": 0.8982222222222223,
+          "af_plus_calibrated_pc": 0.9243358024691358,
+          "pc_orientation": "farther",
+          "seed": 9
+        },
+        {
+          "af_only": 0.7861185185185185,
+          "pc_naive": 0.9003555555555556,
+          "pc_flipped": 0.09964444444444444,
+          "pc_oracle": 0.9003555555555556,
+          "af_plus_calibrated_pc": 0.9351950617283951,
+          "pc_orientation": "farther",
+          "seed": 10
+        },
+        {
+          "af_only": 0.8036296296296296,
+          "pc_naive": 0.9040493827160494,
+          "pc_flipped": 0.09595061728395061,
+          "pc_oracle": 0.9040493827160494,
+          "af_plus_calibrated_pc": 0.9320543209876543,
+          "pc_orientation": "farther",
+          "seed": 11
+        },
+        {
+          "af_only": 0.7893728395061729,
+          "pc_naive": 0.9112098765432098,
+          "pc_flipped": 0.08879012345679012,
+          "pc_oracle": 0.9112098765432098,
+          "af_plus_calibrated_pc": 0.9371703703703703,
+          "pc_orientation": "farther",
+          "seed": 12
+        },
+        {
+          "af_only": 0.7742271604938271,
+          "pc_naive": 0.9214271604938271,
+          "pc_flipped": 0.07857283950617285,
+          "pc_oracle": 0.9214271604938271,
+          "af_plus_calibrated_pc": 0.9500888888888889,
+          "pc_orientation": "farther",
+          "seed": 13
+        },
+        {
+          "af_only": 0.7783703703703704,
+          "pc_naive": 0.9064345679012346,
+          "pc_flipped": 0.09356543209876543,
+          "pc_oracle": 0.9064345679012346,
+          "af_plus_calibrated_pc": 0.9361185185185186,
+          "pc_orientation": "farther",
+          "seed": 14
+        },
+        {
+          "af_only": 0.8004691358024691,
+          "pc_naive": 0.9001481481481481,
+          "pc_flipped": 0.09985185185185186,
+          "pc_oracle": 0.9001481481481481,
+          "af_plus_calibrated_pc": 0.938083950617284,
+          "pc_orientation": "farther",
+          "seed": 15
+        },
+        {
+          "af_only": 0.7919358024691358,
+          "pc_naive": 0.9090814814814815,
+          "pc_flipped": 0.09091851851851852,
+          "pc_oracle": 0.9090814814814815,
+          "af_plus_calibrated_pc": 0.9376246913580247,
+          "pc_orientation": "farther",
+          "seed": 16
+        },
+        {
+          "af_only": 0.8049382716049382,
+          "pc_naive": 0.9278172839506172,
+          "pc_flipped": 0.07218271604938271,
+          "pc_oracle": 0.9278172839506172,
+          "af_plus_calibrated_pc": 0.9520395061728395,
+          "pc_orientation": "farther",
+          "seed": 17
+        },
+        {
+          "af_only": 0.8004444444444444,
+          "pc_naive": 0.8996148148148149,
+          "pc_flipped": 0.10038518518518519,
+          "pc_oracle": 0.8996148148148149,
+          "af_plus_calibrated_pc": 0.9359061728395062,
+          "pc_orientation": "farther",
+          "seed": 18
+        },
+        {
+          "af_only": 0.8089925925925926,
+          "pc_naive": 0.9118864197530864,
+          "pc_flipped": 0.08811358024691358,
+          "pc_oracle": 0.9118864197530864,
+          "af_plus_calibrated_pc": 0.9356,
+          "pc_orientation": "farther",
+          "seed": 19
+        }
+      ]
+    },
+    "ld_blocks=100": {
+      "agg": {
+        "af_only": 0.7936933333333334,
+        "af_only_std": 0.014436959622433153,
+        "pc_naive": 0.9097797530864197,
+        "pc_naive_std": 0.009546355273574178,
+        "pc_flipped": 0.09022024691358024,
+        "pc_flipped_std": 0.009546355273574171,
+        "pc_oracle": 0.9097797530864197,
+        "pc_oracle_std": 0.009546355273574178,
+        "af_plus_calibrated_pc": 0.9403333333333332,
+        "af_plus_calibrated_pc_std": 0.006762096952111654,
+        "orientation_farther_frac": 1.0
+      },
+      "per_seed": [
+        {
+          "af_only": 0.7882024691358025,
+          "pc_naive": 0.9070320987654321,
+          "pc_flipped": 0.0929679012345679,
+          "pc_oracle": 0.9070320987654321,
+          "af_plus_calibrated_pc": 0.9362518518518519,
+          "pc_orientation": "farther",
+          "seed": 0
+        },
+        {
+          "af_only": 0.7876740740740741,
+          "pc_naive": 0.9202172839506173,
+          "pc_flipped": 0.07978271604938271,
+          "pc_oracle": 0.9202172839506173,
+          "af_plus_calibrated_pc": 0.9461135802469136,
+          "pc_orientation": "farther",
+          "seed": 1
+        },
+        {
+          "af_only": 0.791041975308642,
+          "pc_naive": 0.9106913580246914,
+          "pc_flipped": 0.08930864197530865,
+          "pc_oracle": 0.9106913580246914,
+          "af_plus_calibrated_pc": 0.9425086419753086,
+          "pc_orientation": "farther",
+          "seed": 2
+        },
+        {
+          "af_only": 0.7824395061728395,
+          "pc_naive": 0.9201876543209877,
+          "pc_flipped": 0.07981234567901234,
+          "pc_oracle": 0.9201876543209877,
+          "af_plus_calibrated_pc": 0.9448543209876543,
+          "pc_orientation": "farther",
+          "seed": 3
+        },
+        {
+          "af_only": 0.8021777777777778,
+          "pc_naive": 0.9200592592592592,
+          "pc_flipped": 0.07994074074074074,
+          "pc_oracle": 0.9200592592592592,
+          "af_plus_calibrated_pc": 0.9543506172839507,
+          "pc_orientation": "farther",
+          "seed": 4
+        },
+        {
+          "af_only": 0.786079012345679,
+          "pc_naive": 0.913846913580247,
+          "pc_flipped": 0.08615308641975308,
+          "pc_oracle": 0.913846913580247,
+          "af_plus_calibrated_pc": 0.9365925925925926,
+          "pc_orientation": "farther",
+          "seed": 5
+        },
+        {
+          "af_only": 0.8152246913580247,
+          "pc_naive": 0.9001629629629629,
+          "pc_flipped": 0.09983703703703704,
+          "pc_oracle": 0.9001629629629629,
+          "af_plus_calibrated_pc": 0.9407654320987654,
+          "pc_orientation": "farther",
+          "seed": 6
+        },
+        {
+          "af_only": 0.8180049382716049,
+          "pc_naive": 0.8897728395061728,
+          "pc_flipped": 0.11022716049382716,
+          "pc_oracle": 0.8897728395061728,
+          "af_plus_calibrated_pc": 0.944162962962963,
+          "pc_orientation": "farther",
+          "seed": 7
+        },
+        {
+          "af_only": 0.7937135802469136,
+          "pc_naive": 0.920320987654321,
+          "pc_flipped": 0.079679012345679,
+          "pc_oracle": 0.920320987654321,
+          "af_plus_calibrated_pc": 0.9445827160493827,
+          "pc_orientation": "farther",
+          "seed": 8
+        },
+        {
+          "af_only": 0.7564345679012345,
+          "pc_naive": 0.8977432098765432,
+          "pc_flipped": 0.10225679012345679,
+          "pc_oracle": 0.8977432098765432,
+          "af_plus_calibrated_pc": 0.925516049382716,
+          "pc_orientation": "farther",
+          "seed": 9
+        },
+        {
+          "af_only": 0.7796444444444445,
+          "pc_naive": 0.8972888888888889,
+          "pc_flipped": 0.10271111111111111,
+          "pc_oracle": 0.8972888888888889,
+          "af_plus_calibrated_pc": 0.9314864197530864,
+          "pc_orientation": "farther",
+          "seed": 10
+        },
+        {
+          "af_only": 0.8040098765432099,
+          "pc_naive": 0.9052740740740741,
+          "pc_flipped": 0.09472592592592592,
+          "pc_oracle": 0.9052740740740741,
+          "af_plus_calibrated_pc": 0.9319061728395062,
+          "pc_orientation": "farther",
+          "seed": 11
+        },
+        {
+          "af_only": 0.7962320987654321,
+          "pc_naive": 0.9103654320987654,
+          "pc_flipped": 0.08963456790123457,
+          "pc_oracle": 0.9103654320987654,
+          "af_plus_calibrated_pc": 0.9370074074074074,
+          "pc_orientation": "farther",
+          "seed": 12
+        },
+        {
+          "af_only": 0.7781530864197531,
+          "pc_naive": 0.9170567901234568,
+          "pc_flipped": 0.0829432098765432,
+          "pc_oracle": 0.9170567901234568,
+          "af_plus_calibrated_pc": 0.9470765432098766,
+          "pc_orientation": "farther",
+          "seed": 13
+        },
+        {
+          "af_only": 0.7822469135802469,
+          "pc_naive": 0.908479012345679,
+          "pc_flipped": 0.09152098765432098,
+          "pc_oracle": 0.908479012345679,
+          "af_plus_calibrated_pc": 0.9360691358024691,
+          "pc_orientation": "farther",
+          "seed": 14
+        },
+        {
+          "af_only": 0.7963703703703704,
+          "pc_naive": 0.9050123456790123,
+          "pc_flipped": 0.09498765432098766,
+          "pc_oracle": 0.9050123456790123,
+          "af_plus_calibrated_pc": 0.9384345679012346,
+          "pc_orientation": "farther",
+          "seed": 15
+        },
+        {
+          "af_only": 0.7919555555555555,
+          "pc_naive": 0.9113037037037037,
+          "pc_flipped": 0.0886962962962963,
+          "pc_oracle": 0.9113037037037037,
+          "af_plus_calibrated_pc": 0.9394024691358025,
+          "pc_orientation": "farther",
+          "seed": 16
+        },
+        {
+          "af_only": 0.8019111111111111,
+          "pc_naive": 0.9281333333333334,
+          "pc_flipped": 0.07186666666666666,
+          "pc_oracle": 0.9281333333333334,
+          "af_plus_calibrated_pc": 0.952241975308642,
+          "pc_orientation": "farther",
+          "seed": 17
+        },
+        {
+          "af_only": 0.8077185185185185,
+          "pc_naive": 0.8989432098765432,
+          "pc_flipped": 0.1010567901234568,
+          "pc_oracle": 0.8989432098765432,
+          "af_plus_calibrated_pc": 0.938158024691358,
+          "pc_orientation": "farther",
+          "seed": 18
+        },
+        {
+          "af_only": 0.8146320987654321,
+          "pc_naive": 0.9137037037037037,
+          "pc_flipped": 0.0862962962962963,
+          "pc_oracle": 0.9137037037037037,
+          "af_plus_calibrated_pc": 0.9391851851851852,
+          "pc_orientation": "farther",
+          "seed": 19
+        }
+      ]
+    },
+    "ld_blocks=200": {
+      "agg": {
+        "af_only": 0.7956399999999999,
+        "af_only_std": 0.014947281021560732,
+        "pc_naive": 0.912597037037037,
+        "pc_naive_std": 0.010648295439310514,
+        "pc_flipped": 0.08740296296296296,
+        "pc_flipped_std": 0.010648295439310512,
+        "pc_oracle": 0.912597037037037,
+        "pc_oracle_std": 0.010648295439310514,
+        "af_plus_calibrated_pc": 0.9427079012345679,
+        "af_plus_calibrated_pc_std": 0.006952818856208546,
+        "orientation_farther_frac": 1.0
+      },
+      "per_seed": [
+        {
+          "af_only": 0.783525925925926,
+          "pc_naive": 0.9071308641975309,
+          "pc_flipped": 0.09286913580246914,
+          "pc_oracle": 0.9071308641975309,
+          "af_plus_calibrated_pc": 0.9369382716049383,
+          "pc_orientation": "farther",
+          "seed": 0
+        },
+        {
+          "af_only": 0.8055358024691358,
+          "pc_naive": 0.9188345679012345,
+          "pc_flipped": 0.08116543209876544,
+          "pc_oracle": 0.9188345679012345,
+          "af_plus_calibrated_pc": 0.9481432098765432,
+          "pc_orientation": "farther",
+          "seed": 1
+        },
+        {
+          "af_only": 0.8002123456790123,
+          "pc_naive": 0.9086617283950618,
+          "pc_flipped": 0.09133827160493826,
+          "pc_oracle": 0.9086617283950618,
+          "af_plus_calibrated_pc": 0.941604938271605,
+          "pc_orientation": "farther",
+          "seed": 2
+        },
+        {
+          "af_only": 0.7867308641975309,
+          "pc_naive": 0.9238913580246914,
+          "pc_flipped": 0.07610864197530864,
+          "pc_oracle": 0.9238913580246914,
+          "af_plus_calibrated_pc": 0.9490765432098766,
+          "pc_orientation": "farther",
+          "seed": 3
+        },
+        {
+          "af_only": 0.8072049382716049,
+          "pc_naive": 0.924637037037037,
+          "pc_flipped": 0.07536296296296296,
+          "pc_oracle": 0.924637037037037,
+          "af_plus_calibrated_pc": 0.9544296296296296,
+          "pc_orientation": "farther",
+          "seed": 4
+        },
+        {
+          "af_only": 0.784074074074074,
+          "pc_naive": 0.9144,
+          "pc_flipped": 0.0856,
+          "pc_oracle": 0.9144,
+          "af_plus_calibrated_pc": 0.9388592592592593,
+          "pc_orientation": "farther",
+          "seed": 5
+        },
+        {
+          "af_only": 0.8256592592592592,
+          "pc_naive": 0.898083950617284,
+          "pc_flipped": 0.10191604938271605,
+          "pc_oracle": 0.898083950617284,
+          "af_plus_calibrated_pc": 0.9389234567901235,
+          "pc_orientation": "farther",
+          "seed": 6
+        },
+        {
+          "af_only": 0.8066271604938272,
+          "pc_naive": 0.8960641975308642,
+          "pc_flipped": 0.10393580246913581,
+          "pc_oracle": 0.8960641975308642,
+          "af_plus_calibrated_pc": 0.944158024691358,
+          "pc_orientation": "farther",
+          "seed": 7
+        },
+        {
+          "af_only": 0.7900246913580247,
+          "pc_naive": 0.9213580246913581,
+          "pc_flipped": 0.07864197530864198,
+          "pc_oracle": 0.9213580246913581,
+          "af_plus_calibrated_pc": 0.944637037037037,
+          "pc_orientation": "farther",
+          "seed": 8
+        },
+        {
+          "af_only": 0.7674814814814814,
+          "pc_naive": 0.8990567901234567,
+          "pc_flipped": 0.1009432098765432,
+          "pc_oracle": 0.8990567901234567,
+          "af_plus_calibrated_pc": 0.9328691358024691,
+          "pc_orientation": "farther",
+          "seed": 9
+        },
+        {
+          "af_only": 0.7756543209876543,
+          "pc_naive": 0.9025086419753087,
+          "pc_flipped": 0.09749135802469136,
+          "pc_oracle": 0.9025086419753087,
+          "af_plus_calibrated_pc": 0.9304296296296296,
+          "pc_orientation": "farther",
+          "seed": 10
+        },
+        {
+          "af_only": 0.7958617283950618,
+          "pc_naive": 0.9014765432098766,
+          "pc_flipped": 0.09852345679012346,
+          "pc_oracle": 0.9014765432098766,
+          "af_plus_calibrated_pc": 0.9288148148148148,
+          "pc_orientation": "farther",
+          "seed": 11
+        },
+        {
+          "af_only": 0.7980098765432099,
+          "pc_naive": 0.9209135802469136,
+          "pc_flipped": 0.07908641975308642,
+          "pc_oracle": 0.9209135802469136,
+          "af_plus_calibrated_pc": 0.9464,
+          "pc_orientation": "farther",
+          "seed": 12
+        },
+        {
+          "af_only": 0.7794222222222222,
+          "pc_naive": 0.924320987654321,
+          "pc_flipped": 0.07567901234567902,
+          "pc_oracle": 0.924320987654321,
+          "af_plus_calibrated_pc": 0.9499358024691358,
+          "pc_orientation": "farther",
+          "seed": 13
+        },
+        {
+          "af_only": 0.787837037037037,
+          "pc_naive": 0.909516049382716,
+          "pc_flipped": 0.09048395061728395,
+          "pc_oracle": 0.909516049382716,
+          "af_plus_calibrated_pc": 0.9391358024691357,
+          "pc_orientation": "farther",
+          "seed": 14
+        },
+        {
+          "af_only": 0.7978567901234568,
+          "pc_naive": 0.9048197530864197,
+          "pc_flipped": 0.09518024691358025,
+          "pc_oracle": 0.9048197530864197,
+          "af_plus_calibrated_pc": 0.9407703703703704,
+          "pc_orientation": "farther",
+          "seed": 15
+        },
+        {
+          "af_only": 0.7892098765432098,
+          "pc_naive": 0.9179654320987655,
+          "pc_flipped": 0.08203456790123456,
+          "pc_oracle": 0.9179654320987655,
+          "af_plus_calibrated_pc": 0.945046913580247,
+          "pc_orientation": "farther",
+          "seed": 16
+        },
+        {
+          "af_only": 0.7945580246913581,
+          "pc_naive": 0.9349925925925926,
+          "pc_flipped": 0.0650074074074074,
+          "pc_oracle": 0.9349925925925926,
+          "af_plus_calibrated_pc": 0.9540641975308642,
+          "pc_orientation": "farther",
+          "seed": 17
+        },
+        {
+          "af_only": 0.8093382716049383,
+          "pc_naive": 0.9036098765432099,
+          "pc_flipped": 0.09639012345679013,
+          "pc_oracle": 0.9036098765432099,
+          "af_plus_calibrated_pc": 0.9416197530864198,
+          "pc_orientation": "farther",
+          "seed": 18
+        },
+        {
+          "af_only": 0.8279753086419753,
+          "pc_naive": 0.9196987654320987,
+          "pc_flipped": 0.08030123456790124,
+          "pc_oracle": 0.9196987654320987,
+          "af_plus_calibrated_pc": 0.9483012345679013,
+          "pc_orientation": "farther",
+          "seed": 19
+        }
+      ]
+    }
+  },
+  "meta": {
+    "n_per_panel": 450,
+    "real_n_snps": 1363,
+    "real_split_seeds": 20,
+    "sim_seeds": 20,
+    "sim_n_snps": 1363
+  }
+}

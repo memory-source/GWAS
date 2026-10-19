@@ -1,0 +1,10 @@
+chr1 split0 lsr=0.479 planted=0.713 af=0.832 mean_cm(m/n)=1.68/1.68
+chr1 split1 lsr=0.442 planted=0.714 af=0.859 mean_cm(m/n)=1.63/1.71
+chr1 split2 lsr=0.447 planted=0.718 af=0.907 mean_cm(m/n)=1.64/1.74
+chr2 split0 lsr=0.451 planted=0.716 af=0.757 mean_cm(m/n)=1.67/1.77
+chr2 split1 lsr=0.523 planted=0.741 af=0.890 mean_cm(m/n)=1.76/1.69
+chr2 split2 lsr=0.464 planted=0.732 af=0.945 mean_cm(m/n)=1.63/1.72
+chr22 split0 lsr=0.432 planted=0.708 af=0.783 mean_cm(m/n)=1.26/1.35
+chr22 split1 lsr=0.419 planted=0.689 af=0.846 mean_cm(m/n)=1.21/1.30
+chr22 split2 lsr=0.422 planted=0.708 af=0.886 mean_cm(m/n)=1.22/1.31
+done 3713.7 s

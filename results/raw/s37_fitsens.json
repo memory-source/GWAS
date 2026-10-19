@@ -1,0 +1,76 @@
+{
+  "nsp8000_m8000": {
+    "nfit5000": {
+      "n_fit": 5000,
+      "fit_frac": 0.20833333333333334,
+      "af_only": 0.5362390637397766,
+      "pc_calibrated": 0.5023265779018402,
+      "delta_pc_minus_af": -0.0339124858379364,
+      "delta_pc_minus_af_std": 0.007808098109490104,
+      "n_site": 24000,
+      "n_seeds": 5
+    },
+    "nfit10000": {
+      "n_fit": 10000,
+      "fit_frac": 0.4166666666666667,
+      "af_only": 0.5362390637397766,
+      "pc_calibrated": 0.5026242434978485,
+      "delta_pc_minus_af": -0.0336148202419281,
+      "delta_pc_minus_af_std": 0.007868137132283386,
+      "n_site": 24000,
+      "n_seeds": 5
+    },
+    "nfit20000": {
+      "n_fit": 20000,
+      "fit_frac": 0.8333333333333334,
+      "af_only": 0.5362390637397766,
+      "pc_calibrated": 0.5024763405323028,
+      "delta_pc_minus_af": -0.033762723207473755,
+      "delta_pc_minus_af_std": 0.008071915560433362,
+      "n_site": 24000,
+      "n_seeds": 5
+    },
+    "nfit24000": {
+      "n_fit": 24000,
+      "fit_frac": 1.0,
+      "af_only": 0.5362390637397766,
+      "pc_calibrated": 0.5025073111057281,
+      "delta_pc_minus_af": -0.03373175263404846,
+      "delta_pc_minus_af_std": 0.008082463794203854,
+      "n_site": 24000,
+      "n_seeds": 5
+    }
+  },
+  "nsp16000_m3000": {
+    "nfit5000": {
+      "n_fit": 5000,
+      "fit_frac": 0.10416666666666667,
+      "af_only": 0.5271914958953857,
+      "pc_calibrated": 0.5008340835571289,
+      "delta_pc_minus_af": -0.026357412338256836,
+      "delta_pc_minus_af_std": 0.0032224004518824193,
+      "n_site": 48000,
+      "n_seeds": 5
+    },
+    "nfit10000": {
+      "n_fit": 10000,
+      "fit_frac": 0.20833333333333334,
+      "af_only": 0.5271914958953857,
+      "pc_calibrated": 0.5010391891002655,
+      "delta_pc_minus_af": -0.02615230679512024,
+      "delta_pc_minus_af_std": 0.0032504476281140183,
+      "n_site": 48000,
+      "n_seeds": 5
+    },
+    "nfit20000": {
+      "n_fit": 20000,
+      "fit_frac": 0.4166666666666667,
+      "af_only": 0.5271914958953857,
+      "pc_calibrated": 0.5011131525039673,
+      "delta_pc_minus_af": -0.026078343391418457,
+      "delta_pc_minus_af_std": 0.0033387972061770313,
+      "n_site": 48000,
+      "n_seeds": 5
+    }
+  }
+}
