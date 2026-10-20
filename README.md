@@ -1,7 +1,7 @@
 # GWAS — released diagnostics, membership leakage, and reveal governance
 
 Measurement study of what a multi-site genome-wide association study (GWAS) releases.
-The project has two parts:
+The project has three parts:
 
 1. **Passive leakage measurement.** Given a fixed release (allele frequencies, the
    study-fitted PC loading matrix, eigenvalues, missingness, haplotype tables), measure
