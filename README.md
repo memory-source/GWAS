@@ -68,12 +68,15 @@ Active (round 22, claims in `CLAIMS_FROM_RESULTS_ARB_20261017.md`):
 | path | contents |
 |---|---|
 | `code/` | 91 Python modules: `s0`–`s72` experiment scripts plus helpers (`common.py`, `real_panel.py`, `governance.py`, `enforce.py`, `common_gpu.py`, `make_figures.py`) |
-| `results/raw/` | one JSON per experiment cell; every quoted number comes from here |
-| `paper/` | `main.tex` + `main.pdf` + `figures/` |
-| `refine-logs/` | experiment plans, results write-ups, tracker |
-| `review-stage/` | cross-model review logs, reviewer memory, round state |
+| `results/raw/` | 104 result JSONs (one per experiment cell; every quoted number comes from here) plus 49 run logs |
+| `paper/` | `main.tex` + `main.pdf` + `figures/` (8 figures as PDF + PNG) |
+| `refine-logs/` | experiment plans, results write-ups, tracker, per-round reviewer verdicts |
+| `review-stage/` | cross-model review logs, reviewer memory, round state, two independent-review bundles with their verification scripts |
 | `research-plan/` | research directions and the deep-search specification |
 | `idea-stage/` | idea discovery report and the research contract |
+| `logs/` | sharded run logs for `s27`–`s36` (GPU scale, permutation null, ladder, paired, density, five-population, phased/IBD, meta-attack, parse benchmark, frontier) |
+| `.aris/` | skill-install manifest, claim files, evidence precheck, and the per-run review traces (`traces/<skill>/<date>_runNN/`) |
+| `.github/agents/` | the two Copilot reviewer profiles used by the review rounds |
 | `EXPERIMENT_AUDIT*.md/json` | integrity audits (one per round) |
 | `proposal_experiment_plan.md` | the original Chinese proposal |
 | `data/` | data provenance (`data/README.md`); VCFs are not tracked |
